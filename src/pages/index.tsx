@@ -121,6 +121,7 @@ export default function Home() {
                   <div className="h-[1px] bg-opacity-20  bg-slate-600"></div>
                   <p>{x.description}</p>
                   <Link
+                    target="_blank"
                     className="duration-150 underline underline-offset-2 hover:underline-offset-4  w-fit "
                     href={x.link}
                   >
