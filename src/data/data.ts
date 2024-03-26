@@ -137,4 +137,10 @@ export const projects: Project[] = [
     link: "https://audiophile-six-gules.vercel.app/",
     img: "/images/projects/audiophile.png",
   },
+  {
+    title: "MetaPlace",
+    description: "Site statique avec des animations au scroll.",
+    link: "https://metaplace-mocha.vercel.app/",
+    img: "/images/projects/metaplace.png",
+  },
 ];
