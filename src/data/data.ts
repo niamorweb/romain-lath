@@ -124,6 +124,12 @@ export const projects: Project[] = [
     img: "/images/projects/kuta.png",
   },
   {
+    title: "TechNews",
+    description: "Un site de blog réalisé avec Nextjs et ContentLayer",
+    link: "https://tech-news-gold.vercel.app/",
+    img: "/images/projects/technews.png",
+  },
+  {
     title: "Page d'acceuil de Github",
     description:
       "Page d'accueil de Github recréée. En Next.js, Framer Motion pour les animations, Tailwindcss, TypeScript",
