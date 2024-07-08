@@ -77,7 +77,10 @@ export default function Home() {
               Je suis un développeur web frontend / intégrateur web
               {/* JE CONSTRUIS DES CHOSES AVEC MA SOURIS ET MON CLAVIER. */}
             </h1>
-            <button className="text-md lg:text-xl font-medium uppercase flex items-center gap-3 hover:gap-6 duration-150">
+            <Link
+              href="/#projets"
+              className="text-md lg:text-xl font-medium uppercase flex items-center gap-3 hover:gap-6 duration-150"
+            >
               <span>Voir mes projets créés</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +96,7 @@ export default function Home() {
                   d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </section>
         <section
