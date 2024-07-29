@@ -131,7 +131,7 @@ export const projects: Project[] = [
     title: "Openfiles",
     description:
       "Une app pour stocker ses fichiers avec les méthodes de chiffrement les plus robustes ( chiffrement avec clés AES, et chiffrement avec paire de clés RSA ). Frontend réalisé avec Next.js, le backend et le chiffrement en python avec Django. Ce projet à pour but d'être Open Source prochainement",
-    link: "https://kuta.vercel.app/",
+    link: "https://openfiles-omega.vercel.app/",
     img: "/images/projects/openfiles.png",
   },
   {
