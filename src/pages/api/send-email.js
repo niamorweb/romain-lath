@@ -8,17 +8,19 @@ export default async function handler(req, res) {
       port: 465,
       host: "smtp.gmail.com",
       auth: {
-        user: "romain2ndcmpt@gmail.com",
-        pass: "ssip zwim qtzm vzdy",
+        user: process.env.MAIL_SENDER_ADRESS,
+        pass: process.env.MAIL_SENDER_PASS_CODE,
       },
       secure: true,
     });
-
     try {
       // Envoyer l'e-mail
       await transporter.sendMail({
-        to: "niamor.lth@gmail.com",
-        text: content,
+        to: process.env.MAIL_RECEIVER_ADRESS,
+        text: `
+        From : ${email}
+        Content : ${content}
+        `,
       });
 
       res.status(200).json({ success: true });
