@@ -109,8 +109,8 @@ export default function Home() {
           }}
         ></section>
 
-        <section id="projets" className="px-6 py-20">
-          <h1 className="py-14 text-4xl lg:text-6xl font-black uppercase">
+        <section id="projets" className="flex flex-col gap-12 px-6 py-28">
+          <h1 className="text-4xl lg:text-6xl font-black uppercase">
             Projets sélectionnés
           </h1>
           <div className="grid gap-10 lg:gap-6">
@@ -145,9 +145,9 @@ export default function Home() {
 
         <section
           id="competences"
-          className="border-y border-y-black px-6 py-20 flex flex-col gap-10"
+          className="border-y border-y-black px-6 flex flex-col gap-12 py-28"
         >
-          <h1 className="uppercase py-14 text-4xl lg:text-6xl font-black">
+          <h1 className="uppercase text-4xl lg:text-6xl font-black">
             Mes compétences
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
