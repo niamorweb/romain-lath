@@ -145,9 +145,9 @@ export default function Home() {
 
         <section
           id="competences"
-          className="border-y border-y-black px-6 py-14 flex flex-col gap-10"
+          className="border-y border-y-black px-6 py-20 flex flex-col gap-10"
         >
-          <h1 className="uppercase text-4xl lg:text-6xl font-black">
+          <h1 className="uppercase py-14 text-4xl lg:text-6xl font-black">
             Mes compétences
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
         </section>
         <ContactForm />
-        <footer className="border-y border-y-black px-6 py-14 flex flex-col gap-6 ">
+        <footer className="border-y border-y-black px-6 py-20 flex flex-col gap-6 ">
           <span>©2024 niamorweb </span>
           <span>Design inspired by George Christeas </span>
         </footer>
