@@ -130,6 +130,18 @@ export default function Home() {
                   >
                     Site Web
                   </Link>
+
+                  <div className="mt-5 flex items-center gap-2 flex-wrap">
+                    {x.skills.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="px-3 py-1 rounded-sm bg-slate-200 flex-shrink gap-3 w-fit flex justify-start items-center"
+                      >
+                        <skill.icon className=" flex-grow " />
+                        <span className=" flex-grow ">{skill.text}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="lg:w-1/2 translate-y-1/4 border border-black p-1 lg:p-3 hover:translate-y-[20%] duration-150 rounded-xl lg:rounded-3xl">
                   <img

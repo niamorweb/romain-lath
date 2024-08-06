@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import {
   SiTypescript,
   SiJavascript,
@@ -64,7 +65,6 @@ export const skills = [
         icon: SiTailwindcss,
         text: "Tailwind",
       },
-
       {
         icon: SiHtml5,
         text: "HTML5",
@@ -124,6 +124,7 @@ export interface Project {
   description: string;
   link: string;
   img: string;
+  skills: { icon: IconType; text: string }[];
 }
 
 export const projects: Project[] = [
@@ -133,6 +134,24 @@ export const projects: Project[] = [
       "Une app pour stocker ses fichiers avec les méthodes de chiffrement les plus robustes ( chiffrement avec clés AES, et chiffrement avec paire de clés RSA ). Frontend réalisé avec Next.js, le backend et le chiffrement en python avec Django. Ce projet à pour but d'être Open Source prochainement",
     link: "https://openfiles-omega.vercel.app/",
     img: "/images/projects/openfiles.png",
+    skills: [
+      {
+        icon: SiReact,
+        text: "React",
+      },
+      {
+        icon: SiNextdotjs,
+        text: "Next",
+      },
+      {
+        icon: SiDjango,
+        text: "Django",
+      },
+      {
+        icon: SiTailwindcss,
+        text: "Tailwind",
+      },
+    ],
   },
   {
     title: "Kuta",
@@ -140,6 +159,24 @@ export const projects: Project[] = [
       "Une alternative à linktree axée sur le partage de photo construit sur Next.js et Tailwind. Avec Supabase pour gérer la base de données et Cloudinary pour stocker les images.",
     link: "https://kuta.vercel.app/",
     img: "/images/projects/kuta.png",
+    skills: [
+      {
+        icon: SiReact,
+        text: "React",
+      },
+      {
+        icon: SiNextdotjs,
+        text: "Next",
+      },
+      {
+        icon: SiSupabase,
+        text: "Supabase",
+      },
+      {
+        icon: SiTailwindcss,
+        text: "Tailwind",
+      },
+    ],
   },
   // {
   //   title: "TechNews",
@@ -166,5 +203,19 @@ export const projects: Project[] = [
     description: "Site statique avec des animations au scroll.",
     link: "https://metaplace-mocha.vercel.app/",
     img: "/images/projects/metaplace.png",
+    skills: [
+      {
+        icon: SiReact,
+        text: "React",
+      },
+      {
+        icon: SiNextdotjs,
+        text: "Next",
+      },
+      {
+        icon: SiTailwindcss,
+        text: "Tailwind",
+      },
+    ],
   },
 ];
