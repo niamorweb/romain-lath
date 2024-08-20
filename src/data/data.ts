@@ -25,6 +25,7 @@ import {
   SiFigma,
   SiDjango,
   SiVuedotjs,
+  SiStripe,
 } from "react-icons/si";
 
 export const skills = [
@@ -156,7 +157,7 @@ export const projects: Project[] = [
   {
     title: "Kuta",
     description:
-      "Une alternative à linktree axée sur le partage de photo construit sur Next.js et Tailwind. Avec Supabase pour gérer la base de données et Cloudinary pour stocker les images.",
+      "Une alternative à linktree axée sur le partage de photo construit sur Next.js et Tailwind. Avec Supabase pour gérer la base de données et Cloudinary pour stocker les images. Intégration avec Stripe en cours pour ajouter des abonnements payants",
     link: "https://kuta.vercel.app/",
     img: "/images/projects/kuta.png",
     skills: [
@@ -175,6 +176,10 @@ export const projects: Project[] = [
       {
         icon: SiTailwindcss,
         text: "Tailwind",
+      },
+      {
+        icon: SiStripe,
+        text: "Stripe",
       },
     ],
   },
