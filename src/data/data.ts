@@ -130,31 +130,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Openfiles",
-    description:
-      "Une app pour stocker ses fichiers avec les méthodes de chiffrement les plus robustes ( chiffrement avec clés AES, et chiffrement avec paire de clés RSA ). Frontend réalisé avec Next.js, le backend et le chiffrement en python avec Django. Ce projet à pour but d'être Open Source prochainement",
-    link: "https://openfiles-omega.vercel.app/",
-    img: "/images/projects/openfiles.png",
-    skills: [
-      {
-        icon: SiReact,
-        text: "React",
-      },
-      {
-        icon: SiNextdotjs,
-        text: "Next",
-      },
-      {
-        icon: SiDjango,
-        text: "Django",
-      },
-      {
-        icon: SiTailwindcss,
-        text: "Tailwind",
-      },
-    ],
-  },
-  {
     title: "Kuta",
     description:
       "Une alternative à linktree axée sur le partage de photo construit sur Next.js et Tailwind. Avec Supabase pour gérer la base de données et Cloudinary pour stocker les images. Intégration avec Stripe en cours pour ajouter des abonnements payants",
@@ -183,6 +158,32 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "Openfiles",
+    description:
+      "Une app pour stocker ses fichiers avec les méthodes de chiffrement les plus robustes ( chiffrement avec clés AES, et chiffrement avec paire de clés RSA ). Frontend réalisé avec Next.js, le backend et le chiffrement en python avec Django. Ce projet à pour but d'être Open Source prochainement",
+    link: "https://openfiles-omega.vercel.app/",
+    img: "/images/projects/openfiles.png",
+    skills: [
+      {
+        icon: SiReact,
+        text: "React",
+      },
+      {
+        icon: SiNextdotjs,
+        text: "Next",
+      },
+      {
+        icon: SiDjango,
+        text: "Django",
+      },
+      {
+        icon: SiTailwindcss,
+        text: "Tailwind",
+      },
+    ],
+  },
+
   // {
   //   title: "TechNews",
   //   description: "Un site de blog réalisé avec Nextjs et ContentLayer",
