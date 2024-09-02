@@ -205,6 +205,27 @@ export const projects: Project[] = [
   //   img: "/images/projects/audiophile.png",
   // },
   {
+    title: "Intheair",
+    description:
+      "Refonte du site actuel de la startup Intheair avec Next.js et Framer Motion pour toutes les animations",
+    link: "https://demo-ita.vercel.app/",
+    img: "/images/projects/intheair.png",
+    skills: [
+      {
+        icon: SiReact,
+        text: "React",
+      },
+      {
+        icon: SiNextdotjs,
+        text: "Next",
+      },
+      {
+        icon: SiTailwindcss,
+        text: "Tailwind",
+      },
+    ],
+  },
+  {
     title: "MetaPlace",
     description: "Site statique avec des animations au scroll.",
     link: "https://metaplace-mocha.vercel.app/",
