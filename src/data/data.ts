@@ -26,6 +26,7 @@ import {
   SiDjango,
   SiVuedotjs,
   SiStripe,
+  SiNuxtdotjs,
 } from "react-icons/si";
 
 export const skills = [
@@ -159,6 +160,31 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "Journey",
+    description:
+      "Une web app permettant aux utilisateurs de s'inscrire afin d'avoir leur propre blog où ils pourront créer des posts et ensuite partager leur username pour que tout le monde puisse voir leur posts, réalisé en Nuxt(Vue.js) et Supabase.",
+    link: "https://journeyapp.vercel.app/",
+    img: "/images/projects/journey.png",
+    skills: [
+      {
+        icon: SiNuxtdotjs,
+        text: "Nuxt",
+      },
+      {
+        icon: SiVuedotjs,
+        text: "Vue.js",
+      },
+      {
+        icon: SiTailwindcss,
+        text: "Tailwind",
+      },
+      {
+        icon: SiSupabase,
+        text: "Supabase",
+      },
+    ],
+  },
+  {
     title: "Openfiles",
     description:
       "Une app pour stocker ses fichiers avec les méthodes de chiffrement les plus robustes ( chiffrement avec clés AES, et chiffrement avec paire de clés RSA ). Frontend réalisé avec Next.js, le backend et le chiffrement en python avec Django. Ce projet à pour but d'être Open Source prochainement",
@@ -225,24 +251,24 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    title: "MetaPlace",
-    description: "Site statique avec des animations au scroll.",
-    link: "https://metaplace-mocha.vercel.app/",
-    img: "/images/projects/metaplace.png",
-    skills: [
-      {
-        icon: SiReact,
-        text: "React",
-      },
-      {
-        icon: SiNextdotjs,
-        text: "Next",
-      },
-      {
-        icon: SiTailwindcss,
-        text: "Tailwind",
-      },
-    ],
-  },
+  // {
+  //   title: "MetaPlace",
+  //   description: "Site statique avec des animations au scroll.",
+  //   link: "https://metaplace-mocha.vercel.app/",
+  //   img: "/images/projects/metaplace.png",
+  //   skills: [
+  //     {
+  //       icon: SiReact,
+  //       text: "React",
+  //     },
+  //     {
+  //       icon: SiNextdotjs,
+  //       text: "Next",
+  //     },
+  //     {
+  //       icon: SiTailwindcss,
+  //       text: "Tailwind",
+  //     },
+  //   ],
+  // },
 ];
