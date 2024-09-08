@@ -60,6 +60,10 @@ export const skills = [
         text: "Next",
       },
       {
+        icon: SiNuxtdotjs,
+        text: "Nuxt",
+      },
+      {
         icon: SiVuedotjs,
         text: "Vue",
       },
