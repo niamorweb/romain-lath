@@ -135,7 +135,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Kuta",
+    title: "Asuaya",
     description:
       "Une alternative à linktree axée sur le partage de photo construit sur Next.js et Tailwind. Avec Supabase pour gérer la base de données et Cloudinary pour stocker les images. Intégration avec Stripe en cours pour ajouter des abonnements payants",
     link: "https://asuaya.vercel.app/",
