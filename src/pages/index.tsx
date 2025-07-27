@@ -1,197 +1,206 @@
+import ProjectKayo from "@/components/newVersion/projets/kayo";
+import ProjectPlateformeSaas from "@/components/newVersion/projets/plateformesaas";
+import ProjectSiteVitrine from "@/components/newVersion/projets/sitevitrine";
+import { projectsNewVersion, skillsNewVersion } from "@/data/data";
+import { ChevronLeft, Github, Globe, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import Link from "next/link";
-import { SiJavascript, SiTypescript } from "react-icons/si";
-import { skills, projects } from "@/data/data";
-import { useEffect, useState } from "react";
-import ContactForm from "@/components/Contact";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaHamburger } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { CgClose } from "react-icons/cg";
+import React, { useEffect, useState } from "react";
+import { LiaLinkedin } from "react-icons/lia";
 
-const inter = Inter({ subsets: ["latin"] });
+export default function Version2() {
+  const [activeProject, setActiveProject] = useState<any>(null);
 
-const project = [1, 2, 3, 4];
-export default function Home() {
-  const [isMobileNav, setIsMobileNav] = useState(false);
-
-  const linksHomePage = [
-    {
-      name: "Accueil",
-      link: "/",
-    },
-    {
-      name: "Projets",
-      link: "/#projets",
-    },
-    {
-      name: "Compétences",
-      link: "/#competences",
-    },
-    {
-      name: "Contact",
-      link: "/#contact",
-    },
-  ];
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, [activeProject]);
 
   return (
-    <div className="bg-white text-[#494949]">
-      <div
-        className={`min-h-screen relative bg-white border-x-[1px] border-x-black w-[90vw] mx-auto max-w-[1280px] ${inter.className}`}
-      >
-        {isMobileNav && (
-          <div className="lg:hidden absolute border-b-black border-b-[1px] top-[10vh] bg-white w-full py-3 px-3 flex items-center gap-5">
-            {linksHomePage.map((x, index) => (
-              <Link key={index} href={x.link}>
-                {x.name}
-              </Link>
-            ))}
-          </div>
-        )}
-        <header className="h-[6vh] lg:h-[10vh] z-30 sticky  top-0 bg-white flex items-end py-3 px-4 border-b-[1px] border-b-black justify-between">
-          <span className="text-2xl font-medium">ROMAIN LATHUILIERE</span>
-          {isMobileNav ? (
-            <CgClose
-              onClick={() => setIsMobileNav(false)}
-              className="cursor-pointer block h-6 w-6 lg:hidden"
-            />
-          ) : (
-            <GiHamburgerMenu
-              onClick={() => setIsMobileNav(true)}
-              className="cursor-pointer block h-6 w-6 lg:hidden"
-            />
-          )}
-
-          <div className="hidden lg:flex items-center gap-5">
-            {linksHomePage.map((x, index) => (
-              <Link key={index} href={x.link}>
-                {x.name}
-              </Link>
-            ))}
-          </div>
-        </header>
-        <section className="h-[90vh] lg:h-[85vh] px-4 pt-14 flex items-center hero_bg">
-          <div className="flex flex-col items-start -translate-y-10 gap-4 max-w-[600px] ">
-            <h1 className="text-4xl lg:text-6xl font-black uppercase">
-              Je suis un développeur web frontend / intégrateur web
-              {/* JE CONSTRUIS DES CHOSES AVEC MA SOURIS ET MON CLAVIER. */}
-            </h1>
-            <Link
-              href="/#projets"
-              className="text-md lg:text-xl font-medium uppercase flex items-center gap-3 hover:gap-6 duration-150"
-            >
-              <span>Voir mes projets</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </Link>
-          </div>
-        </section>
-        <section
-          className="h-[50px] border-y-[1px] border-y-black"
-          style={{
-            backgroundColor: "#fff",
-            opacity: 0.6,
-            background:
-              "repeating-linear-gradient( -45deg, #000000, #000000 1px, #ffffff 1px, #ffffff 25px );",
-          }}
-        ></section>
-
-        <section id="projets" className="flex flex-col gap-12 px-6 py-28">
-          <h1 className="text-4xl lg:text-6xl font-black uppercase">
-            Projets sélectionnés
-          </h1>
-          <div className="grid gap-10 lg:gap-6">
-            {projects.map((x, index) => (
-              <div
-                key={index}
-                className="flex flex-col lg:flex-row items-center px-6 py-6 lg:py-0 lg:gap-6 border-[1px] border-black overflow-hidden"
-              >
-                <div className="lg:w-1/2 lg:px-8 grid gap-3">
-                  <h2 className="text-3xl font-extrabold">{x.title}</h2>
-                  <div className="h-[1px] bg-opacity-20  bg-slate-600"></div>
-                  <p>{x.description}</p>
-                  <Link
-                    target="_blank"
-                    className="duration-150 underline underline-offset-2 hover:underline-offset-4  w-fit "
-                    href={x.link}
+    <main className="min-h-screen p-6 bg-neutral-100 ">
+      <div className="max-w-[1240px] mx-auto gap-4 bg-neutral-100 flex flex-col md:grid md:grid-cols-3 ">
+        <div
+          className={`w-full md:sticky top-6 h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 ${
+            activeProject && "hidden md:block"
+          }`}
+        >
+          <div className=" bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200">
+            <div className="flex flex-col justify-start items-start gap-4">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-4xl font-semibold ">
+                  Hey, <br /> Je suis Romain Lathuiliere
+                </h1>
+                <h2 className="text-2xl">
+                  UX/UI Designer - Développeur frontend
+                </h2>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <Link
+                  className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
+                  href="mailto:romain.lathuiliere@proton.me"
+                >
+                  <Mail className="size-5" />
+                  Me contacter
+                </Link>
+                <span className="text-wrap ">romain.lathuiliere@proton.me</span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 mt-10">
+              <div className="flex flex-col items-start gap-4">
+                {skillsNewVersion.map((category, catIndex) => (
+                  <div
+                    key={catIndex}
+                    className="flex flex-wrap items-center gap-2"
                   >
-                    Site Web
-                  </Link>
-
-                  <div className="mt-5 flex items-center gap-2 flex-wrap">
-                    {x.skills.map((skill, index) => (
+                    {category.elems.map((skill, index) => (
                       <div
                         key={index}
-                        className="px-3 py-1 rounded-sm bg-slate-200 flex-shrink gap-3 w-fit flex justify-start items-center"
+                        className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
                       >
-                        <skill.icon className=" flex-grow " />
-                        <span className=" flex-grow ">{skill.text}</span>
+                        <Image
+                          width={100}
+                          height={100}
+                          src={skill.icon}
+                          alt={skill.label}
+                          className="w-5 h-5 object-contain"
+                        />
+                        <span className="text-sm text-neutral-800">
+                          {skill.label}
+                        </span>
                       </div>
                     ))}
                   </div>
-                </div>
-                <div className="lg:w-1/2 translate-y-1/4 border border-black p-1 lg:p-3 hover:translate-y-[20%] duration-150 rounded-xl lg:rounded-3xl">
-                  <img
-                    className="rounded-xl lg:rounded-2xl border border-black"
-                    src={x.img}
-                    alt=""
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section
-          id="competences"
-          className="border-y border-y-black px-6 flex flex-col gap-12 py-28"
-        >
-          <h1 className="uppercase text-4xl lg:text-6xl font-black">
-            Mes compétences
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {skills.map((x, index) => (
-              <div
-                key={index}
-                className="p-6 border-black border flex flex-col gap-4"
-              >
-                <h2 className="text-xl font-semibold uppercase">
-                  {x.category}
-                </h2>
-                <div className="flex flex-wrap gap-4 w-fit max-w-[400px]">
-                  {x.elems.map((elem, index) => (
-                    <div
-                      key={index}
-                      className="px-3 py-1 rounded-sm bg-slate-200 flex-shrink gap-3 w-fit flex justify-start items-center"
-                    >
-                      <elem.icon className=" flex-grow " />
-                      <span className=" flex-grow ">{elem.text}</span>
+                ))}
+              </div>{" "}
+              {/* <div className="flex flex-wrap items-center gap-2">
+                {skillsNewVersion &&
+                  skillsNewVersion[1].elems.map((skill: any, index: any) => (
+                    <div className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl">
+                      <skill.icon className=" " />
+                      <span>{skill.text}</span>
                     </div>
                   ))}
-                </div>
               </div>
-            ))}
+              <div className="flex flex-wrap items-center gap-2">
+                {skillsNewVersion &&
+                  skillsNewVersion[2].elems.map((skill: any, index: any) => (
+                    <div className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl">
+                      <skill.icon className=" " />
+                      <span>{skill.text}</span>
+                    </div>
+                  ))}
+              </div> */}
+            </div>
           </div>
-        </section>
-        <ContactForm />
-        <footer className="border-y border-y-black px-6 py-20 flex flex-col gap-6 ">
-          <span>©2024 niamorweb </span>
-          <span>Design inspired by George Christeas </span>
-        </footer>
+          <div className="bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200 flex items-center gap-2">
+            <Link
+              className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+              href="https://github.com/niamorweb"
+              target="_blank"
+            >
+              <Github className="size-5" />
+              Github
+            </Link>{" "}
+            <Link
+              className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+              href="https://www.linkedin.com/in/romain-lathuiliere-681221268/"
+              target="_blank"
+            >
+              <LiaLinkedin className="size-5" />
+              LinkedIn
+            </Link>
+          </div>
+        </div>
+        <div className=" text-neutral-800  col-span-2">
+          <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6 ">
+            {activeProject ? (
+              <button
+                onClick={() => setActiveProject(null)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-neutral-600/5 duration-150 "
+              >
+                <ChevronLeft className="size-5" />
+                <span className="hidden md:inline-block">
+                  Voir tous les projets
+                </span>
+                <span className=" md:hidden">Retour</span>
+              </button>
+            ) : (
+              // <h2 className="text-2xl bg-neutral-50 rounded-2xl border border-neutral-200 p-6 font-medium">
+              <h2 className="text-2xl font-medium">
+                Quelques uns de mes projets
+              </h2>
+            )}
+            {activeProject && (
+              <Link
+                className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
+                href={activeProject.link}
+              >
+                Voir le site
+              </Link>
+            )}
+          </div>
+          {activeProject && activeProject.id === 0 && <ProjectKayo />}
+          {activeProject && activeProject.id === 1 && <ProjectPlateformeSaas />}
+          {activeProject && activeProject.id === 2 && <ProjectSiteVitrine />}
+          {!activeProject && (
+            <div className="flex flex-col gap-6 mt-4">
+              {projectsNewVersion &&
+                projectsNewVersion.map((project: any, i: any) => (
+                  <div
+                    key={i}
+                    className="bg-neutral-50 flex flex-col gap-3 p-4 rounded-2xl border border-neutral-200 "
+                  >
+                    <Image
+                      className="rounded-xl"
+                      width={1400}
+                      height={1400}
+                      src={project.img}
+                      alt=""
+                    />
+                    <div className="">
+                      <div className="mb-3 flex flex-wrap items-center gap-2">
+                        {project.skills.map((skill: any, index: any) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
+                          >
+                            <Image
+                              width={100}
+                              height={100}
+                              src={skill.icon}
+                              alt={skill.label}
+                              className="w-5 h-5 object-contain"
+                            />
+                            <span className="text-sm text-neutral-800">
+                              {skill.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>{" "}
+                      <h3 className="text-xl font-medium">{project.title}</h3>
+                      <p className="text-neutral-500">{project.description}</p>
+                      <div className="flex justify-end items-center gap-2 mt-6">
+                        <button
+                          onClick={() => setActiveProject(project)}
+                          className="bg-neutral-100 flex items-center gap-2 p-3 hover:bg-neutral-50 duration-150 border border-neutral-200 text-neutral-800 rounded-xl"
+                        >
+                          Plus de détails
+                        </button>
+                        <Link
+                          className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
+                          href={project.link}
+                        >
+                          Aller sur le site
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

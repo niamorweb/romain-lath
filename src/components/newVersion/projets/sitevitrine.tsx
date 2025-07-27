@@ -70,6 +70,7 @@ export default function ProjectSiteVitrine() {
             {previous &&
               previous.map((item: any, i: any) => (
                 <div
+                  key={i}
                   onClick={() => setPreviousSelected(i)}
                   className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
                     previousSelected === i
@@ -103,6 +104,7 @@ export default function ProjectSiteVitrine() {
             {after &&
               after.map((item: any, i: any) => (
                 <div
+                  key={i}
                   onClick={() => setAfterSelected(i)}
                   className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
                     afterSelected === i

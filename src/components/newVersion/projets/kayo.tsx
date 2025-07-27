@@ -73,6 +73,7 @@ export default function ProjectKayo() {
             {methodesChiffrement &&
               methodesChiffrement.map((item: any, i: any) => (
                 <div
+                  key={i}
                   onClick={() => setChiffrementSelected(i)}
                   className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
                     chiffrementSelected === i
@@ -87,6 +88,7 @@ export default function ProjectKayo() {
         </div>
         <div className="p-4 rounded-xl bg-neutral-100">
           <Image
+            key={i}
             src={methodesChiffrement[chiffrementSelected].image}
             width={1600}
             height={1600}
@@ -106,6 +108,7 @@ export default function ProjectKayo() {
             {interfaces &&
               interfaces.map((item: any, i: any) => (
                 <div
+                  key={i}
                   onClick={() => setInterfaceSelected(i)}
                   className={`flex items-center cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
                     interfaceSelected === i
