@@ -1,8 +1,4 @@
 import { IconType } from "react-icons";
-import { BsWordpress } from "react-icons/bs";
-import { DiPhotoshop } from "react-icons/di";
-import { FaWebflow } from "react-icons/fa6";
-import { FiFigma, FiFramer } from "react-icons/fi";
 import {
   SiTypescript,
   SiJavascript,
