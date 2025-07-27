@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { LiaLinkedin } from "react-icons/lia";
-
+//test
 export default function Version2() {
   const [activeProject, setActiveProject] = useState<any>(null);
 
