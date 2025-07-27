@@ -347,7 +347,7 @@ export const projectsNewVersion = [
     title: "Kayo (Version alpha)",
     description:
       "Une app de gestion de mots de passe pour les groupes. Avec un chiffrement de bout en bout.",
-    link: "https://asuaya.vercel.app/",
+    link: "#",
     img: "/images/newversion/KAYO/hp.png",
     skills: icons.filter((icon) =>
       ["Figma", "TailwindCSS", "React", "Next.js", "JavaScript"].includes(
