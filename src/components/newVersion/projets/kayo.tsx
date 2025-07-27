@@ -88,7 +88,6 @@ export default function ProjectKayo() {
         </div>
         <div className="p-4 rounded-xl bg-neutral-100">
           <Image
-            key={i}
             src={methodesChiffrement[chiffrementSelected].image}
             width={1600}
             height={1600}
