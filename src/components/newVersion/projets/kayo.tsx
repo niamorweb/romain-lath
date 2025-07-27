@@ -32,25 +32,27 @@ export default function ProjectKayo() {
     <div className="bg-neutral-50 mt-4 flex flex-col gap-16 px-4 py-8 rounded-2xl border border-neutral-200">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl font-medium">Kayo (Version alpha)</h2>
+          <h2 className="text-3xl mb-1 font-medium">Kayo (Version alpha)</h2>
           <p>
             Kayo est une application de gestion de mots de passe collaborative
             dotée d'un chiffrement de bout en bout, permettant aux équipes de
             partager leurs identifiants en toute sécurité.
           </p>
         </div>
-        <div className="p-4 rounded-xl bg-neutral-100">
+        <div className=" mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
             src="/images/newversion/KAYO/hp.png"
-            width={1600}
-            height={1600}
+            width={760}
+            height={760}
             alt=""
           />
         </div>
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl font-medium">Les méthodes de chiffrement</h2>
+          <h2 className="text-3xl mb-1 font-medium">
+            Les méthodes de chiffrement
+          </h2>
           <p>
             Kayo implémente une architecture de chiffrement hybride robuste pour
             garantir la confidentialité des données. Chaque utilisateur dispose
@@ -69,7 +71,7 @@ export default function ProjectKayo() {
             même aux serveurs de l'application, seuls les utilisateurs autorisés
             pouvant déchiffrer les informations avec leurs clés personnelles.
           </p>
-          <div className="flex items-center gap-2 mt-3">
+          <div className="flex flex-wrap items-center gap-2 mt-6">
             {methodesChiffrement &&
               methodesChiffrement.map((item: any, i: any) => (
                 <div
@@ -86,24 +88,24 @@ export default function ProjectKayo() {
               ))}
           </div>
         </div>
-        <div className="p-4 rounded-xl bg-neutral-100">
+        <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
             src={methodesChiffrement[chiffrementSelected].image}
-            width={1600}
-            height={1600}
+            width={760}
+            height={760}
             alt=""
           />
         </div>
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl font-medium">L'interface dans l'app</h2>
+          <h2 className="text-3xl mb-1 font-medium">L'interface dans l'app</h2>
           <p>
             Interface sobre et fonctionnelle regroupant l'essentiel : ajout de
             mots de passe, gestion des groupes collaboratifs, et générateur de
             mots de passe sécurisés.
           </p>
-          <div className="flex items-center gap-2 mt-3">
+          <div className="flex flex-wrap items-center gap-2 mt-6">
             {interfaces &&
               interfaces.map((item: any, i: any) => (
                 <div
@@ -120,11 +122,11 @@ export default function ProjectKayo() {
               ))}
           </div>
         </div>
-        <div className="p-4 rounded-xl bg-neutral-100">
+        <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
             src={interfaces[interfaceSelected].image}
-            width={1600}
-            height={1600}
+            width={760}
+            height={760}
             alt=""
           />
         </div>

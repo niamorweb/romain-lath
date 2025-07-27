@@ -346,9 +346,9 @@ export const projectsNewVersion = [
     id: 0,
     title: "Kayo (Version alpha)",
     description:
-      "Une app de gestion de mots de passe pour les groupes. Avec un chiffrement de bout en bout.",
-    link: "#",
-    img: "/images/newversion/KAYO/hp.png",
+      "Kayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux équipes de partager leurs identifiants en toute sécurité.",
+    link: "https://cayo-zeta.vercel.app",
+    img: "/images/newversion/KAYO/hp2.png",
     skills: icons.filter((icon) =>
       ["Figma", "TailwindCSS", "React", "Next.js", "JavaScript"].includes(
         icon.label
@@ -357,7 +357,7 @@ export const projectsNewVersion = [
   },
   {
     id: 1,
-    title: "Plateforme SaaS",
+    title: "IntheairLabs",
     description:
       "IntheairLabs, une web app pour l'instant B2B permettant aux clients de gérer leur projets, de télécharger leur livrables et de les visualiser directement sur la plateforme. Espace admin et espace client.",
     link: "https://labs.intheair.co/login",
@@ -370,7 +370,7 @@ export const projectsNewVersion = [
     id: 2,
     title: "Site vitrine",
     description:
-      "Le site vitrine de l’entreprise Intheair. Refonte complète du site en allant du design, à l’architecture des pages avec une toute nouvelle navigation. Intégrations avec des applications externes comme Hubspot (pour le côté marketing), Zapier.",
+      "Le site vitrine de l’entreprise Intheair. Refonte complète du site en allant du design, à l’architecture des pages avec une toute nouvelle navigation. Intégrations avec des applications externes comme Hubspot (pour le côté marketing), Zapier. Le site utilise actuellement l'URL temporaire Webflow, le nom de domaine définitif sera configuré lors du déploiement de la version finale.",
     link: "https://romains-groovy-site-d820aa.webflow.io/",
     img: "/images/newversion/SITE_VITRINE/intheair-hp.png",
     skills: icons.filter((icon) =>

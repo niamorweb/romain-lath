@@ -40,19 +40,21 @@ export default function ProjectSiteVitrine() {
     <div className="bg-neutral-50 mt-4 flex flex-col gap-16 px-4 py-8 rounded-2xl border border-neutral-200">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl font-medium">Site Vitrine</h2>
+          <h2 className="text-3xl mb-1 font-medium">Site Vitrine</h2>
           <p>
             Le site vitrine de l’entreprise Intheair. Refonte complète du site
             en allant du design, à l’architecture des pages avec une toute
             nouvelle navigation. Intégrations avec des applications externes
-            comme Hubspot (pour le côté marketing), Zapier.
+            comme Hubspot (pour le côté marketing), Zapier. Le site utilise
+            actuellement l'URL temporaire Webflow, le nom de domaine définitif
+            sera configuré lors du déploiement de la version finale.
           </p>
         </div>
-        <div className="p-4 rounded-xl bg-neutral-100">
+        <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
             src="/images/newversion/SITE_VITRINE/intheair-hp.png"
-            width={1600}
-            height={1600}
+            width={760}
+            height={760}
             alt=""
             className="rounded-lg"
           />
@@ -60,13 +62,15 @@ export default function ProjectSiteVitrine() {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl font-medium">Ancienne version du site</h2>
+          <h2 className="text-3xl mb-1 font-medium">
+            Ancienne version du site
+          </h2>
           <p>
             La version précédente du site Intheair présentait un design et une
             navigation qui nécessitaient une modernisation pour mieux refléter
             l'évolution de l'entreprise.
           </p>
-          <div className="flex items-center gap-2 mt-3">
+          <div className="flex flex-wrap items-center gap-2 mt-6">
             {previous &&
               previous.map((item: any, i: any) => (
                 <div
@@ -83,11 +87,11 @@ export default function ProjectSiteVitrine() {
               ))}
           </div>
         </div>
-        <div className="p-4 rounded-xl bg-neutral-100">
+        <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
             src={previous[previousSelected].image}
-            width={1600}
-            height={1600}
+            width={760}
+            height={760}
             alt=""
             className="rounded-lg"
           />
@@ -95,12 +99,14 @@ export default function ProjectSiteVitrine() {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl font-medium">Nouvelle version du site</h2>
+          <h2 className="text-3xl mb-1 font-medium">
+            Nouvelle version du site
+          </h2>
           <p>
             Version actualisée du site avec un design épuré et une nouvelle
             identité visuelle reflétant mieux l'image de l'entreprise.
           </p>
-          <div className="flex items-center gap-2 mt-3">
+          <div className="flex flex-wrap items-center gap-2 mt-6">
             {after &&
               after.map((item: any, i: any) => (
                 <div
@@ -117,11 +123,11 @@ export default function ProjectSiteVitrine() {
               ))}
           </div>
         </div>
-        <div className="p-4 rounded-xl bg-neutral-100">
+        <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
             src={after[afterSelected].image}
-            width={1600}
-            height={1600}
+            width={760}
+            height={760}
             alt=""
             className="rounded-lg"
           />

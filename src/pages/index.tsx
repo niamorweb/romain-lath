@@ -135,8 +135,9 @@ export default function Version2() {
               <Link
                 className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
                 href={activeProject.link}
+                target="_blank"
               >
-                Voir le site
+                Aller sur le site
               </Link>
             )}
           </div>
@@ -153,8 +154,8 @@ export default function Version2() {
                   >
                     <Image
                       className="rounded-xl"
-                      width={1400}
-                      height={1400}
+                      width={840}
+                      height={840}
                       src={project.img}
                       alt=""
                     />
@@ -178,7 +179,9 @@ export default function Version2() {
                           </div>
                         ))}
                       </div>{" "}
-                      <h3 className="text-xl font-medium">{project.title}</h3>
+                      <h3 className="text-xl font-medium mb-1">
+                        {project.title}
+                      </h3>
                       <p className="text-neutral-500">{project.description}</p>
                       <div className="flex justify-end items-center gap-2 mt-6">
                         <button
@@ -190,6 +193,7 @@ export default function Version2() {
                         <Link
                           className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
                           href={project.link}
+                          target="_blank"
                         >
                           Aller sur le site
                         </Link>
