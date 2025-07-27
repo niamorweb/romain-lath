@@ -1,26 +1,20 @@
 import { IconType } from "react-icons";
+import { BsWordpress } from "react-icons/bs";
+import { DiPhotoshop } from "react-icons/di";
+import { FaWebflow } from "react-icons/fa6";
+import { FiFigma, FiFramer } from "react-icons/fi";
 import {
   SiTypescript,
   SiJavascript,
   SiReact,
   SiNextdotjs,
   SiNodedotjs,
-  SiExpress,
   SiPython,
-  SiMongodb,
   SiHtml5,
   SiCss3,
-  SiAmazonaws,
   SiSupabase,
   SiFirebase,
-  SiRedux,
   SiGit,
-  SiDocker,
-  SiBootstrap,
-  SiMui,
-  SiPrisma,
-  SiFlutter,
-  SiHeroku,
   SiTailwindcss,
   SiFigma,
   SiDjango,
@@ -28,6 +22,79 @@ import {
   SiStripe,
   SiNuxtdotjs,
 } from "react-icons/si";
+
+const icons = [
+  {
+    label: "Figma",
+    icon: "/images/icons/figma.svg",
+  },
+  {
+    label: "Photoshop",
+    icon: "/images/icons/photoshop.svg",
+  },
+  {
+    label: "TailwindCSS",
+    icon: "/images/icons/tailwindcss.svg",
+  },
+  {
+    label: "React",
+    icon: "/images/icons/react.svg",
+  },
+  {
+    label: "Next.js",
+    icon: "/images/icons/nextjs.svg",
+  },
+  {
+    label: "Vue.js",
+    icon: "/images/icons/vuejs.svg",
+  },
+  {
+    label: "Nuxt",
+    icon: "/images/icons/nuxt.svg",
+  },
+  {
+    label: "JavaScript",
+    icon: "/images/icons/javascript.svg",
+  },
+  {
+    label: "Webflow",
+    icon: "/images/icons/webflow.svg",
+  },
+  {
+    label: "Wordpress",
+    icon: "/images/icons/wordpress.svg",
+  },
+  {
+    label: "Framer",
+    icon: "/images/icons/framer.svg",
+  },
+];
+
+const designLabels = ["Figma", "Photoshop"];
+const codeLabels = [
+  "TailwindCSS",
+  "React",
+  "Next.js",
+  "Vue.js",
+  "Nuxt",
+  "JavaScript",
+];
+const cmsLabels = ["Webflow", "Wordpress", "Framer"];
+
+export const skillsNewVersion = [
+  {
+    category: "Design",
+    elems: icons.filter((item) => designLabels.includes(item.label)),
+  },
+  {
+    category: "Code",
+    elems: icons.filter((item) => codeLabels.includes(item.label)),
+  },
+  {
+    category: "CMS",
+    elems: icons.filter((item) => cmsLabels.includes(item.label)),
+  },
+];
 
 export const skills = [
   {
@@ -126,6 +193,7 @@ export const skills = [
 ];
 
 export interface Project {
+  id?: number;
   title: string;
   description: string;
   link: string;
@@ -275,4 +343,42 @@ export const projects: Project[] = [
   //     },
   //   ],
   // },
+];
+
+export const projectsNewVersion = [
+  {
+    id: 0,
+    title: "Kayo (Version alpha)",
+    description:
+      "Une app de gestion de mots de passe pour les groupes. Avec un chiffrement de bout en bout.",
+    link: "https://asuaya.vercel.app/",
+    img: "/images/newversion/KAYO/hp.png",
+    skills: icons.filter((icon) =>
+      ["Figma", "TailwindCSS", "React", "Next.js", "JavaScript"].includes(
+        icon.label
+      )
+    ),
+  },
+  {
+    id: 1,
+    title: "Plateforme SaaS",
+    description:
+      "IntheairLabs, une web app pour l'instant B2B permettant aux clients de gérer leur projets, de télécharger leur livrables et de les visualiser directement sur la plateforme. Espace admin et espace client.",
+    link: "https://labs.intheair.co/login",
+    img: "/images/newversion/INTHEAIRLABS/intheairlabs-login2.png",
+    skills: icons.filter((icon) =>
+      ["Figma", "React", "JavaScript"].includes(icon.label)
+    ),
+  },
+  {
+    id: 2,
+    title: "Site vitrine",
+    description:
+      "Le site vitrine de l’entreprise Intheair. Refonte complète du site en allant du design, à l’architecture des pages avec une toute nouvelle navigation. Intégrations avec des applications externes comme Hubspot (pour le côté marketing), Zapier.",
+    link: "https://romains-groovy-site-d820aa.webflow.io/",
+    img: "/images/newversion/SITE_VITRINE/intheair-hp.png",
+    skills: icons.filter((icon) =>
+      ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label)
+    ),
+  },
 ];

@@ -49,7 +49,7 @@ export default function Home() {
             ))}
           </div>
         )}
-        <header className="h-[10vh] lg:h-[15vh] z-30 sticky  top-0 bg-white flex items-end py-3 px-4 border-b-[1px] border-b-black justify-between">
+        <header className="h-[6vh] lg:h-[10vh] z-30 sticky  top-0 bg-white flex items-end py-3 px-4 border-b-[1px] border-b-black justify-between">
           <span className="text-2xl font-medium">ROMAIN LATHUILIERE</span>
           {isMobileNav ? (
             <CgClose
@@ -81,7 +81,7 @@ export default function Home() {
               href="/#projets"
               className="text-md lg:text-xl font-medium uppercase flex items-center gap-3 hover:gap-6 duration-150"
             >
-              <span>Voir mes projets créés</span>
+              <span>Voir mes projets</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

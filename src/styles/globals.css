@@ -50,3 +50,12 @@ body {
     background-position: 0% 50%;
   }
 }
+
+.project-text-container {
+  max-width: 500px;
+  margin: auto;
+}
+
+p {
+  @apply text-neutral-800/70 leading-[150%];
+}

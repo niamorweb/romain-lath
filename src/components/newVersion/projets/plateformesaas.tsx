@@ -1,0 +1,160 @@
+import Image from "next/image";
+import React, { useState } from "react";
+
+export default function ProjectPlateformeSaas() {
+  const previous = [
+    {
+      textBtn: "Admin tableau",
+      image: "/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.png",
+    },
+    {
+      textBtn: "Admin form",
+      image:
+        "/images/newversion/INTHEAIRLABS/previous-admin-create-project.png",
+    },
+    {
+      textBtn: "Projets",
+      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-1.png",
+    },
+    {
+      textBtn: "Compte",
+      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-2.png",
+    },
+    {
+      textBtn: "Model 3D",
+      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-3.png",
+    },
+  ];
+
+  const [previousSelected, setPreviousSelected] = useState(0);
+
+  const after = [
+    {
+      textBtn: "Admin tableau",
+      image: "/images/newversion/INTHEAIRLABS/companies-table.png",
+    },
+    {
+      textBtn: "Admin form",
+      image: "/images/newversion/INTHEAIRLABS/client-form.png",
+    },
+    {
+      textBtn: "Projets",
+      image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.png",
+    },
+    {
+      textBtn: "Compte",
+      image: "/images/newversion/INTHEAIRLABS/account.png",
+    },
+    {
+      textBtn: "Model 3D",
+      image: "/images/newversion/INTHEAIRLABS/3dmodel.png",
+    },
+  ];
+
+  const [afterSelected, setAfterSelected] = useState(0);
+
+  return (
+    <div className="bg-neutral-50 mt-4 flex flex-col gap-16 px-4 py-8 rounded-2xl border border-neutral-200">
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-1 project-text-container">
+          <h2 className="text-3xl font-medium">Plateforme SaaS</h2>
+          <p>
+            IntheairLabs est une plateforme web collaborative dédiée à la
+            gestion de projets et au partage de livrables. Actuellement orientée
+            B2B, elle permet aux clients de suivre l'avancement de leurs
+            projets, télécharger leurs fichiers et visualiser leurs contenus
+            directement depuis l'interface. <br />
+            <br />
+            La plateforme propose deux environnements distincts : un espace
+            administrateur pour la gestion des projets et un espace client pour
+            le suivi et l'accès aux ressources. <br />
+          </p>
+        </div>
+        <div className="p-4 rounded-xl bg-neutral-100">
+          <Image
+            src="/images/newversion/INTHEAIRLABS/intheairlabs-login2.png"
+            width={1600}
+            height={1600}
+            alt=""
+            className="rounded-lg"
+          />
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1 project-text-container">
+          <h2 className="text-3xl font-medium">
+            Ancienne version de la plateforme
+          </h2>
+          <p>
+            Cette première version proposait deux espaces distincts : un tableau
+            de bord administrateur pour gérer tous les projets, clients et
+            entreprises, et un espace client permettant de visualiser les
+            projets, accéder aux livrables, consulter les modélisations 3D et
+            gérer son compte personnel.
+          </p>
+          <div className="flex items-center gap-2 mt-3">
+            {previous &&
+              previous.map((item: any, i: any) => (
+                <div
+                  onClick={() => setPreviousSelected(i)}
+                  className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
+                    previousSelected === i
+                      ? "bg-blue-600 text-neutral-50 hover:brightness-105"
+                      : "bg-neutral-100 hover:brightness-95"
+                  }`}
+                >
+                  <span>{item.textBtn}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="p-4 rounded-xl bg-neutral-100">
+          <Image
+            src={previous[previousSelected].image}
+            width={1600}
+            height={1600}
+            alt=""
+            className="rounded-lg"
+          />
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1 project-text-container">
+          <h2 className="text-3xl font-medium">
+            Nouvelle version de la plateforme
+          </h2>
+          <p>
+            Cette version conserve l'ensemble des fonctionnalités existantes
+            tout en bénéficiant d'une refonte graphique complète. Le design a
+            été entièrement repensé avec une nouvelle charte graphique moderne,
+            offrant une expérience utilisateur améliorée.
+          </p>
+          <div className="flex items-center gap-2 mt-3">
+            {after &&
+              after.map((item: any, i: any) => (
+                <div
+                  onClick={() => setAfterSelected(i)}
+                  className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
+                    afterSelected === i
+                      ? "bg-blue-600 text-neutral-50 hover:brightness-105"
+                      : "bg-neutral-100 hover:brightness-95"
+                  }`}
+                >
+                  <span>{item.textBtn}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="p-4 rounded-xl bg-neutral-100">
+          <Image
+            src={after[afterSelected].image}
+            width={1600}
+            height={1600}
+            alt=""
+            className="rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
