@@ -1,4 +1,4 @@
-import ProjectKayo from "@/components/newVersion/projets/kayo";
+import ProjectCayo from "@/components/newVersion/projets/cayo";
 import ProjectPlateformeSaas from "@/components/newVersion/projets/plateformesaas";
 import ProjectSiteVitrine from "@/components/newVersion/projets/sitevitrine";
 import { projectsNewVersion, skillsNewVersion } from "@/data/data";
@@ -22,16 +22,16 @@ export default function Version2() {
       <div className="max-w-[1240px] mx-auto gap-4 bg-neutral-100 flex flex-col md:grid md:grid-cols-3 ">
         <div
           className={`w-full md:sticky top-6 h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 ${
-            activeProject && "hidden md:block"
+            activeProject && "hidden md:flex"
           }`}
         >
           <div className=" bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200">
             <div className="flex flex-col justify-start items-start gap-4">
               <div className="flex flex-col gap-2">
-                <h1 className="text-4xl font-semibold ">
-                  Hey, <br /> Je suis Romain Lathuiliere
+                <h1 className="text-4xl font-semibold geist tracking-tighter ">
+                  Romain Lathuiliere
                 </h1>
-                <h2 className="text-2xl">
+                <h2 className="text-2xl font-medium text-black/70 geist tracking-tighter">
                   UX/UI Designer - Développeur frontend
                 </h2>
               </div>
@@ -127,7 +127,7 @@ export default function Version2() {
               </button>
             ) : (
               // <h2 className="text-2xl bg-neutral-50 rounded-2xl border border-neutral-200 p-6 font-medium">
-              <h2 className="text-2xl font-medium">
+              <h2 className="text-2xl font-medium geist tracking-tighter">
                 Quelques uns de mes projets
               </h2>
             )}
@@ -141,7 +141,7 @@ export default function Version2() {
               </Link>
             )}
           </div>
-          {activeProject && activeProject.id === 0 && <ProjectKayo />}
+          {activeProject && activeProject.id === 0 && <ProjectCayo />}
           {activeProject && activeProject.id === 1 && <ProjectPlateformeSaas />}
           {activeProject && activeProject.id === 2 && <ProjectSiteVitrine />}
           {!activeProject && (

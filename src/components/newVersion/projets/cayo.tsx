@@ -1,15 +1,15 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-export default function ProjectKayo() {
+export default function ProjectCayo() {
   const methodesChiffrement = [
     {
       textBtn: "Table Profiles",
-      image: "/images/newversion/KAYO/supabase-profiles.png",
+      image: "/images/newversion/CAYO/supabase-profiles.png",
     },
     {
       textBtn: "Table Passwords",
-      image: "/images/newversion/KAYO/supabase-passwords.png",
+      image: "/images/newversion/CAYO/supabase-passwords.png",
     },
   ];
 
@@ -18,11 +18,11 @@ export default function ProjectKayo() {
   const interfaces = [
     {
       textBtn: "Tableau de bord",
-      image: "/images/newversion/KAYO/dashboard2.png",
+      image: "/images/newversion/CAYO/dashboard2.png",
     },
     {
       textBtn: "Création d'identifiant",
-      image: "/images/newversion/KAYO/create-pw.png",
+      image: "/images/newversion/CAYO/create-pw.png",
     },
   ];
 
@@ -32,16 +32,16 @@ export default function ProjectKayo() {
     <div className="bg-neutral-50 mt-4 flex flex-col gap-16 px-4 py-8 rounded-2xl border border-neutral-200">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl mb-1 font-medium">Kayo (Version alpha)</h2>
+          <h2 className="text-3xl mb-1 font-medium">Cayo (Version alpha)</h2>
           <p>
-            Kayo est une application de gestion de mots de passe collaborative
+            Cayo est une application de gestion de mots de passe collaborative
             dotée d'un chiffrement de bout en bout, permettant aux équipes de
             partager leurs identifiants en toute sécurité.
           </p>
         </div>
         <div className=" mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
-            src="/images/newversion/KAYO/hp.png"
+            src="/images/newversion/CAYO/hp3.png"
             width={760}
             height={760}
             alt=""
@@ -54,7 +54,7 @@ export default function ProjectKayo() {
             Les méthodes de chiffrement
           </h2>
           <p>
-            Kayo implémente une architecture de chiffrement hybride robuste pour
+            Cayo implémente une architecture de chiffrement hybride robuste pour
             garantir la confidentialité des données. Chaque utilisateur dispose
             d'une clé AES unique, sécurisée par un chiffrement utilisant un
             vecteur d'initialisation (IV), un salt cryptographique et le mot de

@@ -56,10 +56,10 @@ const icons = [
     label: "Webflow",
     icon: "/images/icons/webflow.svg",
   },
-  {
-    label: "Wordpress",
-    icon: "/images/icons/wordpress.svg",
-  },
+  // {
+  //   label: "Wordpress",
+  //   icon: "/images/icons/wordpress.svg",
+  // },
   {
     label: "Framer",
     icon: "/images/icons/framer.svg",
@@ -75,7 +75,7 @@ const codeLabels = [
   "Nuxt",
   "JavaScript",
 ];
-const cmsLabels = ["Webflow", "Wordpress", "Framer"];
+const cmsLabels = ["Webflow", "Framer"];
 
 export const skillsNewVersion = [
   {
@@ -344,15 +344,20 @@ export const projects: Project[] = [
 export const projectsNewVersion = [
   {
     id: 0,
-    title: "Kayo (Version alpha)",
+    title: "Cayo (Version alpha)",
     description:
-      "Kayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux équipes de partager leurs identifiants en toute sécurité.",
+      "Cayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux équipes de partager leurs identifiants en toute sécurité.",
     link: "https://cayo-zeta.vercel.app",
-    img: "/images/newversion/KAYO/hp2.png",
+    img: "/images/newversion/CAYO/hp3.png",
     skills: icons.filter((icon) =>
-      ["Figma", "TailwindCSS", "React", "Next.js", "JavaScript"].includes(
-        icon.label
-      )
+      [
+        "Figma",
+        "TailwindCSS",
+        "React",
+        "Next.js",
+        "JavaScript",
+        "Photoshop",
+      ].includes(icon.label)
     ),
   },
   {
