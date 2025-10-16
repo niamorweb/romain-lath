@@ -5,11 +5,11 @@ export default function ProjectCayo() {
   const methodesChiffrement = [
     {
       textBtn: "Table Profiles",
-      image: "/images/newversion/CAYO/supabase-profiles.png",
+      image: "/images/newversion/CAYO/supabase-profiles.avif",
     },
     {
       textBtn: "Table Passwords",
-      image: "/images/newversion/CAYO/supabase-passwords.png",
+      image: "/images/newversion/CAYO/supabase-passwords.avif",
     },
   ];
 
@@ -18,11 +18,15 @@ export default function ProjectCayo() {
   const interfaces = [
     {
       textBtn: "Tableau de bord",
-      image: "/images/newversion/CAYO/dashboard2.png",
+      image: "/images/newversion/CAYO/dashboard.avif",
     },
     {
       textBtn: "Création d'identifiant",
-      image: "/images/newversion/CAYO/create-pw.png",
+      image: "/images/newversion/CAYO/create-pw.avif",
+    },
+    {
+      textBtn: "Gestion d'organisations",
+      image: "/images/newversion/CAYO/orgs.avif",
     },
   ];
 
@@ -39,9 +43,9 @@ export default function ProjectCayo() {
             partager leurs identifiants en toute sécurité.
           </p>
         </div>
-        <div className=" mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
+        <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
-            src="/images/newversion/CAYO/hp3.png"
+            src="/images/newversion/CAYO/hp.avif"
             width={760}
             height={760}
             alt=""

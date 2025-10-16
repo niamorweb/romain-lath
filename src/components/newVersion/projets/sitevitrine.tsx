@@ -5,11 +5,11 @@ export default function ProjectSiteVitrine() {
   const previous = [
     {
       textBtn: "Page d'accueil",
-      image: "/images/newversion/SITE_VITRINE/previous-hp.png",
+      image: "/images/newversion/SITE_VITRINE/previous-hp.avif",
     },
     {
       textBtn: "Une section",
-      image: "/images/newversion/SITE_VITRINE/previous-section.png",
+      image: "/images/newversion/SITE_VITRINE/previous-section.avif",
     },
   ];
 
@@ -18,19 +18,19 @@ export default function ProjectSiteVitrine() {
   const after = [
     {
       textBtn: "Page d'accueil",
-      image: "/images/newversion/SITE_VITRINE/intheair-hp.png",
+      image: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
     },
     {
       textBtn: "Une section",
-      image: "/images/newversion/SITE_VITRINE/chiffres.png",
+      image: "/images/newversion/SITE_VITRINE/chiffres.avif",
     },
     {
       textBtn: "Service",
-      image: "/images/newversion/SITE_VITRINE/pages-services.png",
+      image: "/images/newversion/SITE_VITRINE/pages-services.avif",
     },
     {
       textBtn: "Contact",
-      image: "/images/newversion/SITE_VITRINE/nous-contacter.png",
+      image: "/images/newversion/SITE_VITRINE/nous-contacter.avif",
     },
   ];
 
@@ -45,14 +45,12 @@ export default function ProjectSiteVitrine() {
             Le site vitrine de l’entreprise Intheair. Refonte complète du site
             en allant du design, à l’architecture des pages avec une toute
             nouvelle navigation. Intégrations avec des applications externes
-            comme Hubspot (pour le côté marketing), Zapier. Le site utilise
-            actuellement l'URL temporaire Webflow, le nom de domaine définitif
-            sera configuré lors du déploiement de la version finale.
+            comme Hubspot (pour le côté marketing), Zapier.
           </p>
         </div>
         <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
-            src="/images/newversion/SITE_VITRINE/intheair-hp.png"
+            src="/images/newversion/SITE_VITRINE/intheair-hp.avif"
             width={760}
             height={760}
             alt=""
@@ -126,8 +124,8 @@ export default function ProjectSiteVitrine() {
         <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
             src={after[afterSelected].image}
-            width={760}
-            height={760}
+            width={1000}
+            height={1000}
             alt=""
             className="rounded-lg"
           />

@@ -5,24 +5,25 @@ export default function ProjectPlateformeSaas() {
   const previous = [
     {
       textBtn: "Admin tableau",
-      image: "/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.png",
+      image:
+        "/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.avif",
     },
     {
       textBtn: "Admin form",
       image:
-        "/images/newversion/INTHEAIRLABS/previous-admin-create-project.png",
+        "/images/newversion/INTHEAIRLABS/previous-admin-create-project.avif",
     },
     {
       textBtn: "Projets",
-      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-1.png",
+      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-1.avif",
     },
     {
       textBtn: "Compte",
-      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-2.png",
+      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-2.avif",
     },
     {
       textBtn: "Model 3D",
-      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-3.png",
+      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-3.avif",
     },
   ];
 
@@ -31,23 +32,23 @@ export default function ProjectPlateformeSaas() {
   const after = [
     {
       textBtn: "Admin tableau",
-      image: "/images/newversion/INTHEAIRLABS/companies-table.png",
+      image: "/images/newversion/INTHEAIRLABS/companies-table.avif",
     },
     {
       textBtn: "Admin form",
-      image: "/images/newversion/INTHEAIRLABS/client-form.png",
+      image: "/images/newversion/INTHEAIRLABS/client-form.avif",
     },
     {
       textBtn: "Projets",
-      image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.png",
+      image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.avif",
     },
     {
       textBtn: "Compte",
-      image: "/images/newversion/INTHEAIRLABS/account.png",
+      image: "/images/newversion/INTHEAIRLABS/account.avif",
     },
     {
       textBtn: "Model 3D",
-      image: "/images/newversion/INTHEAIRLABS/3dmodel.png",
+      image: "/images/newversion/INTHEAIRLABS/3dmodel.avif",
     },
   ];
 
@@ -72,7 +73,7 @@ export default function ProjectPlateformeSaas() {
         </div>
         <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
           <Image
-            src="/images/newversion/INTHEAIRLABS/intheairlabs-login2.png"
+            src="/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif"
             width={760}
             height={760}
             alt=""

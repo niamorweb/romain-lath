@@ -72,25 +72,7 @@ export default function Version2() {
                     ))}
                   </div>
                 ))}
-              </div>{" "}
-              {/* <div className="flex flex-wrap items-center gap-2">
-                {skillsNewVersion &&
-                  skillsNewVersion[1].elems.map((skill: any, index: any) => (
-                    <div className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl">
-                      <skill.icon className=" " />
-                      <span>{skill.text}</span>
-                    </div>
-                  ))}
               </div>
-              <div className="flex flex-wrap items-center gap-2">
-                {skillsNewVersion &&
-                  skillsNewVersion[2].elems.map((skill: any, index: any) => (
-                    <div className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl">
-                      <skill.icon className=" " />
-                      <span>{skill.text}</span>
-                    </div>
-                  ))}
-              </div> */}
             </div>
           </div>
           <div className="bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200 flex items-center gap-2">
