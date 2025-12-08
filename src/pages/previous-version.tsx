@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { SiJavascript, SiTypescript } from "react-icons/si";
-import { skills, projects } from "@/data/data";
+import { skills, projects } from "@/components/newVersion/projets/data/data";
 import { useEffect, useState } from "react";
 import ContactForm from "@/components/Contact";
 import { FaArrowRightLong } from "react-icons/fa6";

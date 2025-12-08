@@ -1,12 +1,26 @@
 import ProjectCayo from "@/components/newVersion/projets/cayo";
 import ProjectPlateformeSaas from "@/components/newVersion/projets/plateformesaas";
 import ProjectSiteVitrine from "@/components/newVersion/projets/sitevitrine";
-import { projectsNewVersion, skillsNewVersion } from "@/data/data";
-import { ChevronLeft, Github, Globe, Linkedin, Mail } from "lucide-react";
+import {
+  projectsNewVersion,
+  skillsNewVersion,
+} from "@/components/newVersion/projets/data/data";
+import {
+  ChevronLeft,
+  Github,
+  Globe,
+  Linkedin,
+  Mail,
+  Mic,
+  Notebook,
+  Youtube,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { LiaLinkedin } from "react-icons/lia";
+import ProjectOneClean from "@/components/newVersion/projets/oneclean";
+import ProjectBambinets from "@/components/newVersion/projets/lesbambinets";
 
 export default function Version2() {
   const [activeProject, setActiveProject] = useState<any>(null);
@@ -93,6 +107,83 @@ export default function Version2() {
               LinkedIn
             </Link>
           </div>
+
+          <div className="bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200">
+            <h3 className="text-lg font-semibold mb-4 text-neutral-800">
+              Ma Veille UX/UI
+            </h3>
+            <div className="flex flex-wrap items-center gap-3">
+              {/* Podcast */}
+              <a
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://podcasts.apple.com/fr/podcast/parlons-design/id1455589133" // Exemple de lien
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* Vous pouvez remplacer ceci par une icône de podcast si vous en avez une (ex: Mic/Headphones) */}
+                <Mic className="size-5" />
+                Parlons Design
+              </a>{" "}
+              <a
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://podcasts.apple.com/fr/podcast/parlons-design/id1455589133" // Exemple de lien
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* Vous pouvez remplacer ceci par une icône de podcast si vous en avez une (ex: Mic/Headphones) */}
+                <Youtube className="size-5" />
+                Basti UI
+              </a>
+              {/* Blog 1 */}
+              <a
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://www.arquen.fr/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* Vous pouvez remplacer ceci par une icône de blog/article (ex: FileText) */}
+                <Notebook className="size-5" />
+                Arquen UX
+              </a>
+              {/* Blog 2 */}
+              <a
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://usabilis.com/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Notebook className="size-5" />
+                Usabilis
+              </a>{" "}
+              <a
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://usabilis.com/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Notebook className="size-5" />
+                Articles sur Medium
+              </a>
+              <a
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://usabilis.com/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Notebook className="size-5" />
+                Nielsen Norman Group
+              </a>
+              <a
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://usabilis.com/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Notebook className="size-5" />
+                Smashing Magazine
+              </a>
+            </div>
+          </div>
         </div>
         <div className=" text-neutral-800  col-span-2">
           <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6 ">
@@ -126,6 +217,8 @@ export default function Version2() {
           {activeProject && activeProject.id === 0 && <ProjectCayo />}
           {activeProject && activeProject.id === 1 && <ProjectPlateformeSaas />}
           {activeProject && activeProject.id === 2 && <ProjectSiteVitrine />}
+          {activeProject && activeProject.id === 3 && <ProjectOneClean />}
+          {activeProject && activeProject.id === 4 && <ProjectBambinets />}
           {!activeProject && (
             <div className="flex flex-col gap-6 mt-4">
               {projectsNewVersion &&
