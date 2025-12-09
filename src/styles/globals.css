@@ -64,3 +64,79 @@ p {
 .geist {
   font-family: "Geist", sans-serif;
 }
+
+/* Conteneur principal */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Wrapper pour positionner l'indicateur par rapport aux boutons */
+.tabs-wrapper {
+  display: flex;
+  /* Rend les enfants positionnés absolument (l'indicateur) relatifs à ce conteneur */
+  position: relative;
+  /* S'assurer que les boutons sont au-dessus de l'indicateur */
+  z-index: 1;
+  /* Optionnel: style de conteneur */
+  border-radius: 9999px;
+  background-color: #e5e5e5; /* Couleur de fond par défaut */
+  padding: 4px; /* Un peu de marge autour des boutons */
+}
+
+/* Styles pour les boutons h2 */
+.tab-button {
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 1.5rem; /* 2xl */
+  font-weight: 500; /* medium */
+  /* Utilisation de 'color' pour une transition fluide sur le texte */
+  color: #555;
+  transition: color 0.3s ease-in-out;
+  /* IMPORTANT: Assurez-vous que les boutons ont un arrière-plan transparent
+     pour laisser apparaître l'indicateur derrière */
+  background: transparent;
+  border-radius: 9999px;
+  z-index: 2; /* Pour être au-dessus de l'indicateur */
+  user-select: none; /* Empêche la sélection du texte */
+}
+
+/* État actif du texte (couleur différente) */
+.tab-button.active {
+  color: #333; /* Couleur de texte plus foncée pour l'actif */
+}
+
+/* L'indicateur de bascule (le fond coloré qui se déplace) */
+.tab-indicator {
+  position: absolute;
+  top: 4px; /* Même padding que le wrapper */
+  bottom: 4px; /* Même padding que le wrapper */
+  background-color: white; /* Couleur du fond actif */
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+  /* *** TRANSITION CLÉ POUR LA FLUIDITÉ *** */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* La transition s'applique à 'left' et 'width' (voir JS) */
+}
+
+/* Position et taille de l'indicateur pour l'état 'projets' */
+.tab-indicator.projets {
+  /* Ces valeurs doivent être calculées dynamiquement si le texte est variable.
+     Dans un cas simple et fixe comme celui-ci, on peut les estimer
+     ou utiliser JS pour la précision. */
+  /* Exemple pour un layout simple et centré: */
+  left: 4px;
+  /* Cette largeur doit correspondre à la largeur du bouton "Mes projets" */
+  width: 130px; /* Ajustez selon votre police et padding */
+}
+
+/* Position et taille de l'indicateur pour l'état 'veille' */
+.tab-indicator.veille {
+  /* Déplace l'indicateur à droite.
+     left = largeur_bouton_projets + espace_entre_boutons (ici 0) + padding */
+  left: 140px; /* Ajustez cette valeur */
+  /* Cette largeur doit correspondre à la largeur du bouton "Ma veille" */
+  width: 110px; /* Ajustez selon votre police et padding */
+}
