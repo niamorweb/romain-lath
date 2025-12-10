@@ -110,7 +110,7 @@ export default function Version2() {
     },
   ];
 
-  const getSourceIcon = (type) => {
+  const getSourceIcon = (type: any) => {
     switch (type) {
       case "podcast":
         return <Mic className="size-5 text-indigo-600" />;
