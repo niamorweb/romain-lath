@@ -22,8 +22,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { LiaLinkedin } from "react-icons/lia";
 import ProjectOneClean from "@/components/newVersion/projets/oneclean";
 import ProjectBambinets from "@/components/newVersion/projets/lesbambinets";
+import Head from "next/head";
 
 export default function Version2() {
+  const pageTitle = "Romain Lathuiliere - Portfolio";
+  const pageDescription =
+    "Découvrez mes réalisations en UX/UI Design et développement front-end";
+  const keywords =
+    "portfolio, UX design, UI design, développement front-end, react, Next.js,  site web";
+
   const [activeProject, setActiveProject] = useState<any>(null);
 
   useEffect(() => {
@@ -125,276 +132,291 @@ export default function Version2() {
     }
   };
   return (
-    <main className="min-h-screen p-6 bg-neutral-100 ">
-      <div className="max-w-[1240px] mx-auto gap-4 bg-neutral-100 flex flex-col md:grid md:grid-cols-3 ">
-        <div
-          className={`w-full md:sticky top-6 h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 ${
-            activeProject && "hidden md:flex"
-          }`}
-        >
-          <div className=" bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200">
-            <div className="flex flex-col justify-start items-start gap-4">
-              <div className="flex flex-col gap-2">
-                <h1 className="text-4xl font-semibold geist tracking-tighter ">
-                  Romain Lathuiliere
-                </h1>
-                <h2 className="text-2xl font-medium text-black/70 geist tracking-tighter">
-                  UX/UI Designer - Développeur frontend
-                </h2>
-              </div>
-              <div className="flex items-center gap-2 flex-wrap">
-                <Link
-                  className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
-                  href="mailto:romain.lathuiliere@proton.me"
-                >
-                  <Mail className="size-5" />
-                  Me contacter
-                </Link>
-                <span className="text-wrap ">romain.lathuiliere@proton.me</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 mt-10">
-              <div className="flex flex-col items-start gap-4">
-                {skillsNewVersion.map((category, catIndex) => (
-                  <div
-                    key={catIndex}
-                    className="flex flex-wrap items-center gap-2"
-                  >
-                    {category.elems.map((skill, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
-                      >
-                        <Image
-                          width={100}
-                          height={100}
-                          src={skill.icon}
-                          alt={skill.label}
-                          className="w-5 h-5 object-contain"
-                        />
-                        <span className="text-sm text-neutral-800">
-                          {skill.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200 flex items-center gap-2">
-            <Link
-              className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
-              href="https://github.com/niamorweb"
-              target="_blank"
-            >
-              <Github className="size-5" />
-              Github
-            </Link>{" "}
-            <Link
-              className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
-              href="https://www.linkedin.com/in/romain-lathuiliere-681221268/"
-              target="_blank"
-            >
-              <LiaLinkedin className="size-5" />
-              LinkedIn
-            </Link>
-          </div>
-        </div>
-        <div className=" text-neutral-800  col-span-2 ">
-          <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6  mb-4">
-            {activeProject ? (
-              <button
-                onClick={() => setActiveProject(null)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-neutral-600/5 duration-150 "
-              >
-                <ChevronLeft className="size-5" />
-                <span className="hidden md:inline-block">
-                  Voir tous les projets
-                </span>
-                <span className=" md:hidden">Retour</span>
-              </button>
-            ) : (
-              // <h2 className="text-2xl bg-neutral-50 rounded-2xl border border-neutral-200 p-6 font-medium">
-              <div className="relative mx-auto grid grid-cols-2 rounded-full">
-                <button
-                  className={`text-center cursor-pointer text-xl z-10 py-2 px-4 ${
-                    activeTab === "projets" ? "active" : ""
-                  }`}
-                  onClick={() => setActiveTab("projets")}
-                >
-                  Mes projets
-                </button>
-                <button
-                  className={`text-center cursor-pointer text-xl z-10 py-2 px-4 ${
-                    activeTab === "veille" ? "active" : ""
-                  }`}
-                  onClick={() => setActiveTab("veille")}
-                >
-                  Ma veille
-                </button>
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={keywords} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
-                <div
-                  className={`bg-neutral-200 duration-300 rounded-full w-1/2 absolute left-0 top-0 bottom-0 ${
-                    activeTab === "projets"
-                      ? "translate-x-[0%]"
-                      : "translate-x-[100%]"
-                  }`}
-                ></div>
-              </div>
-            )}
-            {activeProject && (
-              <Link
-                className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
-                href={activeProject.link}
-                target="_blank"
-              >
-                Aller sur le site
-              </Link>
-            )}
-          </div>
-          {activeProject && activeProject.id === 0 && <ProjectCayo />}
-          {activeProject && activeProject.id === 1 && <ProjectPlateformeSaas />}
-          {activeProject && activeProject.id === 2 && <ProjectSiteVitrine />}
-          {activeProject && activeProject.id === 3 && <ProjectOneClean />}
-          {activeProject && activeProject.id === 4 && <ProjectBambinets />}
-          {!activeProject && activeTab === "projets" ? (
-            <div className="flex flex-col gap-6 mt-4">
-              {projectsNewVersion &&
-                projectsNewVersion.map((project: any, i: any) => (
-                  <div
-                    key={i}
-                    className="bg-neutral-50 flex flex-col gap-3 p-4 rounded-2xl border border-neutral-200 "
+      <main className="min-h-screen p-6 bg-neutral-100 ">
+        <div className="max-w-[1240px] mx-auto gap-4 bg-neutral-100 flex flex-col md:grid md:grid-cols-3 ">
+          <div
+            className={`w-full md:sticky top-6 h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 ${
+              activeProject && "hidden md:flex"
+            }`}
+          >
+            <div className=" bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200">
+              <div className="flex flex-col justify-start items-start gap-4">
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-4xl font-semibold geist tracking-tighter ">
+                    Romain Lathuiliere
+                  </h1>
+                  <h2 className="text-2xl font-medium text-black/70 geist tracking-tighter">
+                    UX/UI Designer - Développeur frontend
+                  </h2>
+                </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Link
+                    className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
+                    href="mailto:romain.lathuiliere@icloud.com"
                   >
-                    <Image
-                      className="rounded-xl"
-                      width={840}
-                      height={840}
-                      src={project.img}
-                      alt=""
-                    />
-                    <div className="">
-                      <div className="mb-3 flex flex-wrap items-center gap-2">
-                        {project.skills.map((skill: any, index: any) => (
-                          <div
-                            key={index}
-                            className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
-                          >
-                            <Image
-                              width={100}
-                              height={100}
-                              src={skill.icon}
-                              alt={skill.label}
-                              className="w-5 h-5 object-contain"
-                            />
-                            <span className="text-sm text-neutral-800">
-                              {skill.label}
-                            </span>
-                          </div>
-                        ))}
-                      </div>{" "}
-                      <h3 className="text-xl font-medium mb-1">
-                        {project.title}
-                      </h3>
-                      <p className="text-neutral-500">{project.description}</p>
-                      <div className="flex justify-end items-center gap-2 mt-6">
-                        <button
-                          onClick={() => setActiveProject(project)}
-                          className="bg-neutral-100 flex items-center gap-2 p-3 hover:bg-neutral-50 duration-150 border border-neutral-200 text-neutral-800 rounded-xl"
-                        >
-                          Plus de détails
-                        </button>
-                        <Link
-                          className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
-                          href={project.link}
-                          target="_blank"
-                        >
-                          Aller sur le site
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          ) : (
-            <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6">
-              <div className="flex flex-col gap-2 ">
-                <h4 className="text-xl font-bold mb-6 text-neutral-800 flex items-center gap-2">
-                  Mes Sources de Veille UX/UI
-                </h4>
-
-                <div className="grid gap-8">
-                  {UX_VEILLE_SOURCES.map((source) => (
-                    <a
-                      key={source.name}
-                      // REMPLACER par la véritable URL de la source
-                      href={source.url || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      // Style de la carte: Bordure subtile, Ombre légère, Effet hover
-                      className="block bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all"
+                    <Mail className="size-5" />
+                    Me contacter
+                  </Link>
+                  <span className="text-wrap ">
+                    romain.lathuiliere@icloud.com
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-4 mt-10">
+                <div className="flex flex-col items-start gap-4">
+                  {skillsNewVersion.map((category, catIndex) => (
+                    <div
+                      key={catIndex}
+                      className="flex flex-wrap items-center gap-2"
                     >
-                      <div className="flex justify-between items-start mb-2">
-                        {/* Titre et Type */}
-                        <div className="flex flex-col">
-                          <span className="font-semibold text-lg text-neutral-900">
-                            {source.name}
-                          </span>
-                          <span
-                            className={`font-light uppercase text-xs ${
-                              source.type === "podcast"
-                                ? "text-indigo-600"
-                                : source.type === "youtube"
-                                ? "text-red-600"
-                                : source.type === "blog"
-                                ? "text-green-600"
-                                : "text-neutral-500"
-                            }`}
-                          >
-                            {source.type}
+                      {category.elems.map((skill, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
+                        >
+                          <Image
+                            width={100}
+                            height={100}
+                            src={skill.icon}
+                            alt={skill.label}
+                            className="w-5 h-5 object-contain"
+                          />
+                          <span className="text-sm text-neutral-800">
+                            {skill.label}
                           </span>
                         </div>
-
-                        {/* Icône basée sur le type */}
-                        <div className="flex-shrink-0">
-                          {/* Utilisation de la fonction d'icône */}
-                          {/* {getSourceIcon(source.type)} */}
-                        </div>
-                      </div>
-
-                      {/* Résumé */}
-                      <p className="text-sm text-neutral-600 mb-3">
-                        {source.summary}
-                      </p>
-
-                      {/* Tags des Sujets Abordés */}
-                      <div className="flex flex-wrap gap-2">
-                        {source.topics.map((topic) => (
-                          <span
-                            key={topic}
-                            // Style du Tag: Couleurs douces et aérées
-                            className={`px-2 py-0.5 rounded-full text-xs font-medium border ${
-                              source.type === "podcast"
-                                ? "bg-indigo-100 text-indigo-800"
-                                : source.type === "youtube"
-                                ? "bg-red-100 text-red-800"
-                                : source.type === "blog"
-                                ? "bg-green-100 text-green-800"
-                                : "bg-neutral-100 text-neutral-800"
-                            }`}
-                          >
-                            {topic}
-                          </span>
-                        ))}
-                      </div>
-                    </a>
+                      ))}
+                    </div>
                   ))}
                 </div>
               </div>
             </div>
-          )}
+            <div className="bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200 flex items-center gap-2">
+              <Link
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://github.com/niamorweb"
+                target="_blank"
+              >
+                <Github className="size-5" />
+                Github
+              </Link>{" "}
+              <Link
+                className="flex items-center gap-2 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-2 rounded-xl"
+                href="https://www.linkedin.com/in/romain-lathuiliere-681221268/"
+                target="_blank"
+              >
+                <LiaLinkedin className="size-5" />
+                LinkedIn
+              </Link>
+            </div>
+          </div>
+          <div className=" text-neutral-800  col-span-2 ">
+            <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6  mb-4">
+              {activeProject ? (
+                <button
+                  onClick={() => setActiveProject(null)}
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-neutral-600/5 duration-150 "
+                >
+                  <ChevronLeft className="size-5" />
+                  <span className="hidden md:inline-block">
+                    Voir tous les projets
+                  </span>
+                  <span className=" md:hidden">Retour</span>
+                </button>
+              ) : (
+                // <h2 className="text-2xl bg-neutral-50 rounded-2xl border border-neutral-200 p-6 font-medium">
+                <div className="relative mx-auto grid grid-cols-2 rounded-full">
+                  <button
+                    className={`text-center cursor-pointer text-xl z-10 py-2 px-4 ${
+                      activeTab === "projets" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveTab("projets")}
+                  >
+                    Mes projets
+                  </button>
+                  <button
+                    className={`text-center cursor-pointer text-xl z-10 py-2 px-4 ${
+                      activeTab === "veille" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveTab("veille")}
+                  >
+                    Ma veille
+                  </button>
+
+                  <div
+                    className={`bg-neutral-200 duration-300 rounded-full w-1/2 absolute left-0 top-0 bottom-0 ${
+                      activeTab === "projets"
+                        ? "translate-x-[0%]"
+                        : "translate-x-[100%]"
+                    }`}
+                  ></div>
+                </div>
+              )}
+              {activeProject && (
+                <Link
+                  className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
+                  href={activeProject.link}
+                  target="_blank"
+                >
+                  Aller sur le site
+                </Link>
+              )}
+            </div>
+            {activeProject && activeProject.id === 0 && <ProjectCayo />}
+            {activeProject && activeProject.id === 1 && (
+              <ProjectPlateformeSaas />
+            )}
+            {activeProject && activeProject.id === 2 && <ProjectSiteVitrine />}
+            {activeProject && activeProject.id === 3 && <ProjectOneClean />}
+            {activeProject && activeProject.id === 4 && <ProjectBambinets />}
+            {!activeProject && activeTab === "projets" ? (
+              <div className="flex flex-col gap-6 mt-4">
+                {projectsNewVersion &&
+                  projectsNewVersion.map((project: any, i: any) => (
+                    <div
+                      key={i}
+                      className="bg-neutral-50 flex flex-col gap-3 p-4 rounded-2xl border border-neutral-200 "
+                    >
+                      <Image
+                        className="rounded-xl"
+                        width={840}
+                        height={840}
+                        src={project.img}
+                        alt=""
+                      />
+                      <div className="">
+                        <div className="mb-3 flex flex-wrap items-center gap-2">
+                          {project.skills.map((skill: any, index: any) => (
+                            <div
+                              key={index}
+                              className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
+                            >
+                              <Image
+                                width={100}
+                                height={100}
+                                src={skill.icon}
+                                alt={skill.label}
+                                className="w-5 h-5 object-contain"
+                              />
+                              <span className="text-sm text-neutral-800">
+                                {skill.label}
+                              </span>
+                            </div>
+                          ))}
+                        </div>{" "}
+                        <h3 className="text-xl font-medium mb-1">
+                          {project.title}
+                        </h3>
+                        <p className="text-neutral-500">
+                          {project.description}
+                        </p>
+                        <div className="flex justify-end items-center gap-2 mt-6">
+                          <button
+                            onClick={() => setActiveProject(project)}
+                            className="bg-neutral-100 flex items-center gap-2 p-3 hover:bg-neutral-50 duration-150 border border-neutral-200 text-neutral-800 rounded-xl"
+                          >
+                            Plus de détails
+                          </button>
+                          <Link
+                            className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
+                            href={project.link}
+                            target="_blank"
+                          >
+                            Aller sur le site
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            ) : (
+              <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6">
+                <div className="flex flex-col gap-2 ">
+                  <h4 className="text-xl font-bold mb-6 text-neutral-800 flex items-center gap-2">
+                    Mes Sources de Veille UX/UI
+                  </h4>
+
+                  <div className="grid gap-8">
+                    {UX_VEILLE_SOURCES.map((source) => (
+                      <a
+                        key={source.name}
+                        // REMPLACER par la véritable URL de la source
+                        href={source.url || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        // Style de la carte: Bordure subtile, Ombre légère, Effet hover
+                        className="block bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all"
+                      >
+                        <div className="flex justify-between items-start mb-2">
+                          {/* Titre et Type */}
+                          <div className="flex flex-col">
+                            <span className="font-semibold text-lg text-neutral-900">
+                              {source.name}
+                            </span>
+                            <span
+                              className={`font-light uppercase text-xs ${
+                                source.type === "podcast"
+                                  ? "text-indigo-600"
+                                  : source.type === "youtube"
+                                  ? "text-red-600"
+                                  : source.type === "blog"
+                                  ? "text-green-600"
+                                  : "text-neutral-500"
+                              }`}
+                            >
+                              {source.type}
+                            </span>
+                          </div>
+
+                          {/* Icône basée sur le type */}
+                          <div className="flex-shrink-0">
+                            {/* Utilisation de la fonction d'icône */}
+                            {/* {getSourceIcon(source.type)} */}
+                          </div>
+                        </div>
+
+                        {/* Résumé */}
+                        <p className="text-sm text-neutral-600 mb-3">
+                          {source.summary}
+                        </p>
+
+                        {/* Tags des Sujets Abordés */}
+                        <div className="flex flex-wrap gap-2">
+                          {source.topics.map((topic) => (
+                            <span
+                              key={topic}
+                              // Style du Tag: Couleurs douces et aérées
+                              className={`px-2 py-0.5 rounded-full text-xs font-medium border ${
+                                source.type === "podcast"
+                                  ? "bg-indigo-100 text-indigo-800"
+                                  : source.type === "youtube"
+                                  ? "bg-red-100 text-red-800"
+                                  : source.type === "blog"
+                                  ? "bg-green-100 text-green-800"
+                                  : "bg-neutral-100 text-neutral-800"
+                              }`}
+                            >
+                              {topic}
+                            </span>
+                          ))}
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
