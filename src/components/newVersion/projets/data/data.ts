@@ -383,6 +383,15 @@ export const projectsNewVersion = [
     ),
   },
   {
+    id: 4,
+    title: "Les Bambinets",
+    description:
+      "Projet complètement axé UX et conception UI, application mobile d'apprentissage de la langue des signes pour bébé avec glossaire vidéo et favoris pour améliorer la communication précoce.",
+    link: "https://oneclean.vercel.app/",
+    img: "/images/newversion/LES_BAMBINETS/illustration.avif",
+    skills: icons.filter((icon) => ["Figma"].includes(icon.label)),
+  },
+  {
     id: 3,
     title: "Oneclean",
     description:
@@ -394,14 +403,5 @@ export const projectsNewVersion = [
         icon.label
       )
     ),
-  },
-  {
-    id: 4,
-    title: "Les Bambinets",
-    description:
-      "Projet complètement axé UX et conception UI, application mobile d'apprentissage de la langue des signes pour bébé avec glossaire vidéo et favoris pour améliorer la communication précoce.",
-    link: "https://oneclean.vercel.app/",
-    img: "/images/newversion/LES_BAMBINETS/illustration.avif",
-    skills: icons.filter((icon) => ["Figma"].includes(icon.label)),
   },
 ];
