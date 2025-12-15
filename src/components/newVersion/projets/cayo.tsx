@@ -36,7 +36,7 @@ export default function ProjectCayo() {
     <div className="bg-neutral-50 mt-4 flex flex-col gap-16 px-4 py-8 rounded-2xl border border-neutral-200">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1 project-text-container">
-          <h2 className="text-3xl mb-1 font-medium">Cayo (Version alpha)</h2>
+          <h2 className="text-3xl mb-1 font-medium">Cayo (Version bêta)</h2>
           <p>
             Cayo est une application de gestion de mots de passe collaborative
             dotée d'un chiffrement de bout en bout, permettant aux équipes de

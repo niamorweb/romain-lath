@@ -343,24 +343,6 @@ export const projects: Project[] = [
 
 export const projectsNewVersion = [
   {
-    id: 0,
-    title: "Cayo (Version bêta)",
-    description:
-      "Cayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux familles, équipes de partager leurs identifiants en toute sécurité.",
-    link: "https://cayo-zeta.vercel.app",
-    img: "/images/newversion/CAYO/hp.avif",
-    skills: icons.filter((icon) =>
-      [
-        "Figma",
-        "TailwindCSS",
-        "React",
-        "Next.js",
-        "JavaScript",
-        "Photoshop",
-      ].includes(icon.label)
-    ),
-  },
-  {
     id: 1,
     title: "IntheairLabs",
     description:
@@ -380,6 +362,24 @@ export const projectsNewVersion = [
     img: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
     skills: icons.filter((icon) =>
       ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label)
+    ),
+  },
+  {
+    id: 0,
+    title: "Cayo (Version bêta)",
+    description:
+      "Cayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux familles, équipes de partager leurs identifiants en toute sécurité.",
+    link: "https://cayo-zeta.vercel.app",
+    img: "/images/newversion/CAYO/hp.avif",
+    skills: icons.filter((icon) =>
+      [
+        "Figma",
+        "TailwindCSS",
+        "React",
+        "Next.js",
+        "JavaScript",
+        "Photoshop",
+      ].includes(icon.label)
     ),
   },
   {

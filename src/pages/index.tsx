@@ -277,7 +277,7 @@ export default function Version2() {
             {activeProject && activeProject.id === 2 && <ProjectSiteVitrine />}
             {activeProject && activeProject.id === 3 && <ProjectOneClean />}
             {activeProject && activeProject.id === 4 && <ProjectBambinets />}
-            {!activeProject && activeTab === "projets" ? (
+            {!activeProject && activeTab === "projets" && (
               <div className="flex flex-col gap-6 mt-4">
                 {projectsNewVersion &&
                   projectsNewVersion.map((project: any, i: any) => (
@@ -337,7 +337,8 @@ export default function Version2() {
                     </div>
                   ))}
               </div>
-            ) : (
+            )}
+            {!activeProject && activeTab === "veille" && (
               <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6">
                 <div className="flex flex-col gap-2 ">
                   <h4 className="text-xl font-bold mb-6 text-neutral-800 flex items-center gap-2">
