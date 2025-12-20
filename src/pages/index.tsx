@@ -237,7 +237,7 @@ export default function Version2() {
                   ></div>
                 </div>
               )}
-              {activeProject && (
+              {activeProject && activeProject.id !== 4 && (
                 <Link
                   className="bg-neutral-800 duration-150 hover:bg-neutral-600 flex items-center gap-2 py-2 px-3 text-neutral-50 rounded-lg"
                   href={activeProject.link}
