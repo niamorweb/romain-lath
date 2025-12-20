@@ -46,74 +46,51 @@ export default function Version2() {
       name: "Parlons Design",
       type: "podcast",
       summary:
-        "Podcast francophone essentiel pour suivre la culture du design, les outils et les réflexions sur les défis actuels de l'UX/UI.",
-      topics: ["Actualités UX", "Culture Design", "Tendances UI", "Outils UX"],
-      // Exemple d'URL : à remplacer
+        "Actualités, méthodes et réflexions sur le métier (format podcast).",
+      topics: ["Actualités UX", "Méthodes UX", "Réflexions Métier"],
       url: "https://podcasts.apple.com/fr/podcast/parlons-design/id1455589133",
     },
     {
       name: "Basti UI",
       type: "youtube",
-      summary:
-        "Chaîne YouTube francophone axée sur le design d'interface (UI), les critiques de design et les tutoriels pratiques sur les outils de conception.",
-      topics: ["Actualités UX", "UI Design", "Outils UX", "Veille Visuelle"],
-      // Exemple d'URL : à remplacer
-      url: "[Lien de la chaîne Basti UI]",
+      summary: "Actualités UX/UI et tutoriels Figma/outils (format vidéo).",
+      topics: ["Outils UX", "UI Design", "Figma"],
+      url: "https://www.youtube.com/@BastiUI",
     },
     {
       name: "Nielsen Norman Group (NN/g)",
       type: "blog",
-      summary:
-        "La référence mondiale. Fournit des analyses empiriques et des études approfondies sur l'utilisabilité, la recherche utilisateur et les principes fondamentaux de l'UX.",
-      topics: ["Méthodes UX", "Ergonomie", "Actualités UX", "Accessibilité UX"],
-      // Exemple d'URL : à remplacer
-      url: "[Lien Nielsen Norman Group]",
+      summary: "La référence mondiale en recherche scientifique et ergonomie.",
+      topics: ["Méthodes UX", "Ergonomie", "Recherche Utilisateur"],
+      url: "https://www.nngroup.com/",
     },
     {
-      name: "Usabilis (Blog)",
+      name: "La Grande Ourse",
       type: "blog",
-      summary:
-        "Blog francophone spécialisé en ergonomie et en Méthodes de Conception Centrée Utilisateur (CCU). Idéal pour valider la méthodologie et les bonnes pratiques.",
-      topics: ["Méthodes UX", "Ergonomie", "Accessibilité UX"],
-      // Exemple d'URL : à remplacer
-      url: "https://usabilis.com/blog/",
+      summary: "Études de cas concrètes et méthodologies de conception.",
+      topics: ["Méthodes UX", "Études de cas", "Conception"],
+      url: "https://lagrandeourse.design/blog/",
     },
     {
-      name: "Arquen UX (Blog)",
+      name: "Arquen",
       type: "blog",
-      summary:
-        "Blog francophone clé sur l'Éco-conception numérique et le design durable. Une source incontournable pour les pratiques responsables.",
-      topics: ["Écodéveloppement", "Durabilité", "Conception Responsable"],
-      // Exemple d'URL : à remplacer
+      summary: "Explications de concepts UX et conseils stratégiques.",
+      topics: ["Concepts UX", "Conseils", "Stratégie"],
       url: "https://www.arquen.fr/blog/",
-    },
-    {
-      name: "Smashing Magazine",
-      type: "blog",
-      summary:
-        "Magazine reconnu couvrant un large éventail de sujets, de l'UX/UI aux meilleures pratiques de développement front-end et aux Design Systems.",
-      topics: [
-        "Actualités UX",
-        "Outils UX",
-        "Développement Front-end",
-        "Accessibilité UX",
-      ],
-      // Exemple d'URL : à remplacer
-      url: "[Lien Smashing Magazine]",
     },
     {
       name: "Articles sur Medium",
       type: "blog",
-      summary:
-        "Plateforme dynamique pour des revues d'outils, des études de cas détaillées et des retours d'expérience divers de la communauté internationale.",
-      topics: [
-        "Outils UX",
-        "Méthodes UX",
-        "Business & Marketing",
-        "Durabilité",
-      ],
-      // Exemple d'URL : à remplacer
-      url: "[Lien vers la catégorie UX sur Medium]",
+      summary: "Retours d’expérience et tendances émergentes de la communauté.",
+      topics: ["Tendances", "Retours d'expérience", "Communauté"],
+      url: "https://medium.com/",
+    },
+    {
+      name: "Inspirations (Mobbin, SiteInspire, Awwwards)",
+      type: "web",
+      summary: "Veille visuelle et références UI pour la conception.",
+      topics: ["Veille Visuelle", "Inspiration UI", "Références"],
+      url: "https://mobbin.com/",
     },
   ];
 
@@ -325,13 +302,15 @@ export default function Version2() {
                           >
                             Plus de détails
                           </button>
-                          <Link
-                            className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
-                            href={project.link}
-                            target="_blank"
-                          >
-                            Aller sur le site
-                          </Link>
+                          {project.link && (
+                            <Link
+                              className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
+                              href={project.link}
+                              target="_blank"
+                            >
+                              Aller sur le site
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -340,7 +319,7 @@ export default function Version2() {
             )}
             {!activeProject && activeTab === "veille" && (
               <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6">
-                <div className="flex flex-col gap-2 ">
+                <div className="flex flex-col gap-2 w-full">
                   <h4 className="text-xl font-bold mb-6 text-neutral-800 flex items-center gap-2">
                     Mes Sources de Veille UX/UI
                   </h4>
