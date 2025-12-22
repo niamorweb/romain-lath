@@ -72,6 +72,14 @@ export default function ProjectBambinets() {
       {/* --- Section 1: Présentation du Projet --- */}
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1 project-text-container">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded uppercase">
+              Projet académique
+            </span>
+            <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">
+              UX / UI
+            </span>
+          </div>
           <h2 className="text-3xl mb-1 font-medium">
             Les Bambinets : Langue des Signes avec Bébé
           </h2>

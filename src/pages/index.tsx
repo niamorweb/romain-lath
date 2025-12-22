@@ -23,6 +23,7 @@ import { LiaLinkedin } from "react-icons/lia";
 import ProjectOneClean from "@/components/newVersion/projets/oneclean";
 import ProjectBambinets from "@/components/newVersion/projets/lesbambinets";
 import Head from "next/head";
+import ProjectMonCarnetDeRecettes from "@/components/newVersion/projets/moncarnetderecettes";
 
 export default function Version2() {
   const pageTitle = "Romain Lathuiliere - Portfolio";
@@ -254,6 +255,9 @@ export default function Version2() {
             {activeProject && activeProject.id === 2 && <ProjectSiteVitrine />}
             {activeProject && activeProject.id === 3 && <ProjectOneClean />}
             {activeProject && activeProject.id === 4 && <ProjectBambinets />}
+            {activeProject && activeProject.id === 5 && (
+              <ProjectMonCarnetDeRecettes />
+            )}
             {!activeProject && activeTab === "projets" && (
               <div className="flex flex-col gap-6 mt-4">
                 {projectsNewVersion &&

@@ -392,6 +392,17 @@ export const projectsNewVersion = [
     skills: icons.filter((icon) => ["Figma"].includes(icon.label)),
   },
   {
+    id: 5,
+    title: "Mon Carnet de Recettes",
+    description:
+      "Plateforme de création et d'organisation de recettes avec un système automatisé de génération de livres de cuisine (PDF haute définition) prêts pour l'impression.",
+    link: "https://moncarnetderecettes.vercel.app/",
+    img: "/images/newversion/MON_CARNET_DE_RECETTES/hp.webp",
+    skills: icons.filter((icon) =>
+      ["Figma", "TailwindCSS", "TypeScript", "React"].includes(icon.label)
+    ),
+  },
+  {
     id: 3,
     title: "Oneclean",
     description:

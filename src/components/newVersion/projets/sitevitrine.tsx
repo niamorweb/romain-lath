@@ -40,6 +40,14 @@ export default function ProjectSiteVitrine() {
     <div className="bg-neutral-50 mt-4 flex flex-col gap-16 px-4 py-8 rounded-2xl border border-neutral-200">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1 project-text-container">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded uppercase">
+              Projet professionel
+            </span>
+            <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">
+              UX / UI / Frontend
+            </span>
+          </div>
           <h2 className="text-3xl mb-1 font-medium">Site Vitrine</h2>
           <p>
             Le site vitrine de l’entreprise Intheair. Refonte complète du site
