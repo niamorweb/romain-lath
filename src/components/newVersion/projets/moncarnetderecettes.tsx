@@ -4,8 +4,12 @@ import React, { useState } from "react";
 export default function ProjectMonCarnetDeRecettes() {
   const UI = [
     {
-      textBtn: "Compte",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/account.webp",
+      textBtn: "Figma UI",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/figma-hp.webp",
+    },
+    {
+      textBtn: "Design System",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/ui-figma.webp",
     },
     {
       textBtn: "Page d'accueil héro",
@@ -16,12 +20,12 @@ export default function ProjectMonCarnetDeRecettes() {
       image: "/images/newversion/MON_CARNET_DE_RECETTES/hp2.webp",
     },
     {
-      textBtn: "Profil public",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/public-profile.webp",
+      textBtn: "Compte",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/account.webp",
     },
     {
-      textBtn: "Figma UI",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/ui-figma.webp",
+      textBtn: "Profil public",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/public-profile.webp",
     },
     {
       textBtn: "Générateur de PDF",
@@ -189,11 +193,16 @@ export default function ProjectMonCarnetDeRecettes() {
             Design System & Intégration
           </h2>
           <p className="text-neutral-600">
-            Bien que le projet ait été intégré directement en code, j'ai
-            documenté l'ensemble des composants sur Figma pour garantir une
-            cohérence visuelle. Ce <strong>Design System</strong> assure
-            l'homogénéité entre la plateforme web, les profils publics et le
-            rendu final imprimé.
+            Pour ce projet, j'ai adopté une approche{" "}
+            <strong>Design First</strong>. J'ai débuté par une phase de
+            conception sur Figma afin de définir un système de composants
+            robuste et une identité visuelle cohérente avant d'écrire la moindre
+            ligne de code. <br />
+            <br />
+            Ce <strong>Design System</strong> m'a permis de garantir une
+            homogénéité parfaite entre l'interface de l'application web, les
+            profils publics et, surtout, le rendu final imprimé qui exige une
+            précision rigoureuse.
           </p>
           <div className="flex flex-wrap items-center gap-2 mt-6">
             {UI.map((item, i) => (
