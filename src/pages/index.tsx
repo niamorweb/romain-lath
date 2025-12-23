@@ -201,7 +201,11 @@ export default function Version2() {
               activeProject && "col-span-3"
             }`}
           >
-            <div className="bg-neutral-50 sticky top-5 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6  mb-4">
+            <div
+              className={`bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6  mb-4 ${
+                activeProject && "md:sticky top-5"
+              }`}
+            >
               {activeProject ? (
                 <button
                   onClick={() => setActiveProject(null)}

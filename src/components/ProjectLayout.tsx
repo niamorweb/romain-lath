@@ -32,6 +32,7 @@ interface ProjectLayoutProps {
     description: React.ReactNode;
     uxAssets: ProjectAsset[];
     uiAssets: ProjectAsset[];
+    resultsAssets: ProjectAsset[];
   };
   results: {
     title: string;
@@ -56,9 +57,10 @@ export default function ProjectLayout({
 }: ProjectLayoutProps) {
   const [uxSelected, setUxSelected] = useState(0);
   const [uiSelected, setUiSelected] = useState(0);
+  const [resultSelected, setResultSelected] = useState(0);
 
   return (
-    <div className="bg-neutral-50 mt-4 flex flex-col gap-20 px-6 lg:px-24 py-12 rounded-2xl font-sans">
+    <div className="bg-neutral-50 border-neutral-200 border mt-4 flex flex-col gap-20 px-6 lg:px-24 py-12 rounded-2xl font-sans">
       {/* HEADER */}
       <div className="flex flex-col w-full gap-4 border-b max-w-[700px] mx-auto border-neutral-200 pb-10">
         <div className="flex items-center gap-3">
@@ -285,7 +287,33 @@ export default function ProjectLayout({
             {results.title}
           </h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white p-6 rounded-2xl border border-neutral-200 shadow-sm">
+          <div className="flex flex-wrap gap-2 mb-8">
+            {realization.resultsAssets.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => setResultSelected(i)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  resultSelected === i
+                    ? "bg-orange-600 text-white shadow-md"
+                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                }`}
+              >
+                {item.textBtn}
+              </button>
+            ))}
+          </div>
+          <div className="bg-neutral-50 rounded-xl p-2 border border-neutral-100">
+            <Image
+              src={realization.resultsAssets[resultSelected].image}
+              width={1200}
+              height={700}
+              alt="UI View"
+              className="rounded-lg w-full object-cover"
+            />
+          </div>
+        </div>
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {results.items.map((result, i) => (
             <div
               key={i}
@@ -299,7 +327,7 @@ export default function ProjectLayout({
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
     </div>
   );

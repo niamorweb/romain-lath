@@ -13,27 +13,6 @@ export default function ProjectMonCarnetDeRecettes() {
       textBtn: "Design System",
       image: "/images/newversion/MON_CARNET_DE_RECETTES/ui-figma.webp",
     },
-    {
-      textBtn: "Page d'accueil héro",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/hp.webp",
-    },
-    {
-      textBtn: "Page d'accueil section",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/hp2.webp",
-    },
-    {
-      textBtn: "Compte",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/account.webp",
-    },
-    {
-      textBtn: "Profil public",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/public-profile.webp",
-    },
-    {
-      textBtn: "Générateur de PDF",
-      image:
-        "/images/newversion/MON_CARNET_DE_RECETTES/full-pdf-generator.webp",
-    },
   ];
 
   // Données UX (Flux et interactions)
@@ -72,6 +51,30 @@ export default function ProjectMonCarnetDeRecettes() {
       textBtn: "Ajout catégorie input",
       image:
         "/images/newversion/MON_CARNET_DE_RECETTES/input-category-filled.webp",
+    },
+  ];
+
+  const RESULTS_DATA = [
+    {
+      textBtn: "Page d'accueil héro",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/hp.webp",
+    },
+    {
+      textBtn: "Page d'accueil section",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/hp2.webp",
+    },
+    {
+      textBtn: "Compte",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/account.webp",
+    },
+    {
+      textBtn: "Profil public",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/public-profile.webp",
+    },
+    {
+      textBtn: "Générateur de PDF",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/full-pdf-generator.webp",
     },
   ];
 
@@ -137,6 +140,7 @@ export default function ProjectMonCarnetDeRecettes() {
           "En tant qu'UX/Dev, j'ai piloté toute la chaîne : du Design System au développement de l'API PDF.",
         uxAssets: UX_DATA,
         uiAssets: UI_DATA,
+        resultsAssets: RESULTS_DATA,
       }}
       results={{
         title: "Impact & Valeur ajoutée",

@@ -278,6 +278,9 @@ export default function ProjectBambinets() {
       textBtn: "Composants Mobiles",
       image: "/images/newversion/LES_BAMBINETS/mobile-components.avif",
     },
+  ];
+
+  const RESULTS_DATA = [
     {
       textBtn: "Écran d'Accueil",
       image: "/images/newversion/LES_BAMBINETS/proto-home-connexion.avif",
@@ -363,6 +366,7 @@ export default function ProjectBambinets() {
         ),
         uxAssets: UX_FEATURES,
         uiAssets: UI_DESIGN_SYSTEM,
+        resultsAssets: RESULTS_DATA,
       }}
       results={{
         title: "Pédagogie & Ergonomie Mobile",

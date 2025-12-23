@@ -210,6 +210,10 @@ export default function ProjectSiteVitrine() {
       image: "/images/newversion/SITE_VITRINE/previous-hp.avif",
     },
     {
+      textBtn: "Audit du site",
+      image: "/images/newversion/SITE_VITRINE/lighthouse-before.webp",
+    },
+    {
       textBtn: "Arborescence",
       image: "/images/newversion/SITE_VITRINE/pages-tree.webp",
     },
@@ -217,6 +221,9 @@ export default function ProjectSiteVitrine() {
       textBtn: "Wireframes",
       image: "/images/newversion/SITE_VITRINE/wireframes.webp",
     },
+  ];
+
+  const FINAL_UI_DATA = [
     {
       textBtn: "Inspirations Héro",
       image: "/images/newversion/SITE_VITRINE/inspirations.webp",
@@ -225,12 +232,20 @@ export default function ProjectSiteVitrine() {
       textBtn: "Inspirations d'autres sections",
       image: "/images/newversion/SITE_VITRINE/inspirations2.webp",
     },
+    {
+      textBtn: "Conception sur webflow",
+      image: "/images/newversion/SITE_VITRINE/webflow.webp",
+    },
   ];
 
-  const FINAL_UI_DATA = [
+  const RESULTS_DATA = [
     {
       textBtn: "Nouvelle Home",
       image: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
+    },
+    {
+      textBtn: "Perfomances du site",
+      image: "/images/newversion/SITE_VITRINE/lighthouse-after.webp",
     },
     {
       textBtn: "Chiffres clés",
@@ -251,7 +266,6 @@ export default function ProjectSiteVitrine() {
       badgeStatus="Projet Professionnel"
       badgeRoles="UX / UI / Frontend"
       title="Intheair - Refonte Digitale"
-      // url="https://intheair.fr" // Ajoute l'URL si elle est dispo
       problematic={{
         title:
           "Comment moderniser une image de marque et optimiser la conversion B2B ?",
@@ -286,6 +300,7 @@ export default function ProjectSiteVitrine() {
         ),
         uxAssets: CONCEPTION_DATA,
         uiAssets: FINAL_UI_DATA,
+        resultsAssets: RESULTS_DATA,
       }}
       results={{
         title: "Transformation & Performance",

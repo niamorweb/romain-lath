@@ -177,6 +177,22 @@ export default function ProjectCayo() {
     { textBtn: "Aperçu Landing", image: "/images/newversion/CAYO/hp.avif" },
   ];
 
+  const RESULTS_DATA = [
+    {
+      textBtn: "Tableau de bord",
+      image: "/images/newversion/CAYO/dashboard.avif",
+    },
+    {
+      textBtn: "Création d'identifiant",
+      image: "/images/newversion/CAYO/create-pw.avif",
+    },
+    {
+      textBtn: "Gestion d'organisations",
+      image: "/images/newversion/CAYO/orgs.avif",
+    },
+    { textBtn: "Aperçu Landing", image: "/images/newversion/CAYO/hp.avif" },
+  ];
+
   return (
     <ProjectLayout
       badgeStatus="Projet Personnel"
@@ -273,6 +289,7 @@ export default function ProjectCayo() {
         ),
         uxAssets: CRYPTO_DATA,
         uiAssets: UI_DATA,
+        resultsAssets: RESULTS_DATA,
       }}
       results={{
         title: "Sécurité & Accessibilité",

@@ -207,6 +207,9 @@ export default function ProjectPlateformeSaas() {
       textBtn: "Design Figma",
       image: "/images/newversion/INTHEAIRLABS/figma-designs.webp",
     },
+  ];
+
+  const RESULTS_DATA = [
     {
       textBtn: "Dashboard Projets",
       image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.avif",
@@ -289,6 +292,7 @@ export default function ProjectPlateformeSaas() {
         ),
         uxAssets: PREVIOUS_DATA,
         uiAssets: NEW_UI_DATA,
+        resultsAssets: RESULTS_DATA,
       }}
       results={{
         title: "Efficacité & Expérience Client",
