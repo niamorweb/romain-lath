@@ -122,7 +122,7 @@ export default function Version2() {
         <div className="max-w-[1240px] mx-auto gap-4 bg-neutral-100 flex flex-col md:grid md:grid-cols-3 ">
           <div
             className={`w-full md:sticky top-6 h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 ${
-              activeProject && "hidden md:flex"
+              activeProject && "hidden"
             }`}
           >
             <div className=" bg-neutral-50 h-fit rounded-2xl p-6 border border-neutral-200">
@@ -196,8 +196,12 @@ export default function Version2() {
               </Link>
             </div>
           </div>
-          <div className=" text-neutral-800  col-span-2 ">
-            <div className="bg-neutral-50 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6  mb-4">
+          <div
+            className={`text-neutral-800 col-span-2 ${
+              activeProject && "col-span-3"
+            }`}
+          >
+            <div className="bg-neutral-50 sticky top-5 rounded-2xl flex items-center gap-3 justify-between border border-neutral-200 p-3 md:p-6  mb-4">
               {activeProject ? (
                 <button
                   onClick={() => setActiveProject(null)}
