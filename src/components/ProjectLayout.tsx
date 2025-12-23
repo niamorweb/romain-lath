@@ -39,7 +39,7 @@ interface ProjectLayoutProps {
   };
   personas?: Persona[];
   competitiveAnalysis?: CompetitiveAnalysis[];
-  competitiveAnalysisCcl: string;
+  competitiveAnalysisCcl?: string;
 }
 
 export default function ProjectLayout({
@@ -143,7 +143,7 @@ export default function ProjectLayout({
       {/* NOUVELLE SECTION : PERSONAS */}
       {personas && personas.length > 0 && (
         <section className="flex flex-col gap-8">
-          <div className="flex flex-col gap-2 full max-w-[700px] mx-auto">
+          <div className="flex flex-col gap-2 w-full max-w-[700px] mx-auto">
             <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest">
               Target Users
             </h2>
@@ -151,14 +151,18 @@ export default function ProjectLayout({
               Pour qui avons-nous conçu cette solution ?
             </h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${
+              personas.length === 3 && "lg:grid-cols-3"
+            }`}
+          >
             {personas.map((persona, i) => (
               <div
                 key={i}
                 className="bg-white border border-neutral-200 p-6 rounded-2xl shadow-sm"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  <div className="w-12 h-12 aspect-square bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">
                     {persona.name.charAt(0)}
                   </div>
                   <div>

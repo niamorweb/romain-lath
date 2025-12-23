@@ -181,6 +181,7 @@ export default function ProjectCayo() {
     <ProjectLayout
       badgeStatus="Projet Personnel"
       badgeRoles="UX / UI / Fullstack"
+      competitiveAnalysisCcl="Face aux outils payants et surchargés, l'opportunité était de proposer un minimalisme collaboratif. Cayo rend la sécurité accessible en se concentrant sur le partage de groupe, gratuitement et sans fioritures."
       competitiveAnalysis={[
         {
           competitor: "Google Password Manager / iCloud",
@@ -227,21 +228,23 @@ export default function ProjectCayo() {
       title="Cayo — Gestionnaire de mots de passe"
       problematic={{
         title:
-          "Comment garantir la sécurité absolue des données partagées en équipe ?",
+          "Comment offrir un partage de mots de passe en groupe ultra-sécurisé tout en restant simple et gratuit ?",
         mainImage: "/images/newversion/CAYO/hp.avif",
         description: (
           <div className="flex flex-col gap-4">
             <p>
               La plupart des outils de gestion de mots de passe grand public
-              manquent de flexibilité pour le travail collaboratif, tandis que
-              les outils pro sont souvent trop complexes.
+              manquent d'accessibilité pour les personnes non-techs, et peu de
+              services proposent des plans gratuit pour coffres en groupe, et
+              les outils pro qui les proposent sont souvent trop complexes et
+              cher pour des personnes qui n'accordent pas une grande importance
+              à la sécurité.
             </p>
             <p>
-              L'enjeu de <strong>Cayo</strong> était de construire une
-              application "Zero-Knowledge" : un système où même les serveurs
-              n'ont jamais accès aux données en clair, tout en permettant un
-              partage fluide des accès entre collaborateurs via une interface
-              intuitive.
+              L'enjeu de <strong>Cayo</strong> est de construire une application
+              "Zero-Knowledge" : un système où même les serveurs n'ont jamais
+              accès aux données en clair, tout en permettant un partage fluide
+              des accès en groupe via une interface web intuitive.
             </p>
           </div>
         ),

@@ -206,6 +206,10 @@ import React, { useState } from "react";
 export default function ProjectSiteVitrine() {
   const CONCEPTION_DATA = [
     {
+      textBtn: "Ancienne version",
+      image: "/images/newversion/SITE_VITRINE/previous-hp.avif",
+    },
+    {
       textBtn: "Arborescence",
       image: "/images/newversion/SITE_VITRINE/pages-tree.webp",
     },
@@ -218,8 +222,8 @@ export default function ProjectSiteVitrine() {
       image: "/images/newversion/SITE_VITRINE/inspirations.webp",
     },
     {
-      textBtn: "Ancienne version",
-      image: "/images/newversion/SITE_VITRINE/previous-hp.avif",
+      textBtn: "Inspirations d'autres sections",
+      image: "/images/newversion/SITE_VITRINE/inspirations2.webp",
     },
   ];
 
