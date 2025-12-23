@@ -112,8 +112,8 @@ export default function ProjectBambinets() {
             L'architecture de l'application est pensée pour une consultation
             rapide et un apprentissage efficace, en mettant la vidéo au cœur de
             chaque interaction pour illustrer les gestes. Nous mettons en place
-            un **Glossaire vidéo** (20 mots de base, tirés de Sophie D’olce),
-            des outils de validation (quiz) et une FAQ.
+            un <strong>Glossaire vidéo</strong> (20 mots de base, tirés de
+            Sophie D’olce), des outils de validation (quiz) et une FAQ.
           </p>
           <div className="flex flex-wrap items-center gap-2 mt-6">
             {uxFeatures &&

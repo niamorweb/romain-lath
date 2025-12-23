@@ -15,6 +15,28 @@ export default function ProjectSiteVitrine() {
 
   const [previousSelected, setPreviousSelected] = useState(0);
 
+  const repenserExperience = [
+    {
+      textBtn: "Arborescence des pages",
+      image: "/images/newversion/SITE_VITRINE/pages-tree.webp",
+    },
+    {
+      textBtn: "Wireframes",
+      image: "/images/newversion/SITE_VITRINE/wireframes.webp",
+    },
+    {
+      textBtn: "Inspirations héro",
+      image: "/images/newversion/SITE_VITRINE/inspirations.webp",
+    },
+    {
+      textBtn: "Inpirations pour d'autres sections",
+      image: "/images/newversion/SITE_VITRINE/inspirations2.webp",
+    },
+  ];
+
+  const [repenserExperienceSelected, setRepenserExperienceSelected] =
+    useState(0);
+
   const after = [
     {
       textBtn: "Page d'accueil",
@@ -103,6 +125,43 @@ export default function ProjectSiteVitrine() {
           />
         </div>
       </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1 project-text-container">
+          <h2 className="text-3xl mb-1 font-medium">Repenser l'expérience</h2>
+          <p>
+            Avant de passer au design final, il a fallu repenser toute
+            l'architecture du site. Cela passe par une définition claire de
+            l'arborescence, une analyse concurrentielle, la création de
+            wireframes et une phase de recherche graphique pour définir la
+            nouvelle direction artistique.
+          </p>
+          <div className="flex flex-wrap items-center gap-2 mt-6">
+            {repenserExperience.map((item: any, i: any) => (
+              <div
+                key={i}
+                onClick={() => setRepenserExperienceSelected(i)}
+                className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
+                  repenserExperienceSelected === i
+                    ? "bg-blue-600 text-neutral-50 hover:brightness-105"
+                    : "bg-neutral-100 hover:brightness-95"
+                }`}
+              >
+                <span>{item.textBtn}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
+          <Image
+            src={repenserExperience[repenserExperienceSelected].image}
+            width={1000}
+            height={1000}
+            alt="Phase de conception"
+            className="rounded-lg"
+          />
+        </div>
+      </div>
+
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1 project-text-container">
           <h2 className="text-3xl mb-1 font-medium">

@@ -31,6 +31,14 @@ export default function ProjectPlateformeSaas() {
 
   const after = [
     {
+      textBtn: "Conception UI Figma",
+      image: "/images/newversion/INTHEAIRLABS/figma-designs.webp",
+    },
+    {
+      textBtn: "Présentation nouveau design",
+      image: "/images/newversion/INTHEAIRLABS/figma-validation.webp",
+    },
+    {
       textBtn: "Admin tableau",
       image: "/images/newversion/INTHEAIRLABS/companies-table.avif",
     },
