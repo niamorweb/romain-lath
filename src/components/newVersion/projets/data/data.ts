@@ -343,17 +343,6 @@ export const projects: Project[] = [
 
 export const projectsNewVersion = [
   {
-    id: 1,
-    title: "IntheairLabs",
-    description:
-      "IntheairLabs, une web app pour l'instant B2B permettant aux clients de gérer leur projets, de télécharger leur livrables et de les visualiser directement sur la plateforme. Espace admin et espace client.",
-    link: "https://labs.intheair.co/login",
-    img: "/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif",
-    skills: icons.filter((icon) =>
-      ["Figma", "React", "JavaScript"].includes(icon.label)
-    ),
-  },
-  {
     id: 2,
     title: "Site vitrine",
     description:
@@ -362,6 +351,17 @@ export const projectsNewVersion = [
     img: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
     skills: icons.filter((icon) =>
       ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label)
+    ),
+  },
+  {
+    id: 1,
+    title: "IntheairLabs",
+    description:
+      "IntheairLabs, une web app pour l'instant B2B permettant aux clients de gérer leur projets, de télécharger leur livrables et de les visualiser directement sur la plateforme. Espace admin et espace client.",
+    link: "https://labs.intheair.co/login",
+    img: "/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif",
+    skills: icons.filter((icon) =>
+      ["Figma", "React", "JavaScript"].includes(icon.label)
     ),
   },
   {

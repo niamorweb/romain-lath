@@ -145,26 +145,27 @@ export default function ProjectBambinets() {
           <h3 className="text-xl font-medium mt-4">Spécifications Clés :</h3>
           <ul className="list-disc list-inside space-y-2 mt-2">
             <li>
-              **Glossaire :** 20 mots signés (évolutif), tri alphabétique et
-              **filtrage par catégorie** (Essentiel, Émotions, Loisirs,
-              Nature...).
+              <strong>Glossaire :</strong> 20 mots signés (évolutif), tri
+              alphabétique et
+              <strong>filtrage par catégorie</strong> (Essentiel, Émotions,
+              Loisirs, Nature...).
             </li>
             <li>
-              **Contenu Média :** Chaque signe est illustré par une **vidéo** de
-              démonstration.
+              <strong>Contenu Média :</strong> Chaque signe est illustré par une
+              <strong>vidéo</strong> de démonstration.
             </li>
             <li>
-              **Fonction Favoris :** Ajout rapide à une bibliothèque
-              personnalisée (via icône "Cœur") pour identifier les signes les
-              plus utilisés.
+              <strong>Fonction Favoris :</strong> Ajout rapide à une
+              bibliothèque personnalisée (via icône "Cœur") pour identifier les
+              signes les plus utilisés.
             </li>
             <li>
-              **Quiz :** Microquiz basés sur la reconnaissance des signes
-              présentés en vidéo pour valider les acquis.
+              <strong>Quiz :</strong> Microquiz basés sur la reconnaissance des
+              signes présentés en vidéo pour valider les acquis.
             </li>
             <li>
-              **FAQ :** Réponses aux questions fréquentes sur l'utilisation des
-              signes avec les tout-petits.
+              <strong>FAQ :</strong> Réponses aux questions fréquentes sur
+              l'utilisation des signes avec les tout-petits.
             </li>
           </ul>
         </div>
