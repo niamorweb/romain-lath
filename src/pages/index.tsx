@@ -86,7 +86,7 @@ export default function Version2() {
           <div
             className={`w-full h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 `}
           >
-            <div className="flex flex-col md:items-center justify-between">
+            <div className="flex flex-col md:flex-row md:items-center justify-between">
               <div className="flex flex-col justify-start items-start gap-4 pt-12">
                 <div className="flex flex-col gap-2">
                   <h1 className="text-4xl font-semibold geist tracking-tighter ">
