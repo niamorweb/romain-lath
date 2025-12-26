@@ -7,7 +7,6 @@ import {
 } from "@/components/newVersion/projets/data/data";
 import {
   ChevronLeft,
-  Code,
   ExternalLink,
   Github,
   Globe,
@@ -15,7 +14,6 @@ import {
   Mail,
   Mic,
   Notebook,
-  Paintbrush,
   User,
   Youtube,
 } from "lucide-react";
@@ -27,7 +25,6 @@ import ProjectOneClean from "@/components/newVersion/projets/oneclean";
 import ProjectBambinets from "@/components/newVersion/projets/lesbambinets";
 import Head from "next/head";
 import ProjectMonCarnetDeRecettes from "@/components/newVersion/projets/moncarnetderecettes";
-import Separator from "@/components/Separator";
 
 export default function Version2() {
   const pageTitle = "Romain Lathuiliere - Portfolio";
@@ -36,42 +33,77 @@ export default function Version2() {
   const keywords =
     "portfolio, UX design, UI design, développement front-end, react, Next.js,  site web";
 
+  const [activeProject, setActiveProject] = useState<any>(null);
+
+  const [activeTab, setActiveTab] = useState("projets");
+
   const UX_VEILLE_SOURCES = [
+    {
+      name: "Parlons Design",
+      type: "podcast",
+      summary:
+        "Actualités, méthodes et réflexions sur le métier (format podcast).",
+      topics: ["Actualités UX", "Méthodes UX", "Réflexions Métier"],
+      url: "https://podcasts.apple.com/fr/podcast/parlons-design/id1455589133",
+    },
     {
       name: "Basti UI",
       type: "youtube",
       summary: "Actualités UX/UI et tutoriels Figma/outils (format vidéo).",
-      topics: ["UX/UI"],
+      topics: ["Outils UX", "UI Design", "Figma"],
       url: "https://www.youtube.com/@BastiUI",
+    },
+    {
+      name: "Nielsen Norman Group (NN/g)",
+      type: "blog",
+      summary: "La référence mondiale en recherche scientifique et ergonomie.",
+      topics: ["Méthodes UX", "Ergonomie", "Recherche Utilisateur"],
+      url: "https://www.nngroup.com/",
+    },
+    {
+      name: "La Grande Ourse",
+      type: "blog",
+      summary: "Études de cas concrètes et méthodologies de conception.",
+      topics: ["Méthodes UX", "Études de cas", "Conception"],
+      url: "https://lagrandeourse.design/blog/",
+    },
+    {
+      name: "Arquen",
+      type: "blog",
+      summary: "Explications de concepts UX et conseils stratégiques.",
+      topics: ["Concepts UX", "Conseils", "Stratégie"],
+      url: "https://www.arquen.fr/blog/",
+    },
+    {
+      name: "Articles sur Medium",
+      type: "blog",
+      summary: "Retours d’expérience et tendances émergentes de la communauté.",
+      topics: ["Tendances", "Retours d'expérience", "Communauté"],
+      url: "https://medium.com/",
     },
     {
       name: "Inspirations (Mobbin, SiteInspire, Awwwards)",
       type: "web",
       summary: "Veille visuelle et références UI pour la conception.",
-      topics: ["UX/UI"],
+      topics: ["Veille Visuelle", "Inspiration UI", "Références"],
       url: "https://mobbin.com/",
-    },
-    {
-      name: "UX Collective",
-      type: "blog",
-      summary:
-        "La plateforme de référence pour les études de cas et les réflexions de fond sur l'UX design.",
-      topics: ["UX Design", "Product Design"],
-      url: "https://uxdesign.cc/",
     },
   ];
 
   const getSourceIcon = (type: any) => {
     switch (type) {
-      case "UX/UI":
-        return <Paintbrush className="size-5 text-indigo-600" />;
-      case "Code":
-        return <Code className="size-5 text-red-600" />;
+      case "podcast":
+        return <Mic className="size-5 text-indigo-600" />;
+      case "youtube":
+        return <Youtube className="size-5 text-red-600" />;
+      case "social":
+        return <User className="size-5 text-blue-600" />;
+      case "organisation":
+        return <Globe className="size-5 text-teal-600" />;
       default: // blog, organisation, etc.
         return <Notebook className="size-5 text-gray-600" />;
     }
   };
-
   return (
     <>
       <Head>
@@ -86,7 +118,7 @@ export default function Version2() {
           <div
             className={`w-full h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 `}
           >
-            <div className="flex flex-col md:items-center justify-between">
+            <div className="flex items-center justify-between">
               <div className="flex flex-col justify-start items-start gap-4 pt-12">
                 <div className="flex flex-col gap-2">
                   <h1 className="text-4xl font-semibold geist tracking-tighter ">
@@ -127,11 +159,8 @@ export default function Version2() {
                   </Link>
                 </div>
               </div>
-              <div className="md:hidden">
-                <Separator />
-              </div>
               <div className="flex flex-col gap-4 mt-10">
-                <h3 className="text-3xl font-semibold">Mes compétences</h3>
+                <h3 className="text-2xl font-semibold">Mes compétences</h3>
                 <div className="flex flex-col items-start gap-4 max-w-[400px]">
                   {skillsNewVersion.map((category, catIndex) => (
                     <div
@@ -162,28 +191,44 @@ export default function Version2() {
             </div>
           </div>
 
-          <Separator />
+          <div className="bg-neutral-300 w-full h-[1px] my-6 "></div>
           <div className="flex flex-col gap-8 mt-4">
-            <h2 className="text-3xl font-semibold text-neutral-700">
-              Mes projets sélectionnés
-            </h2>
+            <h2 className="text-3xl font-semibold">Mes projets sélectionnés</h2>
             <div className="flex flex-col gap-6 mt-4">
               {projectsNewVersion &&
                 projectsNewVersion.map((project: any, i: any) => (
-                  <Link
-                    href={"/projects/" + project.url}
+                  <div
                     key={i}
-                    className="cursor-pointer bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all grid grid-cols-1 md:grid-cols-3 items-center gap-6"
+                    className="cursor-pointer bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all grid grid-cols-3 items-center gap-6"
                   >
                     <Image
-                      className="rounded-lg w-full"
+                      className="rounded-lg"
                       width={840}
                       height={840}
                       src={project.img}
                       alt=""
                     />
                     <div className="col-span-2">
-                      <h3 className="text-xl text-neutral-700 font-medium mb-1">
+                      <div className="mb-3 flex flex-wrap items-center gap-2">
+                        {project.skills.map((skill: any, index: any) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
+                          >
+                            <Image
+                              width={100}
+                              height={100}
+                              src={skill.icon}
+                              alt={skill.label}
+                              className="w-5 h-5 object-contain"
+                            />
+                            <span className="text-sm text-neutral-800">
+                              {skill.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>{" "}
+                      <h3 className="text-xl font-medium mb-1">
                         {project.title}
                       </h3>
                       <p className="text-neutral-500">{project.description}</p>
@@ -204,34 +249,15 @@ export default function Version2() {
                         </Link>
                       )}
                     </div> */}
-                      <div className="mt-3 flex flex-wrap items-center gap-2">
-                        {project.skills.map((skill: any, index: any) => (
-                          <div
-                            key={index}
-                            className="flex items-center gap-2 bg-neutral-100 border border-neutral-200 p-2 rounded-xl"
-                          >
-                            <Image
-                              width={100}
-                              height={100}
-                              src={skill.icon}
-                              alt={skill.label}
-                              className="w-5 h-5 object-contain"
-                            />
-                            <span className="text-sm text-neutral-800">
-                              {skill.label}
-                            </span>
-                          </div>
-                        ))}
-                      </div>{" "}
                     </div>
-                  </Link>
+                  </div>
                 ))}
             </div>
           </div>
-          <Separator />
-          <div className="flex flex-col gap-2 w-full mb-8">
+          <div className="bg-neutral-300 w-full h-[1px] my-12 "></div>
+          <div className="flex flex-col gap-2 w-full">
             <h4 className="text-3xl font-bold mb-6 text-neutral-800 flex items-center gap-2">
-              Mes Sources de Veille principales côté UX/UI
+              Mes Sources de Veille UX/UI
             </h4>
 
             <div className="grid rounded-2xl overflow-hidden border border-neutral-200">
