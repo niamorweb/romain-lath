@@ -81,7 +81,7 @@ export default function Version2() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="min-h-screen p-6 bg-neutral-100 ">
+      <main className="min-h-screen p-6 pb-16 bg-neutral-100 ">
         <div className="max-w-[1000px] mx-auto gap-4 flex flex-col">
           <div
             className={`w-full h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 `}
@@ -228,8 +228,8 @@ export default function Version2() {
                 ))}
             </div>
           </div>
-          <Separator />
-          <div className="flex flex-col gap-2 w-full mb-8">
+          {/* <Separator /> */}
+          {/* <div className="flex flex-col gap-2 w-full mb-8">
             <h4 className="text-3xl font-bold mb-6 text-neutral-800 flex items-center gap-2">
               Mes Sources de Veille principales côté UX/UI
             </h4>
@@ -238,16 +238,13 @@ export default function Version2() {
               {UX_VEILLE_SOURCES.map((source) => (
                 <a
                   key={source.name}
-                  // REMPLACER par la véritable URL de la source
                   href={source.url || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  // Style de la carte: Bordure subtile, Ombre légère, Effet hover
                   className="flex items-start justify-between gap-4 bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-3 transition-all"
                 >
                   <div className="">
                     <div className="flex justify-between items-start mb-2">
-                      {/* Titre et Type */}
                       <div className="flex flex-col">
                         <span className="font-semibold text-lg text-neutral-900">
                           {source.name}
@@ -263,7 +260,7 @@ export default function Version2() {
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </>
