@@ -226,6 +226,18 @@ export default function ProjectCayo() {
 
   const RESULTS_DATA = [
     {
+      textBtn: "Store via Zudstand",
+      image: "/images/newversion/CAYO/code-store.webp",
+    },
+    {
+      textBtn: "Chiffrement",
+      image: "/images/newversion/CAYO/code-encryption.webp",
+    },
+    {
+      textBtn: "Route Next.js",
+      image: "/images/newversion/CAYO/code-route.webp",
+    },
+    {
       textBtn: "Tableau de bord",
       image: "/images/newversion/CAYO/dashboard.avif",
     },
@@ -351,25 +363,45 @@ export default function ProjectCayo() {
         description={
           <div className="flex flex-col gap-4">
             <p>
-              Côté développement, j'ai misé sur une stack moderne axée sur la
-              performance et la sécurité <strong>"Zero-Knowledge"</strong> :
+              Pour répondre aux exigences d'un coffre-fort numérique, j'ai
+              architecturé une stack
+              <strong> "Bleeding Edge"</strong> alliant sécurité bancaire et
+              fluidité applicative :
             </p>
             <ul className="list-disc ml-5 space-y-2">
               <li>
-                <strong>Cryptographie :</strong> Implémentation de protocoles de
-                chiffrement robustes (AES-256 pour les données, RSA pour
-                l'échange de clés) directement en JavaScript.
+                <strong>Sécurité Zero-Knowledge :</strong> Mise en œuvre d'une
+                cryptographie hybride (AES-256-CBC & RSA) avec dérivation de clé{" "}
+                <strong>PBKDF2</strong>. Le déchiffrement s'opère exclusivement
+                en mémoire vive côté client, garantissant que le serveur ne voit
+                que des fragments chiffrés.
               </li>
               <li>
-                <strong>Frontend :</strong> Développement sous{" "}
-                <strong>Next.js</strong> et <strong>Tailwind CSS</strong> pour
-                une interface réactive et légère.
+                <strong>Design System sur mesure :</strong> Utilisation de{" "}
+                <strong>Shadcn/UI</strong> et <strong>Radix UI</strong>,
+                entièrement refactorisés pour créer un langage visuel unique.
+                J'ai personnalisé chaque composant pour garantir une
+                accessibilité totale et une cohérence UX parfaite.
               </li>
               <li>
-                <strong>Sécurité des données :</strong> Utilisation de contextes
-                React éphémères (session-only) et optimisation des requêtes pour
-                garantir qu'aucune donnée sensible ne soit stockée en clair côté
-                client.
+                <strong>State Management & Performance :</strong> Gestion
+                d'états complexes via <strong>Zustand</strong>. J'ai optimisé
+                les flux de données avec <strong>useMemo</strong> et des
+                patterns de filtrage amont pour maintenir une fluidité
+                constante, même lors du déchiffrement massif de centaines
+                d'entrées.
+              </li>
+              <li>
+                <strong>Robustesse TypeScript :</strong> Typage strict de bout
+                en bout pour sécuriser les échanges entre le store global et les
+                interfaces de gestion des organisations, éliminant ainsi les
+                risques d'erreurs au runtime.
+              </li>
+              <li>
+                <strong>Stack Moderne :</strong> Développement sous{" "}
+                <strong>Next.js 16 (Canary)</strong> et{" "}
+                <strong>React 19</strong>, anticipant les dernières normes de
+                sécurité et de rendu (Server Components & Actions).
               </li>
             </ul>
           </div>

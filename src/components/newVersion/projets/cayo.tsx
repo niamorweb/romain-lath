@@ -30,6 +30,19 @@ export default function ProjectCayo() {
 
   const RESULTS_DATA = [
     {
+      textBtn: "Store via Zudstand",
+      image: "/images/newversion/CAYO/code-store.avif",
+    },
+    {
+      textBtn: "Chiffrement",
+      image: "/images/newversion/CAYO/code-encryption.avif",
+    },
+    {
+      textBtn:
+        "Exemple de route avec admin et le rôle du user pour voir les permissions",
+      image: "/images/newversion/CAYO/code-route.avif",
+    },
+    {
       textBtn: "Tableau de bord",
       image: "/images/newversion/CAYO/dashboard.avif",
     },
