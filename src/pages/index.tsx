@@ -1,32 +1,22 @@
-import ProjectCayo from "@/components/newVersion/projets/cayo";
-import ProjectPlateformeSaas from "@/components/newVersion/projets/plateformesaas";
-import ProjectSiteVitrine from "@/components/newVersion/projets/sitevitrine";
 import {
   projectsNewVersion,
   skillsNewVersion,
 } from "@/components/newVersion/projets/data/data";
 import {
-  ChevronLeft,
   Code,
   ExternalLink,
   Github,
   Globe,
-  Linkedin,
   Mail,
-  Mic,
+  MoveRight,
   Notebook,
   Paintbrush,
-  User,
-  Youtube,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { LiaLinkedin } from "react-icons/lia";
-import ProjectOneClean from "@/components/newVersion/projets/oneclean";
-import ProjectBambinets from "@/components/newVersion/projets/lesbambinets";
 import Head from "next/head";
-import ProjectMonCarnetDeRecettes from "@/components/newVersion/projets/moncarnetderecettes";
 import Separator from "@/components/Separator";
 
 export default function Version2() {
@@ -93,7 +83,7 @@ export default function Version2() {
                     Romain Lathuiliere
                   </h1>
                   <h2 className="text-2xl font-medium text-black/70 geist tracking-tighter">
-                    UX/UI Designer - Développeur frontend
+                    Développeur frontend (Spécialité UX/UI)
                   </h2>
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">
@@ -132,7 +122,7 @@ export default function Version2() {
               </div>
               <div className="flex flex-col gap-4 mt-10">
                 <h3 className="text-3xl font-semibold">Mes compétences</h3>
-                <div className="flex flex-col items-start gap-4 max-w-[400px]">
+                <div className="flex flex-col items-start gap-4 max-w-[500px]">
                   {skillsNewVersion.map((category, catIndex) => (
                     <div
                       key={catIndex}
@@ -170,40 +160,22 @@ export default function Version2() {
             <div className="flex flex-col gap-6 mt-4">
               {projectsNewVersion &&
                 projectsNewVersion.map((project: any, i: any) => (
-                  <Link
-                    href={"/projects/" + project.url}
+                  <div
                     key={i}
-                    className="cursor-pointer bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all grid grid-cols-1 md:grid-cols-3 items-center gap-6"
+                    className=" bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all grid grid-cols-1 md:grid-cols-5 items-center gap-6"
                   >
                     <Image
-                      className="rounded-lg w-full"
+                      className="rounded-lg w-full md:col-span-2"
                       width={840}
                       height={840}
                       src={project.img}
                       alt=""
                     />
-                    <div className="col-span-2">
+                    <div className="col-span-3">
                       <h3 className="text-xl text-neutral-700 font-medium mb-1">
                         {project.title}
                       </h3>
                       <p className="text-neutral-500">{project.description}</p>
-                      {/* <div className="flex items-center gap-2 mt-6">
-                      <button
-                        onClick={() => setActiveProject(project)}
-                        className="bg-neutral-100 flex items-center gap-2 p-3 hover:bg-neutral-50 duration-150 border border-neutral-200 text-neutral-800 rounded-xl"
-                      >
-                        Plus de détails
-                      </button>
-                      {project.link && (
-                        <Link
-                          className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
-                          href={project.link}
-                          target="_blank"
-                        >
-                          Aller sur le site
-                        </Link>
-                      )}
-                    </div> */}
                       <div className="mt-3 flex flex-wrap items-center gap-2">
                         {project.skills.map((skill: any, index: any) => (
                           <div
@@ -223,8 +195,36 @@ export default function Version2() {
                           </div>
                         ))}
                       </div>{" "}
+                      <div className="flex items-center w-full justify-end gap-2 mt-6">
+                        {project.repoUrl && (
+                          <Link
+                            href={project.repoUrl}
+                            target="_blank"
+                            className="bg-neutral-100 flex items-center gap-2 p-3 hover:bg-neutral-50 duration-150 border border-neutral-200 text-neutral-800 rounded-xl"
+                          >
+                            <Github className="size-5" />
+                          </Link>
+                        )}
+                        {project.link && (
+                          <Link
+                            href={project.link}
+                            target="_blank"
+                            className="bg-neutral-100 flex items-center gap-2 p-3 hover:bg-neutral-50 duration-150 border border-neutral-200 text-neutral-800 rounded-xl"
+                          >
+                            <Globe className="size-5" />
+                          </Link>
+                        )}
+                        <Link
+                          className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
+                          href={"/projects/" + project.url}
+                          target="_blank"
+                        >
+                          Voir plus
+                          <MoveRight className="size-5" />
+                        </Link>
+                      </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
             </div>
           </div>

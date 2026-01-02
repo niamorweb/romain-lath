@@ -165,7 +165,7 @@ export default function ProjectCayo() {
       icon: "/images/icons/react.svg",
     },
     {
-      label: "JavaScript",
+      label: "TypeScript",
       icon: "/images/icons/javascript.svg",
     },
     {
@@ -175,6 +175,10 @@ export default function ProjectCayo() {
     {
       label: "TailwindCSS",
       icon: "/images/icons/tailwindcss.svg",
+    },
+    {
+      label: "Supabase",
+      icon: "/images/icons/supabase.svg",
     },
   ];
 

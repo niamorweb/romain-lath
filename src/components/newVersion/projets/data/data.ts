@@ -53,6 +53,18 @@ const icons = [
     icon: "/images/icons/javascript.svg",
   },
   {
+    label: "TypeScript",
+    icon: "/images/icons/typescript.svg",
+  },
+  {
+    label: "Node.js",
+    icon: "/images/icons/nodejs.svg",
+  },
+  {
+    label: "Django",
+    icon: "/images/icons/django.svg",
+  },
+  {
     label: "Webflow",
     icon: "/images/icons/webflow.svg",
   },
@@ -64,6 +76,10 @@ const icons = [
     label: "Framer",
     icon: "/images/icons/framer.svg",
   },
+  {
+    label: "Supabase",
+    icon: "/images/icons/supabase.svg",
+  },
 ];
 
 const designLabels = ["Figma", "Photoshop"];
@@ -74,8 +90,11 @@ const codeLabels = [
   "Vue.js",
   "Nuxt",
   "JavaScript",
+  "TypeScript",
+  "Django",
+  "Node.js",
 ];
-const cmsLabels = ["Webflow", "Framer"];
+const cmsLabels = ["Webflow", "Framer", "Supabase"];
 
 export const skillsNewVersion = [
   {
@@ -114,21 +133,27 @@ export const projectsNewVersion = [
     link: "https://labs.intheair.co/login",
     img: "/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif",
     skills: icons.filter((icon) =>
-      ["Figma", "React", "JavaScript"].includes(icon.label)
+      ["Figma", "React", "JavaScript", "Django"].includes(icon.label)
     ),
   },
   {
     id: 0,
     url: "cayo",
     title: "Cayo",
+    repoUrl: "https://github.com/niamorweb/cayo",
     description:
       "Cayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux familles, équipes de partager leurs identifiants en toute sécurité.",
     link: "https://cayo-zeta.vercel.app",
     img: "/images/newversion/CAYO/hp.avif",
     skills: icons.filter((icon) =>
-      ["Figma", "TailwindCSS", "React", "Next.js", "JavaScript"].includes(
-        icon.label
-      )
+      [
+        "Figma",
+        "TailwindCSS",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+      ].includes(icon.label)
     ),
   },
   {
@@ -145,12 +170,15 @@ export const projectsNewVersion = [
     id: 5,
     url: "moncarnetderecettes",
     title: "Mon Carnet de Recettes",
+    repoUrl: "https://github.com/niamorweb/moncarnetderecettes",
     description:
       "Plateforme de création et d'organisation de recettes avec un système automatisé de génération de livres de cuisine (PDF haute définition) prêts pour l'impression.",
     link: "https://moncarnetderecettes.vercel.app/",
     img: "/images/newversion/MON_CARNET_DE_RECETTES/hp.webp",
     skills: icons.filter((icon) =>
-      ["Figma", "TailwindCSS", "JavaScript", "React"].includes(icon.label)
+      ["Figma", "TailwindCSS", "TypeScript", "React", "Supabase"].includes(
+        icon.label
+      )
     ),
   },
   // {

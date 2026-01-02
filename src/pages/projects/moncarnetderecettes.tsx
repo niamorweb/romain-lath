@@ -17,12 +17,16 @@ export default function ProjectMonCarnetDeRecettes() {
       icon: "/images/icons/react.svg",
     },
     {
-      label: "JavaScript",
-      icon: "/images/icons/javascript.svg",
+      label: "TypeScript",
+      icon: "/images/icons/typscript.svg",
     },
     {
       label: "TailwindCSS",
       icon: "/images/icons/tailwindcss.svg",
+    },
+    {
+      label: "Supabase",
+      icon: "/images/icons/supabase.svg",
     },
   ];
 

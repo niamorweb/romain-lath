@@ -19,6 +19,10 @@ export default function ProjectPlateformeSaas() {
       label: "JavaScript",
       icon: "/images/icons/javascript.svg",
     },
+    {
+      label: "Django",
+      icon: "/images/icons/django.svg",
+    },
   ];
 
   const PREVIOUS_DATA = [
@@ -58,6 +62,14 @@ export default function ProjectPlateformeSaas() {
   ];
 
   const RESULTS_DATA = [
+    {
+      textBtn: "Frontend en React",
+      image: "/images/newversion/INTHEAIRLABS/code-frontend1.webp",
+    },
+    {
+      textBtn: "Backend en Django",
+      image: "/images/newversion/INTHEAIRLABS/code-backend.webp",
+    },
     {
       textBtn: "Dashboard Projets",
       image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.avif",
@@ -191,37 +203,35 @@ export default function ProjectPlateformeSaas() {
       <Separator />
       <ProjectSection
         subtitle="3"
-        title="Une application plus fluide, plus moderne"
+        title="Performance technique et expérience fluide"
         description={
           <div className="flex flex-col gap-4">
             <p>
-              La refonte a transformé l'outil de travail quotidien des équipes
-              et des clients en une{" "}
-              <strong>interface intuitive, rapide et esthétique</strong>.
+              La réussite de cette refonte repose sur une{" "}
+              <strong>maîtrise complète du flux de données</strong>, de la base
+              de données jusqu'à l'interaction utilisateur :
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-              <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-100">
-                <span className="block font-bold text-neutral-800">
-                  Efficacité Admin
-                </span>
-                <p className="text-sm">
-                  Réduction drastique du temps de gestion des livrables grâce au
-                  nouvel outil d'upload.
-                </p>
-              </div>
-              <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-100">
-                <span className="block font-bold text-neutral-800">
-                  UX Client
-                </span>
-                <p className="text-sm">
-                  Visualisation fluide des données 3D et navigation simplifiée
-                  dans l'historique de projet.
-                </p>
-              </div>
+
+            <div className="gap-4 my-2">
+              <ul className="list-disc ml-5 space-y-2">
+                <li>
+                  <strong>Côté Code : </strong>Développement React optimisé pour
+                  la manipulation de données géospatiales lourdes et intégration{" "}
+                  <strong>Docker</strong> pour une parité parfaite avec
+                  l'environnement de production.
+                </li>
+                <li>
+                  <strong>Côté Backend : </strong>
+                  Collaboration active sur l'architecture{" "}
+                  <strong>Django</strong> : ajustement des routes et des modèles
+                  de données pour garantir des réponses API performantes et
+                  adaptées au Front.
+                </li>
+              </ul>
             </div>
           </div>
         }
-        imgArray={RESULTS_DATA}
+        imgArray={RESULTS_DATA} // Ici tu gardes tes visuels finaux qui prouvent que le travail technique a payé
       />
     </ProjectLayoutGlobal>
   );
