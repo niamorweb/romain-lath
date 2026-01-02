@@ -1,4 +1,4 @@
-import { ExternalLink, MoveLeft } from "lucide-react";
+import { ExternalLink, Github, Globe, MoveLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,6 +9,7 @@ interface projectHeaderType {
   title: string;
   skills: any[];
   websiteUrl?: string;
+  repoUrl?: string;
 }
 
 export default function ProjectHeader({
@@ -17,23 +18,38 @@ export default function ProjectHeader({
   title,
   skills,
   websiteUrl,
+  repoUrl,
 }: projectHeaderType) {
   return (
     <div className="flex flex-col w-full gap-4 max-w-[700px] mx-auto">
-      <div className="flex items-center gap-4 justify-between mb-6 group">
-        <Link href="/" className="text-neutral-700 flex items-center gap-3">
+      <div className="flex items-center gap-4 justify-between mb-6">
+        <Link
+          href="/"
+          className="group text-neutral-700 flex items-center gap-3"
+        >
           <MoveLeft className="group-hover:-translate-x-1 duration-150" />
           Retour
         </Link>
-        {websiteUrl && (
-          <Link
-            href={websiteUrl}
-            target="_blank"
-            className="bg-neutral-800 hover:bg-neutral-900 duration-150 text-neutral-100 w-fit px-4 py-2 rounded-md flex items-center gap-3"
-          >
-            Voir le site <ExternalLink className="size-4" />
-          </Link>
-        )}
+        <div className="flex items-center gap-2">
+          {repoUrl && (
+            <Link
+              href={repoUrl}
+              target="_blank"
+              className="bg-neutral-100 flex items-center gap-2 px-4 py-2 hover:bg-neutral-50 duration-150 border border-neutral-200 text-neutral-800 rounded-lg"
+            >
+              Code source <Github className="size-4" />
+            </Link>
+          )}
+          {websiteUrl && (
+            <Link
+              href={websiteUrl}
+              target="_blank"
+              className="bg-neutral-800 hover:bg-neutral-900 duration-150 text-neutral-100 w-fit px-4 py-2 rounded-lg flex items-center gap-3"
+            >
+              Voir le site <Globe className="size-4" />
+            </Link>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center gap-3 flex-wrap">

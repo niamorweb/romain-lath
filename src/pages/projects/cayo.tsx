@@ -264,9 +264,10 @@ export default function ProjectCayo() {
     <ProjectLayoutGlobal>
       <ProjectHeader
         badgeStatus="Projet Personnel"
-        badgeRoles={["UX/UI Designer", "Développeur Frontend"]}
+        badgeRoles={["UX/UI Designer", "Développeur Fullstack"]}
         title="Cayo - Un gestionnaire de mots de passe axé sur les groupes"
         websiteUrl="https://cayo-zeta.vercel.app"
+        repoUrl="https://github.com/niamorweb/cayo"
         skills={tools}
       />
       <Separator />

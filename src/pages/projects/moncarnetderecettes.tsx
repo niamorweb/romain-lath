@@ -70,6 +70,15 @@ export default function ProjectMonCarnetDeRecettes() {
 
   const RESULTS_DATA = [
     {
+      textBtn: "Drag and drop en code",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/code-dand.webp",
+    },
+    {
+      textBtn: "Protection de page par authentification",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/code-protected-page.webp",
+    },
+    {
       textBtn: "Profil public",
       image: "/images/newversion/MON_CARNET_DE_RECETTES/public-profile.webp",
     },
@@ -104,6 +113,7 @@ export default function ProjectMonCarnetDeRecettes() {
         badgeRoles={["UX/UI Designer", "Développeur Frontend"]}
         title="Mon carnet de recettes - Du numérique au papier"
         websiteUrl="https://moncarnetderecettes.vercel.app"
+        repoUrl="https://github.com/niamorweb/moncarnetderecettes"
         skills={tools}
       />
       <Separator />
