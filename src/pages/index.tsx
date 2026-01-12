@@ -212,7 +212,7 @@ export default function PortfolioModern() {
               </motion.p>
               <motion.a
                 href="/#projects"
-                className="bg-indigo-500/10 group text-indigo-300 border border-indigo-500/20 px-8 py-3.5 rounded-full font-medium hover:bg-indigo-500/20 hover:text-white transition-all w-fit mt-6 flex items-center gap-2 backdrop-blur-md text-sm cursor-pointer"
+                className="bg-indigo-500/10 group text-indigo-300 border border-indigo-500/20 px-8 py-3.5 rounded-full font-medium hover:bg-indigo-500/20 hover:text-white transition-all w-fit mt-12 flex items-center gap-2 backdrop-blur-md text-sm cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
