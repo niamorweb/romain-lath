@@ -1,185 +1,359 @@
-import ProjectLayout from "@/components/ProjectLayout";
+import React from "react";
+import ProjectLayout from "@/components/projects/ProjectLayout";
+import {
+  ProjectHero,
+  ProjectIntro,
+  ProjectSection,
+  ProjectFooter,
+} from "@/components/projects/ProjectComponents";
+import {
+  ShieldCheck,
+  RefreshCw,
+  Fingerprint,
+  Database,
+  Lock,
+  Code2,
+  Store,
+  Key,
+  TestTube2,
+  KeyRound,
+} from "lucide-react";
 
-export default function ProjectCayo() {
-  const CRYPTO_DATA = [
+interface ProjectImageData {
+  textBtn: string;
+  image: string;
+}
+
+interface CayoProjectProps {
+  project: {
+    img: string;
+    url: string;
+  };
+  onClose: () => void;
+  onNextProject: () => void;
+}
+
+const TOOLS = [
+  { label: "Next.js App Router", icon: "/images/icons/nextjs.svg" },
+  { label: "Supabase", icon: "/images/icons/supabase.svg" },
+  { label: "AES-256-GCM", icon: Key },
+  { label: "Zustand", icon: Store },
+  { label: "Typescript", icon: "/images/icons/typescript.svg" },
+];
+
+export default function ProjectDetailViewCayo({
+  project,
+  onClose,
+  onNextProject,
+}: CayoProjectProps) {
+  const THEME = "indigo";
+
+  const CRYPTO_DATA: ProjectImageData[] = [
     {
-      textBtn: "Structure Profils (Supabase)",
-      image: "/images/newversion/CAYO/supabase-profiles.avif",
+      textBtn: "Implémentation AES-256",
+      image: "/images/newversion/CAYO/code-encryption.webp",
     },
     {
-      textBtn: "Stockage Chiffré",
+      textBtn: "Dérivation de clé (Argon2/PBKDF2)",
+      image: "/images/newversion/CAYO/create-pw.avif",
+    },
+    {
+      textBtn: "Stockage Chiffré (Vault)",
       image: "/images/newversion/CAYO/supabase-passwords.avif",
     },
   ];
 
-  const UI_DATA = [
+  const BACKEND_DATA: ProjectImageData[] = [
     {
-      textBtn: "Tableau de bord",
-      image: "/images/newversion/CAYO/dashboard.avif",
+      textBtn: "Row Level Security (RLS)",
+      image: "/images/newversion/CAYO/code-route.webp",
     },
     {
-      textBtn: "Création d'identifiant",
-      image: "/images/newversion/CAYO/create-pw.avif",
+      textBtn: "Store Zustand & Optimistic UI",
+      image: "/images/newversion/CAYO/code-store.webp",
     },
     {
-      textBtn: "Gestion d'organisations",
-      image: "/images/newversion/CAYO/orgs.avif",
+      textBtn: "Modèle de Données Profils",
+      image: "/images/newversion/CAYO/supabase-profiles.avif",
     },
-    { textBtn: "Aperçu Landing", image: "/images/newversion/CAYO/hp.avif" },
   ];
 
-  const RESULTS_DATA = [
+  const GROUP_CRYPTO_DATA: ProjectImageData[] = [
     {
-      textBtn: "Store via Zudstand",
-      image: "/images/newversion/CAYO/code-store.avif",
+      textBtn: "Échange de clés RSA",
+      image: "/images/newversion/CAYO/crypto-process-group-creation.webp",
     },
     {
-      textBtn: "Chiffrement",
-      image: "/images/newversion/CAYO/code-encryption.avif",
+      textBtn: "Système d'invitation",
+      image: "/images/newversion/CAYO/crypto-process-group-invitation.webp",
     },
     {
-      textBtn:
-        "Exemple de route avec admin et le rôle du user pour voir les permissions",
-      image: "/images/newversion/CAYO/code-route.avif",
+      textBtn: "Modèle de données Access",
+      image: "/images/newversion/CAYO/sharing-key-code.avif",
+    },
+  ];
+
+  const JEST_DATA: ProjectImageData[] = [
+    {
+      textBtn: "Structure des tests",
+      image: "/images/newversion/CAYO/jest-files.avif",
     },
     {
-      textBtn: "Tableau de bord",
+      textBtn: "Tests Unitaires Crypto",
+      image: "/images/newversion/CAYO/jest-code.avif",
+    },
+    {
+      textBtn: "Résultat",
+      image: "/images/newversion/CAYO/jest-terminal.avif",
+    },
+  ];
+
+  const UX_DATA: ProjectImageData[] = [
+    {
+      textBtn: "Page Login",
+      image: "/images/newversion/CAYO/login.avif",
+    },
+    {
+      textBtn: "Onboarding Flow",
+      image: "/images/newversion/CAYO/onboarding.avif",
+    },
+    {
+      textBtn: "Dashboard Sécurisé",
       image: "/images/newversion/CAYO/dashboard.avif",
     },
     {
-      textBtn: "Création d'identifiant",
-      image: "/images/newversion/CAYO/create-pw.avif",
+      textBtn: "Identifiant",
+      image: "/images/newversion/CAYO/credential.avif",
     },
     {
-      textBtn: "Gestion d'organisations",
-      image: "/images/newversion/CAYO/orgs.avif",
+      textBtn: "Secure Share",
+      image: "/images/newversion/CAYO/secure-share.avif",
     },
-    { textBtn: "Aperçu Landing", image: "/images/newversion/CAYO/hp.avif" },
+    {
+      textBtn: "Import CSV",
+      image: "/images/newversion/CAYO/import.avif",
+    },
+    {
+      textBtn: "Organisation Gestion",
+      image: "/images/newversion/CAYO/org-settings.avif",
+    },
+    {
+      textBtn: "Nouvelle Organisation",
+      image: "/images/newversion/CAYO/new-org.avif",
+    },
+    {
+      textBtn: "Organisation Membres",
+      image: "/images/newversion/CAYO/members.avif",
+    },
   ];
+
+  const DEMO_VIDEO_URL =
+    "https://res.cloudinary.com/dfez6bupb/video/upload/v1768160482/202601111931_qhgtnc.mp4";
 
   return (
-    <ProjectLayout
-      badgeStatus="Projet Personnel"
-      badgeRoles="UX / UI / Fullstack"
-      competitiveAnalysisCcl="Face aux outils payants et surchargés, l'opportunité était de proposer un minimalisme collaboratif. Cayo rend la sécurité accessible en se concentrant sur le partage de groupe, gratuitement et sans fioritures."
-      competitiveAnalysis={[
-        {
-          competitor: "Google Password Manager / iCloud",
-          strength: "Gratuit et intégré nativement au système.",
-          weakness:
-            "Le partage de mots de passe en groupe (famille ou petite équipe) est limité, complexe ou peu sécurisé.",
-        },
-        {
-          competitor: "1Password / Dashlane",
-          strength: "Fonctionnalités de partage très avancées.",
-          weakness:
-            "Modèle économique par abonnement coûteux. Les fonctions de groupe sont souvent bloquées derrière un paywall élevé.",
-        },
-        {
-          competitor: "Bitwarden",
-          strength: "Possibilité de partage gratuit (Open Source).",
-          weakness:
-            "L'ergonomie des 'Organisations' et des 'Collections' est complexe pour un utilisateur qui veut juste partager un code Netflix ou une clé API en 2 clics.",
-        },
-      ]}
-      personas={[
-        {
-          name: "Thomas",
-          role: "Le Colocataire Organisé",
-          goal: "Partager les codes Wi-Fi et les comptes de factures (EDF, Netflix) avec ses 3 colocataires.",
-          painPoint:
-            "Utilise WhatsApp pour copier-coller des mots de passe en clair. Refuse de payer un abonnement 'Famille' pour un usage domestique.",
-        },
-        {
-          name: "Sarah",
-          role: "La Freelance Multi-Projets",
-          goal: "Donner un accès temporaire à des outils (CMS, réseaux sociaux) à des partenaires externes.",
-          painPoint:
-            "Les outils pros sont trop complexes pour des collaborateurs ponctuels. Veut une solution où le partage de groupe se fait en 2 clics.",
-        },
-        {
-          name: "Marc",
-          role: "Le Référent Numérique Familial",
-          goal: "Sécuriser les comptes de ses parents âgés et pouvoir intervenir en cas d'oubli.",
-          painPoint:
-            "Ses parents sont perdus face aux interfaces denses type Bitwarden. Il a besoin d'une UX ultra-dépouillée pour éviter les erreurs.",
-        },
-      ]}
-      title="Cayo — Gestionnaire de mots de passe"
-      problematic={{
-        title:
-          "Comment offrir un partage de mots de passe en groupe ultra-sécurisé tout en restant simple et gratuit ?",
-        mainImage: "/images/newversion/CAYO/hp.avif",
-        description: (
-          <div className="flex flex-col gap-4">
-            <p>
-              La plupart des outils de gestion de mots de passe grand public
-              manquent d'accessibilité pour les personnes non-techs, et peu de
-              services proposent des plans gratuit pour coffres en groupe, et
-              les outils pro qui les proposent sont souvent trop complexes et
-              cher pour des personnes qui n'accordent pas une grande importance
-              à la sécurité.
-            </p>
-            <p>
-              L'enjeu de <strong>Cayo</strong> est de construire une application
-              "Zero-Knowledge" : un système où même les serveurs n'ont jamais
-              accès aux données en clair, tout en permettant un partage fluide
-              des accès en groupe via une interface web intuitive.
-            </p>
-          </div>
-        ),
-      }}
-      realization={{
-        title: "Architecture de Chiffrement Hybride & UX Minimaliste",
-        description: (
-          <div className="flex flex-col gap-4">
-            <p>
-              Le cœur du projet repose sur une{" "}
-              <strong>architecture hybride AES/RSA</strong>. J'ai implémenté un
-              système où chaque utilisateur possède son propre couple de clés
-              asymétriques, permettant de partager des clés de coffre-fort (AES)
-              de manière sécurisée sans jamais transmettre le mot de passe
-              maître.
-            </p>
+    <ProjectLayout onClose={onClose} accentColor={THEME}>
+      {(onMediaClick) => (
+        <>
+          <ProjectHero
+            title="Cayo Security"
+            subtitle="Zero-Knowledge Password Protocol."
+            image={project.img}
+            layoutId={`image-container-${project.url}`}
+            liveUrl="https://cayo-zeta.vercel.app"
+            repoUrl="https://github.com/niamorweb/cayo"
+            onDemoClick={() =>
+              onMediaClick({
+                image: DEMO_VIDEO_URL,
+                textBtn: "Démonstration Complète",
+                isVideo: true,
+              })
+            }
+            tags={[
+              {
+                label: "End-to-End Encryption",
+                icon: ShieldCheck,
+                color: "text-indigo-400",
+              },
+              {
+                label: "Real-time Mesh",
+                icon: RefreshCw,
+                color: "text-blue-400",
+              },
+              {
+                label: "Web Crypto API",
+                icon: Code2,
+                color: "text-neutral-300",
+              },
+            ]}
+          />
 
-            <p>
-              Côté <strong>Frontend</strong>, le défi était de masquer cette
-              complexité technique derrière une interface sobre. J'ai utilisé{" "}
-              <strong>Supabase</strong> pour la gestion de la base de données et
-              l'authentification, en veillant à ce que chaque transaction de
-              donnée soit chiffrée côté client avant l'envoi.
-            </p>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-neutral-200">
+            {/* INTRO : Le Challenge Technique */}
+            <ProjectIntro
+              context={{
+                headline: (
+                  <span>
+                    Conception d'une architecture{" "}
+                    <span className="text-indigo-400 font-medium">
+                      Zero-Knowledge
+                    </span>{" "}
+                    : garantir que le serveur ne possède jamais la clé de
+                    déchiffrement.
+                  </span>
+                ),
+                content: (
+                  <div className="space-y-4">
+                    <p>
+                      Cayo répond à une faille de sécurité critique : le partage
+                      de secrets par canaux non sécurisés (SMS, Excel) au sein
+                      des familles et des TPE. L'objectif était de lever les
+                      barrières à l'adoption, le coût et la complexité, en
+                      proposant un{" "}
+                      <strong>
+                        espace collaboratif gratuit où la sécurité est garantie
+                        par les mathématiques
+                      </strong>
+                      , et non par le serveur.
+                    </p>
+                    <p>
+                      Pour garantir une confidentialité absolue, j'ai implémenté
+                      une architecture <strong>Zero-Knowledge</strong> : toutes
+                      les données sont chiffrées sur l'appareil de l'utilisateur
+                      avant d'atteindre Supabase. Le défi technique a consisté à
+                      orchestrer un{" "}
+                      <strong>
+                        chiffrement hybride (AES-256 pour les données, RSA pour
+                        le partage)
+                      </strong>{" "}
+                      afin de permettre l'accès aux membres d'un groupe sans
+                      jamais exposer les clés en clair.
+                    </p>
+                    <p>
+                      Le résultat est une solution où la confiance est
+                      décentralisée, permettant à des équipes ou des familles de
+                      collaborer sereinement sans changer leurs habitudes de
+                      stockage, tout en bénéficiant d'une protection de niveau
+                      bancaire.
+                    </p>
+                    <div className="flex gap-4 text-sm text-neutral-400 border-l-2 border-indigo-500/30 pl-4 mt-2 font-mono">
+                      <span>AES-256-GCM</span>
+                      <span>•</span>
+                      <span>PostgreSQL RLS</span>
+                      <span>•</span>
+                      <span>Zustand</span>
+                    </div>
+                  </div>
+                ),
+              }}
+              stack={TOOLS}
+            />
+
+            <div className="flex flex-col gap-32">
+              <ProjectSection
+                title="Cryptographie & Architecture"
+                description={
+                  <span>
+                    Au cœur du système : l'implémentation de{" "}
+                    <strong>AES-256-GCM</strong>. Le mot de passe maître de
+                    l'utilisateur permet de dériver une clé de chiffrement via
+                    PBKDF2. Cette clé sert à chiffrer le "Vault" personnel
+                    localement, garantissant qu'aucune donnée en clair ne quitte
+                    jamais l'appareil.
+                  </span>
+                }
+                icon={<ShieldCheck size={24} className="text-indigo-400" />}
+                images={CRYPTO_DATA}
+                onImageClick={onMediaClick}
+                accentColor="indigo"
+              />
+
+              <ProjectSection
+                title="Protocole de Partage Asymétrique"
+                description={
+                  <span>
+                    Pour permettre le partage familial sans compromettre les
+                    clés privées, Cayo utilise le chiffrement{" "}
+                    <strong>RSA (Asymétrique)</strong>. Chaque utilisateur
+                    possède une paire de clés. Lorsqu'un secret est partagé, sa
+                    clé AES est "enveloppée" (wrapped) avec la{" "}
+                    <strong>clé publique</strong> du destinataire. Seule la{" "}
+                    <strong>clé privée</strong> du membre de la famille peut
+                    alors déverrouiller l'accès.
+                  </span>
+                }
+                icon={<KeyRound size={24} className="text-blue-400" />}
+                images={GROUP_CRYPTO_DATA}
+                reversed={true}
+                onImageClick={onMediaClick}
+                accentColor="blue"
+              />
+              <ProjectSection
+                title="Infra Temps Réel & Sécurité BDD"
+                description={
+                  <span>
+                    Utilisation de <strong>Supabase</strong> pour le backend. La
+                    sécurité est déléguée au niveau le plus bas : la base de
+                    données. Des politiques{" "}
+                    <strong>RLS (Row Level Security)</strong> strictes empêchent
+                    toute lecture non autorisée, même en cas de faille API. Côté
+                    client, <strong>Zustand</strong> gère l'état global et la
+                    réhydratation du coffre-fort.
+                  </span>
+                }
+                icon={<Database size={24} className="text-blue-400" />}
+                images={BACKEND_DATA}
+                reversed
+                onImageClick={onMediaClick}
+                accentColor="blue"
+              />
+              <ProjectSection
+                title="Fiabilité & Tests Unitaires"
+                description={
+                  <span>
+                    Dans une application où une erreur d'un bit peut corrompre
+                    définitivement les données utilisateur, les tests ne sont
+                    pas une option. Mise en place d'une suite de tests{" "}
+                    <strong>Jest</strong> rigoureuse pour valider les fonctions
+                    critiques de chiffrement/déchiffrement et garantir la
+                    non-régression à chaque déploiement.
+                  </span>
+                }
+                icon={<TestTube2 size={24} className="text-emerald-400" />}
+                images={JEST_DATA}
+                reversed={true}
+                onImageClick={onMediaClick}
+                accentColor="emerald"
+              />
+
+              <ProjectSection
+                title="Interfaces & Expérience"
+                description={
+                  <span>
+                    Allier sécurité critique et fluidité collaborative.
+                    Développée avec Next.js et Tailwind CSS, l'interface permet
+                    une gestion intuitive des coffres-forts partagés.
+                    L'architecture hybride (Client/Serveur) assure une
+                    réactivité optimale tout en garantissant une validation des
+                    accès ultrasécurisée directement sur le serveur avant chaque
+                    rendu.
+                  </span>
+                }
+                icon={<Fingerprint size={24} className="text-purple-400" />}
+                images={UX_DATA}
+                onImageClick={onMediaClick}
+                accentColor="purple"
+              />
+            </div>
+
+            <ProjectFooter
+              onNextProject={onNextProject}
+              onClose={onClose}
+              nextTitle="Suivant : Un SaaS B2B"
+              accentColor={THEME}
+            />
           </div>
-        ),
-        uxAssets: CRYPTO_DATA,
-        uiAssets: UI_DATA,
-        resultsAssets: RESULTS_DATA,
-      }}
-      results={{
-        title: "Sécurité & Accessibilité",
-        items: [
-          {
-            title: "Architecture Zero-Knowledge",
-            description:
-              "Confidentialité totale : les données sont inaccessibles aux serveurs de l'application.",
-          },
-          {
-            title: "Partage Sécurisé",
-            description:
-              "Implémentation réussie du chiffrement asymétrique pour la gestion de groupes collaboratifs.",
-          },
-          {
-            title: "Interface Fonctionnelle",
-            description:
-              "Un dashboard épuré qui permet une gestion rapide des identifiants au quotidien.",
-          },
-          {
-            title: "Stack Moderne",
-            description:
-              "Utilisation de Supabase pour une synchronisation en temps réel et une sécurité robuste.",
-          },
-        ],
-      }}
-    />
+        </>
+      )}
+    </ProjectLayout>
   );
 }

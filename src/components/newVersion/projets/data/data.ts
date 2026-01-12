@@ -1,24 +1,3 @@
-import { IconType } from "react-icons";
-import {
-  SiTypescript,
-  SiJavascript,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPython,
-  SiHtml5,
-  SiCss3,
-  SiSupabase,
-  SiFirebase,
-  SiGit,
-  SiTailwindcss,
-  SiFigma,
-  SiDjango,
-  SiVuedotjs,
-  SiStripe,
-  SiNuxtdotjs,
-} from "react-icons/si";
-
 const icons = [
   {
     label: "Figma",
@@ -57,6 +36,38 @@ const icons = [
     icon: "/images/icons/typescript.svg",
   },
   {
+    label: "Express",
+    icon: "/images/icons/expressjs.svg",
+  },
+  {
+    label: "Nest.js",
+    icon: "/images/icons/nestjs.svg",
+  },
+  {
+    label: "Postgresql",
+    icon: "/images/icons/postgresql.svg",
+  },
+  {
+    label: "Prisma",
+    icon: "/images/icons/prisma.svg",
+  },
+  {
+    label: "Git",
+    icon: "/images/icons/git.svg",
+  },
+  {
+    label: "Postman",
+    icon: "/images/icons/postman.svg",
+  },
+  {
+    label: "Docker",
+    icon: "/images/icons/docker.svg",
+  },
+  {
+    label: "Jest",
+    icon: "/images/icons/jest.svg",
+  },
+  {
     label: "Node.js",
     icon: "/images/icons/nodejs.svg",
   },
@@ -68,10 +79,6 @@ const icons = [
     label: "Webflow",
     icon: "/images/icons/webflow.svg",
   },
-  // {
-  //   label: "Wordpress",
-  //   icon: "/images/icons/wordpress.svg",
-  // },
   {
     label: "Framer",
     icon: "/images/icons/framer.svg",
@@ -82,8 +89,8 @@ const icons = [
   },
 ];
 
-const designLabels = ["Figma", "Photoshop"];
-const codeLabels = [
+const frontendLabels = [
+  "Figma",
   "TailwindCSS",
   "React",
   "Next.js",
@@ -91,37 +98,70 @@ const codeLabels = [
   "Nuxt",
   "JavaScript",
   "TypeScript",
-  "Django",
-  "Node.js",
 ];
-const cmsLabels = ["Webflow", "Framer", "Supabase"];
+
+const backendLabels = ["Node.js", "Express", "Nest.js", "Jest"];
+
+const dbAndOtherLabels = ["Prisma", "Postgresql", "Git", "Docker", "Postman"];
 
 export const skillsNewVersion = [
   {
-    category: "Design",
-    elems: icons.filter((item) => designLabels.includes(item.label)),
+    category: "Frontend",
+    elems: icons.filter((item) => frontendLabels.includes(item.label)),
   },
   {
-    category: "Code",
-    elems: icons.filter((item) => codeLabels.includes(item.label)),
+    category: "Backend",
+    elems: icons.filter((item) => backendLabels.includes(item.label)),
   },
   {
-    category: "CMS",
-    elems: icons.filter((item) => cmsLabels.includes(item.label)),
+    category: "BDD et autre",
+    elems: icons.filter((item) => dbAndOtherLabels.includes(item.label)),
   },
 ];
 
 export const projectsNewVersion = [
   {
-    id: 2,
-    url: "intheair",
-    title: "Site vitrine",
+    id: 5,
+    url: "moncarnetderecettes",
+    title: "Mon Carnet de Recettes",
+    repoUrl: "https://github.com/niamorweb/moncarnetderecettes",
     description:
-      "Le site vitrine de l’entreprise Intheair. Refonte complète du site en allant du design, à l’architecture des pages avec une toute nouvelle navigation. Intégrations avec des applications externes comme Hubspot (pour le côté marketing), Zapier.",
-    link: "https://intheair.co/",
-    img: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
+      "Plateforme de création et d'organisation de recettes avec un système automatisé de génération de livres de cuisine (PDF haute définition) prêts pour l'impression.",
+    link: "https://moncarnetderecettes.vercel.app/",
+    img: "/images/newversion/MON_CARNET_DE_RECETTES/hp-heroo.avif",
     skills: icons.filter((icon) =>
-      ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label)
+      [
+        "Figma",
+        "TailwindCSS",
+        "TypeScript",
+        "Nuxt",
+        "Vue.js",
+        "Nest.js",
+        "Postgresql",
+        "Prisma",
+        "Docker",
+      ].includes(icon.label)
+    ),
+  },
+  {
+    id: 0,
+    url: "cayo",
+    title: "Cayo",
+    repoUrl: "https://github.com/niamorweb/cayo",
+    description:
+      "Cayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux familles, équipes de partager leurs identifiants en toute sécurité.",
+    link: "https://cayo-zeta.vercel.app",
+    img: "/images/newversion/CAYO/hp-hero.avif",
+    skills: icons.filter((icon) =>
+      [
+        "Figma",
+        "TailwindCSS",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Jest",
+      ].includes(icon.label)
     ),
   },
   {
@@ -137,50 +177,27 @@ export const projectsNewVersion = [
     ),
   },
   {
-    id: 0,
-    url: "cayo",
-    title: "Cayo",
-    repoUrl: "https://github.com/niamorweb/cayo",
+    id: 2,
+    url: "intheair",
+    title: "Intheair - Site vitrine",
     description:
-      "Cayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux familles, équipes de partager leurs identifiants en toute sécurité.",
-    link: "https://cayo-zeta.vercel.app",
-    img: "/images/newversion/CAYO/hp.avif",
+      "Le site vitrine de l’entreprise Intheair. Refonte complète du site en allant du design, à l’architecture des pages avec une toute nouvelle navigation. Intégrations avec des applications externes comme Hubspot (pour le côté marketing), Zapier.",
+    link: "https://intheair.co/",
+    img: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
     skills: icons.filter((icon) =>
-      [
-        "Figma",
-        "TailwindCSS",
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Supabase",
-      ].includes(icon.label)
+      ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label)
     ),
   },
-  {
-    id: 4,
-    url: "lesbambinets",
-    title: "Les Bambinets",
-    description:
-      "Projet complètement axé UX et conception UI, application mobile d'apprentissage de la langue des signes pour bébé avec glossaire vidéo et favoris pour améliorer la communication précoce.",
-    link: null,
-    img: "/images/newversion/LES_BAMBINETS/illustration.avif",
-    skills: icons.filter((icon) => ["Figma"].includes(icon.label)),
-  },
-  {
-    id: 5,
-    url: "moncarnetderecettes",
-    title: "Mon Carnet de Recettes",
-    repoUrl: "https://github.com/niamorweb/moncarnetderecettes",
-    description:
-      "Plateforme de création et d'organisation de recettes avec un système automatisé de génération de livres de cuisine (PDF haute définition) prêts pour l'impression.",
-    link: "https://moncarnetderecettes.vercel.app/",
-    img: "/images/newversion/MON_CARNET_DE_RECETTES/hp.webp",
-    skills: icons.filter((icon) =>
-      ["Figma", "TailwindCSS", "TypeScript", "React", "Supabase"].includes(
-        icon.label
-      )
-    ),
-  },
+  // {
+  //   id: 4,
+  //   url: "lesbambinets",
+  //   title: "Les Bambinets",
+  //   description:
+  //     "Projet complètement axé UX et conception UI, application mobile d'apprentissage de la langue des signes pour bébé avec glossaire vidéo et favoris pour améliorer la communication précoce.",
+  //   link: null,
+  //   img: "/images/newversion/LES_BAMBINETS/illustration.avif",
+  //   skills: icons.filter((icon) => ["Figma"].includes(icon.label)),
+  // },
   // {
   //   id: 3,
   //   title: "Oneclean",

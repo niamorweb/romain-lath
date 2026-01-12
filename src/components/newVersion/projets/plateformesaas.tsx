@@ -1,324 +1,213 @@
-// import Image from "next/image";
-// import React, { useState } from "react";
+import React from "react";
+import ProjectViewLayout from "@/components/projects/ProjectLayout";
+import {
+  ProjectHero,
+  ProjectIntro,
+  ProjectSection,
+  ProjectFooter,
+} from "@/components/projects/ProjectComponents";
+import {
+  Database,
+  LayoutDashboard,
+  GitMerge,
+  Braces,
+  Layers,
+  Terminal,
+  Box,
+} from "lucide-react";
 
-import ProjectLayout from "@/components/ProjectLayout";
+const TOOLS = [
+  { label: "React", icon: "/images/icons/react.svg" },
+  { label: "Django (Python)", icon: "/images/icons/django.svg" },
+  { label: "PostgreSQL", icon: "/images/icons/postgresql.svg" },
+  { label: "Figma to Code", icon: "/images/icons/figma.svg" },
+];
 
-// export default function ProjectPlateformeSaas() {
-//   const previous = [
-//     {
-//       textBtn: "Admin tableau",
-//       image:
-//         "/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.avif",
-//     },
-//     {
-//       textBtn: "Admin form",
-//       image:
-//         "/images/newversion/INTHEAIRLABS/previous-admin-create-project.avif",
-//     },
-//     {
-//       textBtn: "Projets",
-//       image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-1.avif",
-//     },
-//     {
-//       textBtn: "Compte",
-//       image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-2.avif",
-//     },
-//     {
-//       textBtn: "Model 3D",
-//       image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-3.avif",
-//     },
-//   ];
+const ARCHITECTURE_DATA = [
+  {
+    textBtn: "Architecture Monolithique",
+    image: "/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.avif",
+  },
+  {
+    textBtn: "Dette Technique UI",
+    image: "/images/newversion/INTHEAIRLABS/previous-admin-create-project.avif",
+  },
+  {
+    textBtn: "Modélisation des Données",
+    image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-3.avif",
+  },
+];
 
-//   const [previousSelected, setPreviousSelected] = useState(0);
+const COMPONENT_DATA = [
+  {
+    textBtn: "Atomic Design System",
+    image: "/images/newversion/INTHEAIRLABS/figma-designs.webp",
+  },
+  {
+    textBtn: "React Component Library",
+    image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.avif",
+  },
+];
 
-//   const after = [
-//     {
-//       textBtn: "Conception UI Figma",
-//       image: "/images/newversion/INTHEAIRLABS/figma-designs.webp",
-//     },
-//     {
-//       textBtn: "Présentation nouveau design",
-//       image: "/images/newversion/INTHEAIRLABS/figma-validation.webp",
-//     },
-//     {
-//       textBtn: "Admin tableau",
-//       image: "/images/newversion/INTHEAIRLABS/companies-table.avif",
-//     },
-//     {
-//       textBtn: "Admin form",
-//       image: "/images/newversion/INTHEAIRLABS/client-form.avif",
-//     },
-//     {
-//       textBtn: "Projets",
-//       image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.avif",
-//     },
-//     {
-//       textBtn: "Compte",
-//       image: "/images/newversion/INTHEAIRLABS/account.avif",
-//     },
-//     {
-//       textBtn: "Model 3D",
-//       image: "/images/newversion/INTHEAIRLABS/3dmodel.avif",
-//     },
-//   ];
+const INTEGRATION_DATA = [
+  {
+    textBtn: "CRUD Admin Panel",
+    image: "/images/newversion/INTHEAIRLABS/companies-table.avif",
+  },
+  {
+    textBtn: "Forms & Validation",
+    image: "/images/newversion/INTHEAIRLABS/client-form.avif",
+  },
+  {
+    textBtn: "Intégration Viewer 3D",
+    image: "/images/newversion/INTHEAIRLABS/3dmodel.avif",
+  },
+];
 
-//   const [afterSelected, setAfterSelected] = useState(0);
-
-//   return (
-//     <div className="bg-neutral-50 mt-4 flex flex-col gap-16 px-4 py-8 rounded-2xl border border-neutral-200">
-//       <div className="flex flex-col gap-6">
-//         <div className="flex flex-col gap-1 project-text-container">
-//           <div className="flex items-center gap-3 mb-2">
-//             <span className="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded uppercase">
-//               Projet professionel
-//             </span>
-//             <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">
-//               UX / UI / Frontend
-//             </span>
-//           </div>
-//           <h2 className="text-3xl mb-1 font-medium">IntheairLabs</h2>
-//           <p>
-//             IntheairLabs est une plateforme web collaborative dédiée à la
-//             gestion de projets et au partage de livrables. Actuellement orientée
-//             B2B, elle permet aux clients de suivre l'avancement de leurs
-//             projets, télécharger leurs fichiers et visualiser leurs contenus
-//             directement depuis l'interface. <br />
-//             <br />
-//             La plateforme propose deux environnements distincts : un espace
-//             administrateur pour la gestion des projets et un espace client pour
-//             le suivi et l'accès aux ressources. <br />
-//           </p>
-//         </div>
-//         <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
-//           <Image
-//             src="/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif"
-//             width={760}
-//             height={760}
-//             alt=""
-//             className="rounded-lg"
-//           />
-//         </div>
-//       </div>
-//       <div className="flex flex-col gap-2">
-//         <div className="flex flex-col gap-1 project-text-container">
-//           <h2 className="text-3xl mb-1 font-medium">
-//             Ancienne version de la plateforme
-//           </h2>
-//           <p>
-//             Cette première version proposait deux espaces distincts : un tableau
-//             de bord administrateur pour gérer tous les projets, clients et
-//             entreprises, et un espace client permettant de visualiser les
-//             projets, accéder aux livrables, consulter les modélisations 3D et
-//             gérer son compte personnel.
-//           </p>
-//           <div className="flex flex-wrap items-center gap-2 mt-6">
-//             {previous &&
-//               previous.map((item: any, i: any) => (
-//                 <div
-//                   key={i}
-//                   onClick={() => setPreviousSelected(i)}
-//                   className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
-//                     previousSelected === i
-//                       ? "bg-blue-600 text-neutral-50 hover:brightness-105"
-//                       : "bg-neutral-100 hover:brightness-95"
-//                   }`}
-//                 >
-//                   <span>{item.textBtn}</span>
-//                 </div>
-//               ))}
-//           </div>
-//         </div>
-//         <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
-//           <Image
-//             src={previous[previousSelected].image}
-//             width={760}
-//             height={760}
-//             alt=""
-//             className="rounded-lg"
-//           />
-//         </div>
-//       </div>
-//       <div className="flex flex-col gap-2">
-//         <div className="flex flex-col gap-1 project-text-container">
-//           <h2 className="text-3xl mb-1 font-medium">
-//             Nouvelle version de la plateforme
-//           </h2>
-//           <p>
-//             Cette version conserve l'ensemble des fonctionnalités existantes
-//             tout en bénéficiant d'une refonte graphique complète. Le design a
-//             été entièrement repensé avec une nouvelle charte graphique moderne,
-//             offrant une expérience utilisateur améliorée.
-//           </p>
-//           <div className="flex flex-wrap items-center gap-2 mt-6">
-//             {after &&
-//               after.map((item: any, i: any) => (
-//                 <div
-//                   key={i}
-//                   onClick={() => setAfterSelected(i)}
-//                   className={`flex items-center duration-150 cursor-pointer gap-2 text-sm border border-neutral-200 p-2 rounded-3xl ${
-//                     afterSelected === i
-//                       ? "bg-blue-600 text-neutral-50 hover:brightness-105"
-//                       : "bg-neutral-100 hover:brightness-95"
-//                   }`}
-//                 >
-//                   <span>{item.textBtn}</span>
-//                 </div>
-//               ))}
-//           </div>
-//         </div>
-//         <div className="mt-2 md:mt-0 md:p-4 rounded-xl bg-neutral-100">
-//           <Image
-//             src={after[afterSelected].image}
-//             width={760}
-//             height={760}
-//             alt=""
-//             className="rounded-lg"
-//           />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-export default function ProjectPlateformeSaas() {
-  const PREVIOUS_DATA = [
-    {
-      textBtn: "Dashboard Admin (Ancien)",
-      image:
-        "/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.avif",
-    },
-    {
-      textBtn: "Formulaire (Ancien)",
-      image:
-        "/images/newversion/INTHEAIRLABS/previous-admin-create-project.avif",
-    },
-    {
-      textBtn: "Vue Projets (Ancien)",
-      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-1.avif",
-    },
-    {
-      textBtn: "Visualisation 3D (Ancienne)",
-      image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-3.avif",
-    },
-  ];
-
-  const NEW_UI_DATA = [
-    {
-      textBtn: "Design Figma",
-      image: "/images/newversion/INTHEAIRLABS/figma-designs.webp",
-    },
-  ];
-
-  const RESULTS_DATA = [
-    {
-      textBtn: "Dashboard Projets",
-      image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.avif",
-    },
-    {
-      textBtn: "Tableau Admin",
-      image: "/images/newversion/INTHEAIRLABS/companies-table.avif",
-    },
-    {
-      textBtn: "Nouveau Formulaire",
-      image: "/images/newversion/INTHEAIRLABS/client-form.avif",
-    },
-    {
-      textBtn: "Visualisation 3D",
-      image: "/images/newversion/INTHEAIRLABS/3dmodel.avif",
-    },
-  ];
+export default function ProjectPlateformeSaas({
+  project,
+  onClose,
+  onNextProject,
+}: any) {
+  const THEME = "indigo";
 
   return (
-    <ProjectLayout
-      badgeStatus="Projet Professionnel"
-      badgeRoles="UX / UI / Frontend"
-      title="IntheairLabs - Plateforme SaaS Collaborative"
-      personas={[
-        {
-          name: "Marc",
-          role: "Responsable Opérationnel",
-          goal: "Centraliser les livrables de 50 chantiers annuels pour ses clients.",
-          painPoint:
-            "Perd un temps immense à chercher les derniers modèles 3D dans des chaînes d'emails interminables.",
-        },
-        {
-          name: "Sophie",
-          role: "Client B2B (Investisseur)",
-          goal: "Visualiser l'avancement concret de son projet sans installer de logiciel technique.",
-          painPoint:
-            "Se sent dépassée par les outils trop complexes et veut une interface claire et accessible.",
-        },
-      ]}
-      problematic={{
-        title:
-          "Comment simplifier la gestion de livrables complexes dans un environnement B2B ?",
-        mainImage: "/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif",
-        description: (
-          <div className="flex flex-col gap-4">
-            <p>
-              IntheairLabs est un outil critique pour la collaboration entre
-              l'entreprise et ses clients B2B. L'ancienne interface souffrait
-              d'une <strong>dette de design</strong> importante, rendant la
-              navigation laborieuse et la gestion des fichiers peu intuitive.
-            </p>
-            <p>
-              L'enjeu était de transformer cet outil technique en une plateforme
-              moderne, capable de supporter des{" "}
-              <strong>modélisations 3D</strong> tout en offrant un espace
-              administrateur performant pour la gestion quotidienne.
-            </p>
+    <ProjectViewLayout onClose={onClose} accentColor={THEME}>
+      {(onImageClick) => (
+        <>
+          <ProjectHero
+            title="IntheairLabs"
+            subtitle="SaaS B2B : React & Django Integration."
+            image="/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif"
+            layoutId={`image-container-${project.url}`}
+            liveUrl="https://labs.intheair.co/login"
+            tags={[
+              {
+                label: "Fullstack Integration",
+                icon: GitMerge,
+                color: "text-indigo-400",
+              },
+              {
+                label: "Django Backend",
+                icon: Database,
+                color: "text-emerald-400",
+              },
+              {
+                label: "Complex Data Visualization",
+                color: "text-neutral-300",
+              },
+            ]}
+          />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-neutral-200">
+            <ProjectIntro
+              context={{
+                headline: (
+                  <span>
+                    Refonte d'un SaaS B2B : du{" "}
+                    <span className="text-indigo-400 font-medium">
+                      Design System
+                    </span>{" "}
+                    à l'intégration Backend.
+                  </span>
+                ),
+                content: (
+                  <div className="space-y-4">
+                    <p>
+                      IntheairLabs est une plateforme de gestion de livrables 3D
+                      complexes. Le défi n'était pas seulement visuel, mais
+                      structurel : comment moderniser le frontend sans casser la
+                      logique métier lourde du backend Django existant ?
+                    </p>
+                    <p>
+                      En tant que <strong>Lead Frontend & Designer</strong>,
+                      j'ai travaillé en binôme quotidien avec le développeur
+                      Backend. J'ai dépassé mes prérogatives UI pour intervenir
+                      directement dans les <strong>Vues Django</strong> et
+                      adapter les modèles de données afin de faciliter la
+                      consommation API côté React.
+                    </p>
+                    <div className="flex flex-wrap gap-4 text-sm text-neutral-400 border-t border-neutral-800 pt-4 mt-2 font-mono">
+                      <span className="flex items-center gap-2">
+                        <GitMerge size={14} /> Pair Programming
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <Braces size={14} /> Django Templates
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <Box size={14} /> 3D WebGL Integration
+                      </span>
+                    </div>
+                  </div>
+                ),
+              }}
+              stack={TOOLS}
+            />
+
+            <div className="flex flex-col gap-32">
+              <ProjectSection
+                title="Refactoring & Dette Technique"
+                description={
+                  <span>
+                    L'application souffrait d'une dette technique UI liée à un
+                    couplage trop fort entre le backend et le rendu visuel. La
+                    première phase a consisté à analyser la structure des
+                    données (Projets - Livrables - Assets 3D) pour préparer une
+                    architecture Frontend découplée et réactive.
+                  </span>
+                }
+                icon={<Terminal size={24} className="text-orange-400" />}
+                images={ARCHITECTURE_DATA}
+                onImageClick={onImageClick}
+                accentColor="orange"
+              />
+
+              <ProjectSection
+                title="Design System & Composants React"
+                description={
+                  <span>
+                    Industrialisation de l'UI. Création d'un Design System
+                    complet sur Figma, puis traduction immédiate en{" "}
+                    <strong>Composants React réutilisables</strong>. Cette
+                    approche a permis d'accélérer le développement des vues
+                    Admin complexes (Tableaux de données, Filtres avancés).
+                  </span>
+                }
+                icon={<Layers size={24} className="text-pink-400" />}
+                images={COMPONENT_DATA}
+                reversed
+                onImageClick={onImageClick}
+                accentColor="pink"
+              />
+
+              <ProjectSection
+                title="Intégration Fullstack & 3D"
+                description={
+                  <span>
+                    La partie critique du projet. Intégration des endpoints API
+                    pour le CRUD des projets. Intervention sur le code{" "}
+                    <strong>Python/Django</strong> pour ajuster les serializers
+                    et optimiser les payloads envoyés au Front. Intégration d'un
+                    viewer 3D WebGL interagissant en temps réel avec l'état de
+                    l'application.
+                  </span>
+                }
+                icon={<Database size={24} className="text-indigo-400" />}
+                images={INTEGRATION_DATA}
+                onImageClick={onImageClick}
+                accentColor={THEME}
+              />
+            </div>
+
+            <ProjectFooter
+              onClose={onClose}
+              nextTitle="La refonte de leur site vitrine"
+              accentColor={THEME}
+              onNextProject={onNextProject}
+            />
           </div>
-        ),
-      }}
-      realization={{
-        title: "Audit, Test Utilisateurs et Refonte Graphique",
-        description: (
-          <div className="flex flex-col gap-4">
-            <p>
-              Mon approche a été centrée sur l'utilisateur : j'ai réalisé un{" "}
-              <strong>audit complet</strong> de l'application et mené des{" "}
-              <strong>entretiens avec les équipes internes</strong> pour lister
-              les points de friction majeurs.
-            </p>
-            <p>
-              J'ai mis en place des{" "}
-              <strong>sessions de tests utilisateurs</strong> itératifs avec les
-              équipes métiers pour valider chaque nouvelle vue sur Figma avant
-              la phase de développement. Cette collaboration étroite a permis de
-              corriger les problèmes d'ergonomie sur les formulaires complexes
-              et les tableaux de données.
-            </p>
-          </div>
-        ),
-        uxAssets: PREVIOUS_DATA,
-        uiAssets: NEW_UI_DATA,
-        resultsAssets: RESULTS_DATA,
-      }}
-      results={{
-        title: "Efficacité & Expérience Client",
-        items: [
-          {
-            title: "Réduction de la charge cognitive",
-            description:
-              "Une hiérarchie de l'information clarifiée permettant aux clients de trouver leurs livrables 2x plus vite.",
-          },
-          {
-            title: "Validation métier à 100%",
-            description:
-              "L'interface a été co-construite avec les utilisateurs finaux, garantissant une adoption immédiate.",
-          },
-          {
-            title: "Interface Admin Optimisée",
-            description:
-              "Les formulaires de création de projets ont été simplifiés pour réduire les erreurs de saisie.",
-          },
-          {
-            title: "Modernisation Technologique",
-            description:
-              "Une refonte visuelle qui aligne la plateforme avec les standards actuels des outils SaaS B2B.",
-          },
-        ],
-      }}
-    />
+        </>
+      )}
+    </ProjectViewLayout>
   );
 }
