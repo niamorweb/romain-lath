@@ -215,7 +215,7 @@ export const ProjectSection = ({
 
             <div className="absolute bottom-4 left-4 pointer-events-none">
               <span
-                className={`text-xs font-mono text-${accentColor}-100 bg-${accentColor}-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-${accentColor}-500/20`}
+                className={`text-xs font-mono text-neutral-100 bg-neutral-900/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-neutral-500/20`}
               >
                 {img.textBtn}
               </span>

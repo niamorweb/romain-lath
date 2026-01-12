@@ -50,12 +50,12 @@ export default function ProjectDetailViewCayo({
 
   const CRYPTO_DATA: ProjectImageData[] = [
     {
-      textBtn: "Implémentation AES-256",
-      image: "/images/newversion/CAYO/code-encryption.webp",
+      textBtn: "Chiffrement String via AES-256",
+      image: "/images/newversion/CAYO/text-encryption.avif",
     },
     {
-      textBtn: "Dérivation de clé (Argon2/PBKDF2)",
-      image: "/images/newversion/CAYO/create-pw.avif",
+      textBtn: "Dérivation de clé (PBKDF2)",
+      image: "/images/newversion/CAYO/code-encryption.webp",
     },
     {
       textBtn: "Stockage Chiffré (Vault)",
@@ -88,7 +88,7 @@ export default function ProjectDetailViewCayo({
       image: "/images/newversion/CAYO/crypto-process-group-invitation.webp",
     },
     {
-      textBtn: "Modèle de données Access",
+      textBtn: "Echange de clés via RSA",
       image: "/images/newversion/CAYO/sharing-key-code.avif",
     },
   ];
