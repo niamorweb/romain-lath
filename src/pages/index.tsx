@@ -191,7 +191,7 @@ export default function PortfolioModern() {
                 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[1] mb-8 text-neutral-500"
               >
                 Développeur <br />
-                <span className="text-white">Fullstack JavaScript.</span>
+                <span className="text-white">Fullstack JS/TS.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -199,16 +199,18 @@ export default function PortfolioModern() {
                 transition={{ delay: 0.4 }}
                 className="text-xl text-neutral-400 max-w-xl leading-relaxed"
               >
-                Spécialisé sur la{" "}
+                Je construis des applications web de bout en bout avec
+                l'écosystème{" "}
                 <span className="text-white font-medium border-b border-white/30 pb-0.5">
-                  stack JS / TS / Node
+                  TypeScript
                 </span>
-                , je développe des solutions fullstack de la{" "}
+                . Expert <span className="text-white">Next.js & NestJS</span>,
+                je développe des solutions de la{" "}
                 <span className="text-white font-medium border-b border-white/30 pb-0.5">
-                  base de données (Prisma/SQL){" "}
+                  base de données (Prisma/SQL)
                 </span>{" "}
-                jusqu'au déploiement. Je privilégie le code propre et les rendus
-                rapides. .
+                jusqu'à l'interface utilisateur, avec une forte sensibilité{" "}
+                <span className="text-white font-medium">UI/UX</span>.
               </motion.p>
               <motion.a
                 href="/#projects"
