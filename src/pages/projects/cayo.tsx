@@ -193,54 +193,40 @@ export default function CayoProjectPage() {
               context={{
                 headline: (
                   <span>
-                    Conception d'une architecture{" "}
-                    <span className="text-indigo-400 font-medium">
-                      Zero-Knowledge
-                    </span>{" "}
-                    : garantir que le serveur ne possède jamais la clé de
-                    déchiffrement.
+                    Un gestionnaire de secrets <strong>Zero-Knowledge</strong> :
+                    la sécurité par le chiffrement côté client.
                   </span>
                 ),
                 content: (
                   <div className="space-y-4">
                     <p>
-                      Cayo répond à une faille de sécurité critique : le partage
-                      de secrets par canaux non sécurisés (SMS, Excel) au sein
-                      des familles et des TPE. L'objectif était de lever les
-                      barrières à l'adoption, le coût et la complexité, en
-                      proposant un{" "}
-                      <strong>
-                        espace collaboratif gratuit où la sécurité est garantie
-                        par les mathématiques
-                      </strong>
-                      , et non par le serveur.
+                      Cayo est né d'un constat simple : beaucoup de familles et
+                      de petites entreprises partagent encore leurs accès via
+                      des canaux non sécurisés (SMS, Excel, emails). L'objectif
+                      était de créer un espace de partage collaboratif où{" "}
+                      <strong>le serveur n'a jamais accès aux données</strong>.
                     </p>
                     <p>
-                      Pour garantir une confidentialité absolue, j'ai implémenté
-                      une architecture <strong>Zero-Knowledge</strong> : toutes
-                      les données sont chiffrées sur l'appareil de l'utilisateur
-                      avant d'atteindre Supabase. Le défi technique a consisté à
-                      orchestrer un{" "}
-                      <strong>
-                        chiffrement hybride (AES-256 pour les données, RSA pour
-                        le partage)
-                      </strong>{" "}
-                      afin de permettre l'accès aux membres d'un groupe sans
-                      jamais exposer les clés en clair.
+                      Le défi technique a été d'implémenter un{" "}
+                      <strong>chiffrement hybride</strong> directement dans le
+                      navigateur : les données sont sécurisées en{" "}
+                      <strong>AES-256</strong>, tandis que les clés de partage
+                      entre utilisateurs sont gérées via <strong>RSA</strong>.
+                      Ainsi, même en cas de compromission de la base de données
+                      (Supabase), les secrets restent indéchiffrables.
                     </p>
                     <p>
-                      Le résultat est une solution où la confiance est
-                      décentralisée, permettant à des équipes ou des familles de
-                      collaborer sereinement sans changer leurs habitudes de
-                      stockage, tout en bénéficiant d'une protection de niveau
-                      bancaire.
+                      Le résultat est une application web fluide qui permet de
+                      collaborer sur des dossiers sensibles sans compromis sur
+                      la vie privée, tout en gardant une expérience utilisateur
+                      proche d'un outil de gestion classique.
                     </p>
                     <div className="flex gap-4 text-sm text-neutral-400 border-l-2 border-indigo-500/30 pl-4 mt-2 font-mono">
                       <span>AES-256-GCM</span>
                       <span>•</span>
-                      <span>PostgreSQL RLS</span>
+                      <span>RSA-OAEP</span>
                       <span>•</span>
-                      <span>Zustand</span>
+                      <span>Supabase RLS</span>
                     </div>
                   </div>
                 ),
@@ -307,15 +293,16 @@ export default function CayoProjectPage() {
                 accentColor="blue"
               />
               <ProjectSection
-                title="Fiabilité & Tests Unitaires"
+                title="Fiabilité & Tests"
                 description={
                   <span>
-                    Dans une application où une erreur d'un bit peut corrompre
-                    définitivement les données utilisateur, les tests ne sont
-                    pas une option. Mise en place d'une suite de tests{" "}
-                    <strong>Jest</strong> rigoureuse pour valider les fonctions
-                    critiques de chiffrement/déchiffrement et garantir la
-                    non-régression à chaque déploiement.
+                    Le chiffrement ne laisse aucune place à l'erreur. J'ai mis
+                    en place une suite de tests avec <strong>Jest</strong> pour
+                    valider chaque étape de la manipulation des clés
+                    (chiffrement/déchiffrement). L'objectif est de garantir que
+                    les données restent toujours accessibles et d'éviter toute
+                    régression sur les fonctions critiques lors des mises à
+                    jour.
                   </span>
                 }
                 icon={<TestTube2 size={24} className="text-emerald-400" />}
@@ -326,16 +313,15 @@ export default function CayoProjectPage() {
               />
 
               <ProjectSection
-                title="Interfaces & Expérience"
+                title="UX & Sécurité"
                 description={
                   <span>
-                    Allier sécurité critique et fluidité collaborative.
-                    Développée avec Next.js et Tailwind CSS, l'interface permet
-                    une gestion intuitive des coffres-forts partagés.
-                    L'architecture hybride (Client/Serveur) assure une
-                    réactivité optimale tout en garantissant une validation des
-                    accès ultrasécurisée directement sur le serveur avant chaque
-                    rendu.
+                    Le défi était de rendre le chiffrement transparent pour
+                    l'utilisateur. L'interface utilise <strong>Next.js</strong>{" "}
+                    pour valider les droits d'accès côté serveur (SSR) avant
+                    d'afficher les coffres-forts. On obtient ainsi un outil
+                    réactif qui masque toute la complexité technique du
+                    déchiffrement des données en local.
                   </span>
                 }
                 icon={<Fingerprint size={24} className="text-purple-400" />}

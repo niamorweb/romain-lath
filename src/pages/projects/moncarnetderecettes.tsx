@@ -157,7 +157,7 @@ export default function ProjectDetailViewCarnet() {
         <>
           <ProjectHero
             title="Mon Carnet De Recettes"
-            subtitle="Architecture Fullstack : NestJS, Prisma & Nuxt."
+            subtitle=". Projet Fullstack"
             image={project.img}
             layoutId={`image-container-${project.url}`}
             liveUrl="https://moncarnetderecettes.vercel.app"
@@ -193,53 +193,45 @@ export default function ProjectDetailViewCarnet() {
               context={{
                 headline: (
                   <span>
-                    Conception d'une architecture{" "}
-                    <span className="text-orange-400 font-medium">
-                      SaaS modulaire
-                    </span>{" "}
-                    séparant strictement la logique métier (NestJS) de
-                    l'interface client (Nuxt).
+                    Un <strong>SaaS d'organisation culinaire</strong> conçu avec
+                    une architecture découplée (NestJS & Nuxt).
                   </span>
                 ),
                 content: (
                   <div className="space-y-4">
                     <p>
-                      L'objectif était de créer une{" "}
-                      <strong>expérience verticale dédiée</strong> à
-                      l'organisation culinaire, s'affranchissant de la
-                      complexité des outils généralistes comme Notion. J'ai
-                      conçu une interface métier optimisée pour la saisie et la
-                      consultation, supprimant toute friction cognitive.
+                      L'idée était de créer un outil plus intuitif que Notion
+                      pour gérer ses recettes. J'ai conçu une interface épurée,
+                      pensée pour une utilisation rapide en cuisine, sans les
+                      fioritures des outils généralistes.
                     </p>
                     <p>
-                      La fonctionnalité phare du projet est la{" "}
-                      <strong>
-                        passerelle entre le numérique et le physique
-                      </strong>{" "}
-                      : un moteur d'édition permettant de générer instantanément
-                      un carnet de recettes prêt pour l'impression. La stack
-                      technique actuelle assure la génération dynamique de
-                      fichiers PDF "pixel-perfect" hautement personnalisés.
+                      La fonctionnalité principale est un{" "}
+                      <strong>moteur de génération de PDF</strong>. Il permet de
+                      transformer ses recettes numériques en un carnet physique
+                      personnalisé, prêt à être imprimé, avec une mise en page
+                      soignée et dynamique.
                     </p>
                     <p>
-                      Au-delà de l'interface, l'enjeu majeur résidait dans l'
-                      <strong>industrialisation du prototype</strong> : mise en
-                      place d'une architecture robuste, typage strict de bout en
-                      bout et orchestration de services tiers (Stripe,
-                      Cloudinary, Resend) au sein d'une API NestJS sécurisée.
+                      Côté backend, j'ai mis en place une structure solide avec{" "}
+                      <strong>NestJS et Prisma</strong>. Le projet intègre une
+                      gestion complète des paiements (Stripe), du stockage
+                      d'images (Cloudinary) et de l'envoi d'emails (Resend), le
+                      tout avec un typage TypeScript strict pour plus de
+                      fiabilité.
                     </p>
                     <div className="flex flex-wrap gap-4 text-sm text-neutral-400 border-t border-neutral-800 pt-4 mt-4">
                       <span className="flex items-center gap-2">
-                        <Database size={14} className="text-orange-400" /> ORM :
-                        Prisma
+                        <Database size={14} className="text-orange-400" />{" "}
+                        Prisma (PostgreSQL)
                       </span>
                       <span className="flex items-center gap-2">
-                        <Server size={14} className="text-orange-400" /> Infra :
-                        Railway + Vercel
+                        <Server size={14} className="text-orange-400" /> Railway
+                        + Vercel
                       </span>
                       <span className="flex items-center gap-2">
                         <ShieldCheck size={14} className="text-orange-400" />{" "}
-                        Auth : JWT Strategy
+                        Auth : JWT / Passport
                       </span>
                     </div>
                   </div>
@@ -307,9 +299,9 @@ export default function ProjectDetailViewCarnet() {
                 title="Frontend State & Media"
                 description={
                   <span>
-                    Côté client, <strong>Nuxt 3</strong> gère le SSR pour le
-                    SEO. Utilisation de <strong>Pinia</strong> pour la gestion
-                    d'état global (User session). Intégration de{" "}
+                    Côté client, <strong>Nuxt</strong> gère le SSR pour le SEO.
+                    Utilisation de <strong>Pinia</strong> pour la gestion d'état
+                    global (User session). Intégration de{" "}
                     <strong>Cloudinary</strong> pour l'optimisation à la volée
                     et le stockage sécurisé des images utilisateurs.
                   </span>
@@ -325,7 +317,7 @@ export default function ProjectDetailViewCarnet() {
                 title="Intégration Client & UX"
                 description={
                   <span>
-                    Le Frontend <strong>Nuxt 3</strong> ne se contente pas
+                    Le Frontend <strong>Nuxt</strong> ne se contente pas
                     d'afficher des pixels. Il gère une logique complexe :{" "}
                     <strong>SSR</strong> pour le référencement des profils
                     publics,

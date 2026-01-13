@@ -115,38 +115,44 @@ export default function ProjectPlateformeSaas() {
               context={{
                 headline: (
                   <span>
-                    Refonte d'un SaaS B2B : du{" "}
+                    Modernisation d'un SaaS 3D : refonte de l'interface et
                     <span className="text-indigo-400 font-medium">
-                      Design System
-                    </span>{" "}
-                    à l'intégration Backend.
+                      {" "}
+                      optimisation du backend Django
+                    </span>
+                    .
                   </span>
                 ),
                 content: (
                   <div className="space-y-4">
                     <p>
-                      IntheairLabs est une plateforme de gestion de livrables 3D
-                      complexes. Le défi n'était pas seulement visuel, mais
-                      structurel : comment moderniser le frontend sans casser la
-                      logique métier lourde du backend Django existant ?
+                      IntheairLabs est une plateforme de gestion de livrables
+                      3D. Le challenge principal était de reconstruire
+                      entièrement le frontend sans perturber la logique métier
+                      déjà en place sur le backend Django.
                     </p>
                     <p>
-                      En tant que <strong>Lead Frontend & Designer</strong>,
-                      j'ai travaillé en binôme quotidien avec le développeur
-                      Backend. J'ai dépassé mes prérogatives UI pour intervenir
-                      directement dans les <strong>Vues Django</strong> et
-                      adapter les modèles de données afin de faciliter la
-                      consommation API côté React.
+                      J'ai travaillé en binôme avec le développeur backend pour
+                      fluidifier l'échange de données. Je suis intervenu
+                      directement sur les <strong>vues Django</strong> et les{" "}
+                      <strong>modèles</strong> pour adapter l'API et faciliter
+                      l'intégration des nouveaux composants React.
+                    </p>
+                    <p>
+                      Cette collaboration étroite a permis de transformer une
+                      interface vieillissante en une application moderne,
+                      capable de gérer des visualisations 3D complexes de
+                      manière fluide.
                     </p>
                     <div className="flex flex-wrap gap-4 text-sm text-neutral-400 border-t border-neutral-800 pt-4 mt-2 font-mono">
                       <span className="flex items-center gap-2">
                         <GitMerge size={14} /> Pair Programming
                       </span>
                       <span className="flex items-center gap-2">
-                        <Braces size={14} /> Django Templates
+                        <Braces size={14} /> Django API
                       </span>
                       <span className="flex items-center gap-2">
-                        <Box size={14} /> 3D WebGL Integration
+                        <Box size={14} /> WebGL / 3D
                       </span>
                     </div>
                   </div>

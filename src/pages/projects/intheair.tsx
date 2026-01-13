@@ -99,8 +99,8 @@ export default function ProjectSiteVitrine() {
       {(onImageClick) => (
         <>
           <ProjectHero
-            title="Intheair."
-            subtitle="Product Design & Technical SEO."
+            title="Intheair"
+            subtitle=". Refonte d'un site vitrine"
             image="/images/newversion/SITE_VITRINE/intheair-hp.avif"
             layoutId={`image-container-${project.url}`}
             liveUrl="https://intheair.co/"
@@ -117,36 +117,34 @@ export default function ProjectSiteVitrine() {
               },
             ]}
           />
-
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-neutral-200">
             <ProjectIntro
               context={{
                 headline: (
                   <span>
-                    Choix d'une architecture{" "}
-                    <span className="text-cyan-400 font-medium">Low-Code</span>{" "}
-                    pour maximiser la vélocité et l'autonomie des équipes
-                    marketing.
+                    Priorité à l'<strong>efficacité</strong> : une architecture
+                    hybride pour un site vitrine performant.
                   </span>
                 ),
                 content: (
                   <div className="space-y-4">
                     <p>
-                      En tant que développeur, il est crucial de choisir le bon
-                      outil. Pour ce site vitrine, une SPA (React/Vue) aurait
-                      été une sur-ingénierie ("Overkill").
+                      L'objectif était simple : livrer rapidement tout en
+                      laissant la main aux équipes marketing pour le contenu.
+                      Utiliser un framework JS lourd aurait été
+                      contre-productif.
                     </p>
                     <p>
-                      J'ai opté pour <strong>Webflow</strong> couplé à du{" "}
-                      <strong>JavaScript vanilla</strong> pour garantir un temps
-                      de déploiement record, une gestion CMS native pour le
-                      client, tout en maintenant un contrôle strict sur le DOM
-                      et les performances (Core Web Vitals).
+                      J'ai choisi <strong>Webflow</strong> pour la rapidité de
+                      mise en ligne et son CMS, complété par du{" "}
+                      <strong>JavaScript sur mesure</strong> pour les
+                      interactions complexes. Résultat : un code léger, un SEO
+                      optimisé et une maintenance simplifiée.
                     </p>
                     <div className="flex gap-4 text-sm text-neutral-400 border-l-2 border-cyan-500/30 pl-4 mt-2">
-                      <span>⚡ Lighthouse : 98/100</span>
-                      <span>🔍 SEO Sémantique</span>
-                      <span>📱 Mobile First</span>
+                      <span>⚡ Perf : 98/100</span>
+                      <span>🛠 Custom JS</span>
+                      <span>📈 SEO Ready</span>
                     </div>
                   </div>
                 ),
@@ -156,15 +154,16 @@ export default function ProjectSiteVitrine() {
 
             <div className="flex flex-col gap-32">
               <ProjectSection
-                title="Audit & Architecture de Données"
+                title="Audit & Structure du contenu"
                 description={
                   <span>
-                    Avant le design, une phase d'ingénierie a permis de
-                    restructurer le contenu. Modélisation des collections CMS
-                    (comme une BDD relationnelle) pour lier les{" "}
-                    <em>Services</em> aux <em>Études de cas</em> dynamiquement.
-                    Analyse de l'existant pour identifier les goulots
-                    d'étranglement SEO.
+                    Le projet a commencé par un{" "}
+                    <strong>audit de l'existant</strong> pour identifier les
+                    manques en SEO et en navigation. J'ai entièrement{" "}
+                    <strong>repensé l'arborescence</strong> du site et intégré
+                    de nouvelles pages de services qui n'étaient pas
+                    répertoriées, tout en automatisant les liens entre ces
+                    services et les études de cas via le CMS.
                   </span>
                 }
                 icon={<Database size={24} className="text-orange-400" />}
@@ -193,24 +192,27 @@ export default function ProjectSiteVitrine() {
               />
 
               <ProjectSection
-                title="Performance & Conversion"
+                title="Performance & Impact"
                 description={
                   <div className="space-y-4">
                     <p>
-                      Le résultat n'est pas seulement esthétique. C'est un
-                      produit optimisé pour la conversion. Le temps de
-                      chargement (LCP) a été réduit de <strong>40%</strong> par
-                      rapport à l'ancienne version WordPress.
+                      L'objectif était de dépasser les performances de
+                      l'ancienne version développée en{" "}
+                      <strong>HTML/JS statique (Gulp)</strong>. En optimisant
+                      les assets et le rendu, j'ai réduit le temps de chargement
+                      (LCP) de <strong>40%</strong>.
                     </p>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="bg-white/5 p-3 rounded-lg border border-white/10 flex items-center gap-2">
                         <LineChart size={16} className="text-green-400" />
-                        <span className="text-xs font-mono">Lead Gen +25%</span>
+                        <span className="text-xs font-mono">
+                          +25% de contacts
+                        </span>
                       </div>
                       <div className="bg-white/5 p-3 rounded-lg border border-white/10 flex items-center gap-2">
                         <Gauge size={16} className="text-cyan-400" />
                         <span className="text-xs font-mono">
-                          SEO Score 100%
+                          Score SEO : 100
                         </span>
                       </div>
                     </div>
