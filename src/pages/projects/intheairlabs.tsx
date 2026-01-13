@@ -163,14 +163,17 @@ export default function ProjectPlateformeSaas() {
 
             <div className="flex flex-col gap-32">
               <ProjectSection
-                title="Refactoring & Dette Technique"
+                title="Refactoring & Gestion d'assets"
                 description={
                   <span>
-                    L'application souffrait d'une dette technique UI liée à un
-                    couplage trop fort entre le backend et le rendu visuel. La
-                    première phase a consisté à analyser la structure des
-                    données (Projets - Livrables - Assets 3D) pour préparer une
-                    architecture Frontend découplée et réactive.
+                    Le point critique de l'ancien système était la gestion des
+                    fichiers : les utilisateurs devaient uploader leurs assets
+                    un par un, sans aucun retour sur l'état d'avancement. J'ai
+                    refondu la structure de données{" "}
+                    <strong>Projets / Livrables / Assets</strong> pour permettre
+                    une gestion globale des fichiers, tout en fiabilisant les
+                    retours d'état (succès/erreur) lors de l'envoi vers le
+                    serveur.
                   </span>
                 }
                 icon={<Terminal size={24} className="text-orange-400" />}
