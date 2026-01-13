@@ -73,65 +73,9 @@ const ModernSkillCard = ({ title, icon: Icon, skills, accentColor }: any) => (
 );
 
 export default function PortfolioModern() {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
-
-  useEffect(() => {
-    if (selectedProject) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [selectedProject]);
-
   const frontendSkills = skillsNewVersion[0]?.elems || [];
   const designSkills = skillsNewVersion[1]?.elems || [];
   const backendSkills = skillsNewVersion[2]?.elems || [];
-
-  const handleNextProject = (currentUrl: string) => {
-    const currentIndex = projectsNewVersion.findIndex(
-      (p: any) => p.url === currentUrl
-    );
-
-    const nextIndex = currentIndex + 1;
-
-    if (nextIndex < projectsNewVersion.length) {
-      setSelectedProject(projectsNewVersion[nextIndex]);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      setSelectedProject(null);
-    }
-  };
-
-  const renderProjectDetail = () => {
-    if (!selectedProject) return null;
-
-    const nextProject =
-      projectsNewVersion[
-        projectsNewVersion.findIndex(
-          (p: any) => p.url === selectedProject.url
-        ) + 1
-      ];
-
-    const commonProps = {
-      project: selectedProject,
-      onClose: () => setSelectedProject(null),
-      onNextProject: () => handleNextProject(selectedProject.url),
-      nextProjectName: nextProject?.title || "Retour à l'accueil",
-    };
-
-    switch (selectedProject.url) {
-      case "moncarnetderecettes":
-        return <ProjectDetailViewCarnet {...commonProps} />;
-      case "cayo":
-        return <ProjectDetailViewCayo {...commonProps} />;
-      case "intheair":
-        return <ProjectDetailViewIntheair {...commonProps} />;
-      case "intheairlabs":
-        return <ProjectDetailViewSaas {...commonProps} />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <>
@@ -268,15 +212,10 @@ export default function PortfolioModern() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
             {projectsNewVersion.map((project: any, i: number) => (
-              <motion.div
+              <Link
+                href={"/projects/" + project.url}
                 key={i}
-                layoutId={`card-container-${project.url}`}
-                onClick={() => setSelectedProject(project)}
                 className="group cursor-pointer"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
               >
                 <div className="relative aspect-[16/11] rounded-xl overflow-hidden bg-[#0a0a0a] border border-white/10 mb-6 transition-all duration-500 group-hover:border-white/30">
                   <motion.div
@@ -306,15 +245,10 @@ export default function PortfolioModern() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </Link>
             ))}
           </div>
         </section>
-
-        {/* MODAL PROJET (Dynamique) */}
-        <AnimatePresence>
-          {selectedProject && renderProjectDetail()}
-        </AnimatePresence>
       </main>
     </>
   );
