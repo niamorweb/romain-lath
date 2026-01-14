@@ -181,7 +181,6 @@ export default function Version2() {
                         <Link
                           className="bg-neutral-800 flex items-center gap-2 p-3 hover:bg-neutral-600 duration-150 border border-neutral-200 text-neutral-50 rounded-xl"
                           href={"/projects/" + project.url}
-                          target="_blank"
                         >
                           Voir plus
                           <MoveRight className="size-5" />
