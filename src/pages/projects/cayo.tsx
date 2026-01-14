@@ -50,7 +50,6 @@ export default function CayoProjectPage() {
   );
   const project = projectsNewVersion[currentIndex];
 
-  if (!project) return null;
   const CRYPTO_DATA: ProjectImageData[] = [
     {
       textBtn: "Chiffrement String via AES-256",
@@ -235,6 +234,8 @@ export default function CayoProjectPage() {
     return () =>
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
+
+  if (!project) return null;
 
   return (
     <ProjectLayoutGlobal>

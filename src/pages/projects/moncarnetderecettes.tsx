@@ -50,8 +50,6 @@ export default function ProjectDetailViewCarnet() {
     (p) => p.url === currentSlug
   );
   const project = projectsNewVersion[currentIndex];
-  const nextProject =
-    projectsNewVersion[currentIndex + 1] || projectsNewVersion[0];
 
   const ARCHITECTURE_DATA: ProjectImageData[] = [
     {
@@ -207,6 +205,8 @@ export default function ProjectDetailViewCarnet() {
     return () =>
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
+
+  if (!project) return null;
 
   return (
     <ProjectLayoutGlobal>
