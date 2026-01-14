@@ -67,15 +67,15 @@ export default function CayoProjectPage() {
 
   const BACKEND_DATA: ProjectImageData[] = [
     {
-      textBtn: "Row Level Security (RLS)",
+      textBtn: "Route API Next.js",
       image: "/images/newversion/CAYO/code-route.webp",
     },
     {
-      textBtn: "Store Zustand & Optimistic UI",
+      textBtn: "Store Zustand",
       image: "/images/newversion/CAYO/code-store.webp",
     },
     {
-      textBtn: "Modèle de Données Profils",
+      textBtn: "Données Table Profiles",
       image: "/images/newversion/CAYO/supabase-profiles.avif",
     },
   ];

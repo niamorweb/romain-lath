@@ -61,7 +61,7 @@ const BUILD_DATA = [
   },
   {
     textBtn: "Custom CSS/JS Injection",
-    image: "/images/newversion/SITE_VITRINE/inspirations2.webp", // Placeholder pour du code si tu as, sinon garde l'UI
+    image: "/images/newversion/SITE_VITRINE/custom-js.avif",
   },
 ];
 

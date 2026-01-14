@@ -31,27 +31,31 @@ const TOOLS = [
 
 const ARCHITECTURE_DATA = [
   {
-    textBtn: "Architecture Monolithique",
+    textBtn: "Ancienne version",
     image: "/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.avif",
   },
   {
-    textBtn: "Dette Technique UI",
+    textBtn: "Formulaire",
     image: "/images/newversion/INTHEAIRLABS/previous-admin-create-project.avif",
   },
   {
-    textBtn: "Modélisation des Données",
+    textBtn: "Page model 3D",
     image: "/images/newversion/INTHEAIRLABS/italabs-client-previous-3.avif",
   },
 ];
 
 const COMPONENT_DATA = [
   {
-    textBtn: "Atomic Design System",
+    textBtn: "Nouveau Design",
     image: "/images/newversion/INTHEAIRLABS/figma-designs.webp",
   },
   {
-    textBtn: "React Component Library",
-    image: "/images/newversion/INTHEAIRLABS/intheairlabs-dashboard.avif",
+    textBtn: "Intégration de la map en code",
+    image: "/images/newversion/INTHEAIRLABS/map-code.avif",
+  },
+  {
+    textBtn: "Mise à jour du backend",
+    image: "/images/newversion/INTHEAIRLABS/code-backend.webp",
   },
 ];
 
@@ -61,12 +65,16 @@ const INTEGRATION_DATA = [
     image: "/images/newversion/INTHEAIRLABS/companies-table.avif",
   },
   {
-    textBtn: "Forms & Validation",
+    textBtn: "Nouveau formulairees",
     image: "/images/newversion/INTHEAIRLABS/client-form.avif",
   },
   {
-    textBtn: "Intégration Viewer 3D",
+    textBtn: "Nouvelle page Model 3D",
     image: "/images/newversion/INTHEAIRLABS/3dmodel.avif",
+  },
+  {
+    textBtn: "Map interactive",
+    image: "/images/newversion/INTHEAIRLABS/map-area.avif",
   },
 ];
 

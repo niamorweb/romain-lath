@@ -113,17 +113,18 @@ export default function ProjectDetailViewCarnet() {
 
   const FRONTEND_INTEGRATION_DATA: ProjectImageData[] = [
     {
-      textBtn: "Dashboard (Consommation API)",
+      textBtn: "Dashboard",
       image:
         "/images/newversion/MON_CARNET_DE_RECETTES/dashboard-selection.webp",
     },
     {
-      textBtn: "SSR Profil Public (SEO)",
+      textBtn: "Profil Public",
       image: "/images/newversion/MON_CARNET_DE_RECETTES/profile-page.avif",
     },
     {
       textBtn: "Générateur de pdf",
-      image: "/images/newversion/MON_CARNET_DE_RECETTES/pdf.webp",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/full-pdf-generator.webp",
     },
     {
       textBtn: "Gestion erreurs",
@@ -131,7 +132,7 @@ export default function ProjectDetailViewCarnet() {
         "/images/newversion/MON_CARNET_DE_RECETTES/create-recipe-errors.avif",
     },
     {
-      textBtn: "SSR Recette Publique (SEO)",
+      textBtn: "Recette Publique",
       image: "/images/newversion/MON_CARNET_DE_RECETTES/public-recipe.avif",
     },
   ];
