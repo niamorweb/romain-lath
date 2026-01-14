@@ -126,7 +126,7 @@ export default function Version2() {
                 projectsNewVersion.map((project: any, i: any) => (
                   <div
                     key={i}
-                    className=" bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all grid grid-cols-1 md:grid-cols-5 items-center gap-6"
+                    className=" bg-neutral-100 hover:bg-neutral-50 duration-150 border border-neutral-200 p-4 rounded-xl transition-all flex flex-col md:grid grid-cols-1 md:grid-cols-5 items-center gap-6"
                   >
                     <Image
                       className="rounded-lg w-full md:col-span-2"
