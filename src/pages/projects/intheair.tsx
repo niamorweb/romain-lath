@@ -228,7 +228,7 @@ export default function ProjectSiteVitrine() {
             </div>
 
             <ProjectFooter
-              onNextProject={() => router.push(`/projects/#`)}
+              onNextProject={() => router.push(`/#projects`)}
               onClose={() => router.push("/#projects")}
               nextTitle="Retour sur l'écran d'accueil"
               accentColor={THEME}
