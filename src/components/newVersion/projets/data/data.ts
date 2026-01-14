@@ -1,17 +1,5 @@
 const icons = [
   {
-    label: "Figma",
-    icon: "/images/icons/figma.svg",
-  },
-  {
-    label: "Photoshop",
-    icon: "/images/icons/photoshop.svg",
-  },
-  {
-    label: "TailwindCSS",
-    icon: "/images/icons/tailwindcss.svg",
-  },
-  {
     label: "React",
     icon: "/images/icons/react.svg",
   },
@@ -20,12 +8,16 @@ const icons = [
     icon: "/images/icons/nextjs.svg",
   },
   {
-    label: "Vue.js",
-    icon: "/images/icons/vuejs.svg",
-  },
-  {
     label: "Nuxt",
     icon: "/images/icons/nuxt.svg",
+  },
+  {
+    label: "Jest",
+    icon: "/images/icons/jest.svg",
+  },
+  {
+    label: "Nest.js",
+    icon: "/images/icons/nestjs.svg",
   },
   {
     label: "JavaScript",
@@ -40,10 +32,6 @@ const icons = [
     icon: "/images/icons/expressjs.svg",
   },
   {
-    label: "Nest.js",
-    icon: "/images/icons/nestjs.svg",
-  },
-  {
     label: "Postgresql",
     icon: "/images/icons/postgresql.svg",
   },
@@ -56,16 +44,16 @@ const icons = [
     icon: "/images/icons/git.svg",
   },
   {
+    label: "Vue.js",
+    icon: "/images/icons/vuejs.svg",
+  },
+  {
     label: "Postman",
     icon: "/images/icons/postman.svg",
   },
   {
     label: "Docker",
     icon: "/images/icons/docker.svg",
-  },
-  {
-    label: "Jest",
-    icon: "/images/icons/jest.svg",
   },
   {
     label: "Node.js",
@@ -86,6 +74,18 @@ const icons = [
   {
     label: "Supabase",
     icon: "/images/icons/supabase.svg",
+  },
+  {
+    label: "Figma",
+    icon: "/images/icons/figma.svg",
+  },
+  {
+    label: "Photoshop",
+    icon: "/images/icons/photoshop.svg",
+  },
+  {
+    label: "TailwindCSS",
+    icon: "/images/icons/tailwindcss.svg",
   },
 ];
 
@@ -131,14 +131,14 @@ export const projectsNewVersion = [
     img: "/images/newversion/MON_CARNET_DE_RECETTES/hp-heroo.avif",
     skills: icons.filter((icon) =>
       [
-        "Figma",
-        "TailwindCSS",
-        "TypeScript",
         "Nuxt",
-        "Vue.js",
         "Nest.js",
         "Postgresql",
         "Prisma",
+        "TypeScript",
+        "Figma",
+        "TailwindCSS",
+        "Vue.js",
         "Docker",
       ].includes(icon.label)
     ),

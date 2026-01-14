@@ -1,39 +1,26 @@
-import React from "react";
-import ProjectViewLayout from "@/components/projects/ProjectLayout";
+import React, { useEffect, useRef, useState } from "react";
 import {
-  ProjectHero,
-  ProjectIntro,
-  ProjectSection,
-  ProjectFooter,
-} from "@/components/projects/ProjectComponents";
-import {
-  Server,
   CreditCard,
-  Layout,
   Database,
   Mail,
-  ShieldCheck,
   Cloud,
-  Code2,
   Laptop,
   DollarSign,
-  Image,
+  Minimize,
+  Maximize,
+  RotateCcw,
+  Play,
 } from "lucide-react";
 import { projectsNewVersion } from "@/components/newVersion/projets/data/data";
-import { useRouter } from "next/navigation";
+import ProjectLayoutGlobal from "@/components/project/ProjectLayoutGlobal";
+import ProjectHeader from "@/components/project/ProjectHeader";
+import ProjectSection from "@/components/project/ProjectSection";
+import Separator from "@/components/project/Separator";
+import Image from "next/image";
 
 interface ProjectImageData {
   textBtn: string;
   image: string;
-}
-
-interface CarnetProjectProps {
-  project: {
-    img: string;
-    url: string;
-  };
-  onClose: () => void;
-  onNextProject: () => void;
 }
 
 const TOOLS = [
@@ -49,9 +36,14 @@ const TOOLS = [
 ];
 
 export default function ProjectDetailViewCarnet() {
-  const THEME = "orange";
-  const router = useRouter();
   const currentSlug = "moncarnetderecettes";
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   // Trouver le projet actuel et le suivant dans la liste
   const currentIndex = projectsNewVersion.findIndex(
@@ -145,204 +137,274 @@ export default function ProjectDetailViewCarnet() {
       image: "/images/newversion/MON_CARNET_DE_RECETTES/public-recipe.avif",
     },
   ];
-  const DEMO_VIDEO_URL =
+  const VIDEO_URL =
     "https://res.cloudinary.com/dfez6bupb/video/upload/v1768160482/202601112016_1_ezqjgj.mp4";
+  const POSTER_URL = "/images/newversion/MON_CARNET_DE_RECETTES/hp-heroo.avif";
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleFullscreen = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Empêche le clic de déclencher le Play/Pause du parent
+
+    if (!document.fullscreenElement) {
+      // Entre en plein écran sur le CONTENEUR (pour garder l'UI)
+      containerRef.current?.requestFullscreen().catch((err) => {
+        console.error(`Erreur d'activation du plein écran: ${err.message}`);
+      });
+    } else {
+      // Sort du plein écran
+      document.exitFullscreen();
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      const current = videoRef.current.currentTime;
+      const duration = videoRef.current.duration;
+      if (duration > 0) {
+        setProgress((current / duration) * 100);
+      }
+    }
+  };
+
+  // Gère le clic sur la barre de progression
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+
+    if (videoRef.current && progressBarRef.current) {
+      const rect = progressBarRef.current.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      const percentage = clickX / width;
+
+      const newTime = percentage * videoRef.current.duration;
+      videoRef.current.currentTime = newTime;
+      setProgress(percentage * 100);
+    }
+  };
+
+  const handleVideoEnd = () => {
+    setIsPlaying(false);
+    setProgress(100);
+    if (videoRef.current) videoRef.current.currentTime = 0;
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
 
   return (
-    <ProjectViewLayout
-      onClose={() => router.push("/#projects")}
-      accentColor={THEME}
-    >
-      {(onMediaClick) => (
-        <>
-          <ProjectHero
-            title="Mon Carnet De Recettes"
-            subtitle=". Projet Fullstack"
-            image={project.img}
-            layoutId={`image-container-${project.url}`}
-            liveUrl="https://moncarnetderecettes.vercel.app"
-            repoUrl="https://github.com/niamorweb/moncarnetderecettes"
-            onDemoClick={() =>
-              onMediaClick({
-                image: DEMO_VIDEO_URL,
-                textBtn: "Démonstration Complète",
-                isVideo: true,
-              })
-            }
-            tags={[
-              {
-                label: "Backend Architecture",
-                icon: Server,
-                color: "text-red-400",
-              },
-              {
-                label: "Payment System",
-                icon: CreditCard,
-                color: "text-indigo-400",
-              },
-              {
-                label: "Type Safety",
-                icon: Code2,
-                color: "text-blue-400",
-              },
-            ]}
+    <ProjectLayoutGlobal>
+      <ProjectHeader
+        badgeStatus="Projet Personnel"
+        badgeRoles={["Développeur Fullstack"]}
+        title="Mon carnet de recettes - Du numérique au papier"
+        websiteUrl="https://moncarnetderecettes.vercel.app"
+        repoUrl="https://github.com/niamorweb/moncarnetderecettes"
+        skills={project.skills}
+      />
+
+      <Separator />
+      <section className="grid grid-cols-1 gap-10 items-center w-full max-w-[1240px] mx-auto">
+        <div className="flex flex-col gap-4 max-w-[700px] mx-auto">
+          <h3 className="text-3xl text-balance font-bold text-neutral-800 leading-tight">
+            Contexte
+          </h3>
+          <div className="text-neutral-600 text-balance leading-relaxed flex flex-col gap-3">
+            <p>
+              S'il existe de nombreuses plateformes pour centraliser ses
+              recettes numériquement, il manque souvent un pont vers le monde
+              physique. <strong>Mon Carnet de Recettes</strong> répond à ce
+              besoin en permettant de transformer une collection digitale en un{" "}
+              <strong>véritable livre de cuisine soigné et personnalisé</strong>
+              .
+            </p>
+            <p>
+              Le défi : offrir une interface de gestion de contenu simple qui se
+              traduit automatiquement en une mise en page print professionnelle,
+              prête à être imprimée.
+            </p>
+          </div>
+        </div>
+        <div
+          ref={containerRef} // C'est lui qui passera en fullscreen
+          className={`group relative rounded-2xl overflow-hidden shadow-2xl shadow-neutral-200/50 border border-neutral-200 bg-black cursor-pointer select-none transition-all duration-500 ${
+            isFullscreen
+              ? "w-full h-full rounded-none border-none"
+              : "aspect-video"
+          }`}
+          onClick={togglePlay}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <video
+            ref={videoRef}
+            src={VIDEO_URL}
+            poster={POSTER_URL}
+            className={`w-full h-full object-cover transition-transform duration-700 ${
+              !isPlaying && isHovered && !isFullscreen
+                ? "scale-105 blur-[2px]"
+                : "scale-100 blur-0"
+            } ${isFullscreen ? "object-contain" : "object-cover"}`}
+            // En fullscreen, on préfère "contain" pour voir toute la vidéo sans crop
+            playsInline
+            onTimeUpdate={handleTimeUpdate}
+            onEnded={handleVideoEnd}
           />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-neutral-200">
-            <ProjectIntro
-              context={{
-                headline: (
-                  <span>
-                    Un <strong>SaaS d'organisation culinaire</strong> conçu avec
-                    une architecture découplée (NestJS & Nuxt).
-                  </span>
-                ),
-                content: (
-                  <div className="space-y-4">
-                    <p>
-                      L'idée était de créer un outil plus intuitif que Notion
-                      pour gérer ses recettes. J'ai conçu une interface épurée,
-                      pensée pour une utilisation rapide en cuisine, sans les
-                      fioritures des outils généralistes.
-                    </p>
-                    <p>
-                      La fonctionnalité principale est un{" "}
-                      <strong>moteur de génération de PDF</strong>. Il permet de
-                      transformer ses recettes numériques en un carnet physique
-                      personnalisé, prêt à être imprimé, avec une mise en page
-                      soignée et dynamique.
-                    </p>
-                    <p>
-                      Côté backend, j'ai mis en place une structure solide avec{" "}
-                      <strong>NestJS et Prisma</strong>. Le projet intègre une
-                      gestion complète des paiements (Stripe), du stockage
-                      d'images (Cloudinary) et de l'envoi d'emails (Resend), le
-                      tout avec un typage TypeScript strict pour plus de
-                      fiabilité.
-                    </p>
-                    <div className="flex flex-wrap gap-4 text-sm text-neutral-400 border-t border-neutral-800 pt-4 mt-4">
-                      <span className="flex items-center gap-2">
-                        <Database size={14} className="text-orange-400" />{" "}
-                        Prisma (PostgreSQL)
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <Server size={14} className="text-orange-400" /> Railway
-                        + Vercel
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <ShieldCheck size={14} className="text-orange-400" />{" "}
-                        Auth : JWT / Passport
-                      </span>
-                    </div>
-                  </div>
-                ),
-              }}
-              stack={TOOLS}
-            />
+          {/* Overlay Noir (disparait au play) */}
+          <div
+            className={`absolute inset-0 bg-black/10 transition-opacity duration-500 pointer-events-none ${
+              isPlaying ? "opacity-0" : "opacity-100"
+            }`}
+          />
 
-            <div className="flex flex-col gap-32">
-              <ProjectSection
-                title="Architecture Backend & Data"
-                description={
-                  <span>
-                    Structure modulaire sous <strong>NestJS</strong> utilisant
-                    l'injection de dépendances pour une testabilité maximale.
-                    Modélisation des données relationnelles complexes (Recettes,
-                    Catégories, Users, Abonnements) via <strong>Prisma</strong>{" "}
-                    sur une base <strong>PostgreSQL</strong> hébergée chez
-                    Railway.
-                  </span>
-                }
-                icon={<Database size={24} className="text-orange-400" />}
-                images={ARCHITECTURE_DATA}
-                onImageClick={onMediaClick}
-                accentColor="orange"
-              />
+          {/* Bouton Play Central */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-500 ${
+              isPlaying ? "opacity-0 scale-110" : "opacity-100 scale-100"
+            }`}
+          >
+            {progress === 100 ? (
+              <div className="w-20 h-20 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg border border-white/50">
+                <RotateCcw className="w-8 h-8 text-neutral-900" />
+              </div>
+            ) : (
+              <div className="relative w-20 h-20 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg border border-white/50 group-hover:scale-110 transition-transform duration-300">
+                <Play className="w-8 h-8 text-neutral-900 ml-1 fill-neutral-900" />
+              </div>
+            )}
+          </div>
 
-              <ProjectSection
-                title="Sécurité & Communication"
-                description={
-                  <span>
-                    Implémentation d'un système d'authentification robuste
-                    (Guards, Interceptors). Intégration de l'API{" "}
-                    <strong>Resend</strong> pour gérer les emails de manière
-                    asynchrone (confirmation de compte, reset password)
-                    directement depuis les services NestJS.
-                  </span>
-                }
-                icon={<Mail size={24} className="text-blue-400" />}
-                images={AUTH_DATA}
-                reversed
-                onImageClick={onMediaClick}
-                accentColor="blue"
-              />
-
-              <ProjectSection
-                title="Monétisation via Stripe"
-                description={
-                  <span>
-                    Logique de paiement complète. Création de sessions de
-                    paiement sécurisées et, surtout, mise en place de{" "}
-                    <strong>Webhooks</strong> pour écouter les événements Stripe
-                    (`invoice.paid`, `subscription.deleted`) afin de
-                    synchroniser l'état de la base de données en temps réel sans
-                    dépendre du client.
-                  </span>
-                }
-                icon={<CreditCard size={24} className="text-indigo-400" />}
-                images={PAYMENT_DATA}
-                onImageClick={onMediaClick}
-                accentColor="indigo"
-              />
-
-              <ProjectSection
-                title="Frontend State & Media"
-                description={
-                  <span>
-                    Côté client, <strong>Nuxt</strong> gère le SSR pour le SEO.
-                    Utilisation de <strong>Pinia</strong> pour la gestion d'état
-                    global (User session). Intégration de{" "}
-                    <strong>Cloudinary</strong> pour l'optimisation à la volée
-                    et le stockage sécurisé des images utilisateurs.
-                  </span>
-                }
-                icon={<Cloud size={24} className="text-emerald-400" />}
-                images={FRONT_LOGIC_DATA}
-                reversed
-                onImageClick={onMediaClick}
-                accentColor="emerald"
-              />
-
-              <ProjectSection
-                title="Intégration Client & UX"
-                description={
-                  <span>
-                    Le Frontend <strong>Nuxt</strong> ne se contente pas
-                    d'afficher des pixels. Il gère une logique complexe :{" "}
-                    <strong>SSR</strong> pour le référencement des profils
-                    publics,
-                    <strong>Pinia</strong> pour la persistance de session
-                    utilisateur, et des composants interactifs (Drag & Drop,
-                    Modales) connectés en temps réel à l'API via{" "}
-                    <strong>$fetch</strong>.
-                  </span>
-                }
-                icon={<Laptop size={24} className="text-emerald-400" />}
-                images={FRONTEND_INTEGRATION_DATA}
-                onImageClick={onMediaClick}
-                accentColor="emerald"
-              />
+          {/* --- UI DU BAS (CONTROLS) --- */}
+          <div
+            className={`absolute bottom-0 left-0 w-full flex flex-col justify-end transition-opacity duration-300 px-4 pb-4 ${
+              isPlaying || isHovered ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {/* Bouton Fullscreen (Flottant en bas à droite) */}
+            <div className="flex justify-end mb-2">
+              <button
+                onClick={toggleFullscreen}
+                className="p-2 rounded-full bg-black/50 backdrop-blur-md text-white border border-white/10 hover:bg-white hover:text-black transition-all duration-300 z-20 group/btn"
+                title={isFullscreen ? "Réduire" : "Plein écran"}
+              >
+                {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
+              </button>
             </div>
 
-            <ProjectFooter
-              nextTitle="Explorer le projet suivant"
-              accentColor={THEME}
-              onNextProject={() => router.push(`/projects/${nextProject.url}`)}
-              onClose={() => router.push("/#projects")}
-            />
+            {/* Barre de progression */}
+            <div
+              className="w-full h-2 group/progress cursor-pointer relative py-2" // Zone clickable augmentée verticalement (py-2)
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div
+                ref={progressBarRef}
+                className="w-full h-1 bg-black/30 rounded-full overflow-hidden backdrop-blur-sm relative"
+                onClick={handleSeek}
+              >
+                <div
+                  className="absolute top-0 left-0 h-full bg-red-600 transition-all duration-100 ease-linear rounded-full"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+            </div>
           </div>
-        </>
-      )}
-    </ProjectViewLayout>
+        </div>
+      </section>
+      <Separator />
+
+      <div className="flex flex-col gap-32">
+        <ProjectSection
+          title="Architecture Backend & Data"
+          description={
+            <span>
+              Structure modulaire sous <strong>NestJS</strong>. Modélisation des
+              données relationnelles (Recettes, Catégories, Users,
+              Abonnements..) via <strong>Prisma</strong> sur une base{" "}
+              <strong>PostgreSQL</strong>. Serveur hébergé chez Railway et
+              PostgreSQL sur Prisma.io.
+            </span>
+          }
+          icon={<Database size={24} />}
+          imgArray={ARCHITECTURE_DATA}
+        />
+
+        <ProjectSection
+          title="Sécurité & Communication"
+          description={
+            <span>
+              Implémentation d'un système d'authentification robuste (JWT et la
+              confirmation de mail obligatoire avec Guards ). Intégration de
+              l'API <strong>Resend</strong> pour gérer les confirmations de
+              compte directement depuis les services NestJS.
+            </span>
+          }
+          icon={<Mail size={24} />}
+          imgArray={AUTH_DATA}
+        />
+
+        <ProjectSection
+          title="Monétisation via Stripe"
+          description={
+            <span>
+              Logique de paiement complète. Création de sessions de paiement
+              sécurisées et, surtout, mise en place de <strong>Webhooks</strong>{" "}
+              pour écouter les événements Stripe (`invoice.paid`,
+              `subscription.deleted`..) afin de synchroniser l'état de la base
+              de données en temps réel.
+            </span>
+          }
+          icon={<CreditCard size={24} />}
+          imgArray={PAYMENT_DATA}
+        />
+
+        <ProjectSection
+          title="Frontend State & Media"
+          description={
+            <span>
+              Côté client, <strong>Nuxt</strong> gère le SSR pour le SEO.
+              Utilisation de <strong>Pinia</strong> pour la gestion d'état
+              global (User session). Intégration de <strong>Cloudinary</strong>{" "}
+              pour l'optimisation à la volée et le stockage sécurisé des images
+              utilisateurs.
+            </span>
+          }
+          icon={<Cloud size={24} />}
+          imgArray={FRONT_LOGIC_DATA}
+        />
+
+        <ProjectSection
+          title="Intégration Client & UX"
+          description={
+            <span>
+              Le Frontend <strong>Nuxt</strong> ne se contente pas d'afficher
+              des pixels. Il gère une logique complexe : <strong>SSR</strong>{" "}
+              pour le référencement des profils publics,
+              <strong>Pinia</strong> pour la persistance de session utilisateur,
+              et des composants interactifs (Drag & Drop, Modales) connectés en
+              temps réel à l'API via <strong>$fetch</strong>.
+            </span>
+          }
+          icon={<Laptop size={24} />}
+          imgArray={FRONTEND_INTEGRATION_DATA}
+        />
+      </div>
+    </ProjectLayoutGlobal>
   );
 }

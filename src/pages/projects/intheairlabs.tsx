@@ -3,7 +3,6 @@ import ProjectViewLayout from "@/components/projects/ProjectLayout";
 import {
   ProjectHero,
   ProjectIntro,
-  ProjectSection,
   ProjectFooter,
 } from "@/components/projects/ProjectComponents";
 import {
@@ -17,6 +16,11 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { projectsNewVersion } from "@/components/newVersion/projets/data/data";
+import ProjectLayoutGlobal from "@/components/project/ProjectLayoutGlobal";
+import ProjectHeader from "@/components/project/ProjectHeader";
+import Separator from "@/components/project/Separator";
+import Image from "next/image";
+import ProjectSection from "@/components/project/ProjectSection";
 
 const TOOLS = [
   { label: "React", icon: "/images/icons/react.svg" },
@@ -80,154 +84,100 @@ export default function ProjectPlateformeSaas() {
     projectsNewVersion[currentIndex + 1] || projectsNewVersion[0];
 
   return (
-    <ProjectViewLayout
-      onClose={() => router.push("/#projects")}
-      accentColor={THEME}
-    >
-      {(onImageClick) => (
-        <>
-          <ProjectHero
-            title="IntheairLabs"
-            subtitle="SaaS B2B : React & Django Integration."
-            image="/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif"
-            layoutId={`image-container-${project.url}`}
-            liveUrl="https://labs.intheair.co/login"
-            tags={[
-              {
-                label: "Fullstack Integration",
-                icon: GitMerge,
-                color: "text-indigo-400",
-              },
-              {
-                label: "Django Backend",
-                icon: Database,
-                color: "text-emerald-400",
-              },
-              {
-                label: "Complex Data Visualization",
-                color: "text-neutral-300",
-              },
-            ]}
-          />
+    <ProjectLayoutGlobal>
+      <ProjectHeader
+        badgeStatus="Projet Professionnel"
+        badgeRoles={["Développeur Fullstack", "UX/UI Designer"]}
+        title="IntheairLabs - Refonte"
+        websiteUrl="https://labs.intheair.co/login"
+        skills={project.skills}
+      />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-neutral-200">
-            <ProjectIntro
-              context={{
-                headline: (
-                  <span>
-                    Modernisation d'un SaaS 3D : refonte de l'interface et
-                    <span className="text-indigo-400 font-medium">
-                      {" "}
-                      optimisation du backend Django
-                    </span>
-                    .
-                  </span>
-                ),
-                content: (
-                  <div className="space-y-4">
-                    <p>
-                      IntheairLabs est une plateforme de gestion de livrables
-                      3D. Le challenge principal était de reconstruire
-                      entièrement le frontend sans perturber la logique métier
-                      déjà en place sur le backend Django.
-                    </p>
-                    <p>
-                      J'ai travaillé en binôme avec le développeur backend pour
-                      fluidifier l'échange de données. Je suis intervenu
-                      directement sur les <strong>vues Django</strong> et les{" "}
-                      <strong>modèles</strong> pour adapter l'API et faciliter
-                      l'intégration des nouveaux composants React.
-                    </p>
-                    <p>
-                      Cette collaboration étroite a permis de transformer une
-                      interface vieillissante en une application moderne,
-                      capable de gérer des visualisations 3D complexes de
-                      manière fluide.
-                    </p>
-                    <div className="flex flex-wrap gap-4 text-sm text-neutral-400 border-t border-neutral-800 pt-4 mt-2 font-mono">
-                      <span className="flex items-center gap-2">
-                        <GitMerge size={14} /> Pair Programming
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <Braces size={14} /> Django API
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <Box size={14} /> WebGL / 3D
-                      </span>
-                    </div>
-                  </div>
-                ),
-              }}
-              stack={TOOLS}
-            />
-
-            <div className="flex flex-col gap-32">
-              <ProjectSection
-                title="Refactoring & Gestion d'assets"
-                description={
-                  <span>
-                    Le point critique de l'ancien système était la gestion des
-                    fichiers : les utilisateurs devaient uploader leurs assets
-                    un par un, sans aucun retour sur l'état d'avancement. J'ai
-                    refondu la structure de données{" "}
-                    <strong>Projets / Livrables / Assets</strong> pour permettre
-                    une gestion globale des fichiers, tout en fiabilisant les
-                    retours d'état (succès/erreur) lors de l'envoi vers le
-                    serveur.
-                  </span>
-                }
-                icon={<Terminal size={24} className="text-orange-400" />}
-                images={ARCHITECTURE_DATA}
-                onImageClick={onImageClick}
-                accentColor="orange"
-              />
-
-              <ProjectSection
-                title="Design System & Composants React"
-                description={
-                  <span>
-                    Industrialisation de l'UI. Création d'un Design System
-                    complet sur Figma, puis traduction immédiate en{" "}
-                    <strong>Composants React réutilisables</strong>. Cette
-                    approche a permis d'accélérer le développement des vues
-                    Admin complexes (Tableaux de données, Filtres avancés).
-                  </span>
-                }
-                icon={<Layers size={24} className="text-pink-400" />}
-                images={COMPONENT_DATA}
-                reversed
-                onImageClick={onImageClick}
-                accentColor="pink"
-              />
-
-              <ProjectSection
-                title="Intégration Fullstack & 3D"
-                description={
-                  <span>
-                    La partie critique du projet. Intégration des endpoints API
-                    pour le CRUD des projets. Intervention sur le code{" "}
-                    <strong>Python/Django</strong> pour ajuster les serializers
-                    et optimiser les payloads envoyés au Front. Intégration d'un
-                    viewer 3D WebGL interagissant en temps réel avec l'état de
-                    l'application.
-                  </span>
-                }
-                icon={<Database size={24} className="text-indigo-400" />}
-                images={INTEGRATION_DATA}
-                onImageClick={onImageClick}
-                accentColor={THEME}
-              />
-            </div>
-
-            <ProjectFooter
-              nextTitle="La refonte de leur site vitrine"
-              accentColor={THEME}
-              onNextProject={() => router.push(`/projects/${nextProject.url}`)}
-              onClose={() => router.push("/#projects")}
-            />
+      <Separator />
+      <section className="grid grid-cols-1 gap-10 items-center w-full max-w-[1240px] mx-auto">
+        <div className="flex flex-col gap-4 max-w-[700px] mx-auto">
+          <h3 className="text-3xl text-balance font-bold text-neutral-800 leading-tight">
+            Contexte
+          </h3>
+          <div className="text-neutral-600 text-balance leading-relaxed flex flex-col gap-3">
+            <p>
+              IntheairLabs est une{" "}
+              <strong>
+                plateforme SaaS B2B spécialisée dans la gestion de données
+                géospatiales
+              </strong>
+              . L'application permet aux clients de piloter leurs projets via
+              une interface cartographique, de suivre l'avancement des chantiers
+              et de visualiser des données techniques lourdes (nuages de points
+              3D, orthomosaïques) directement dans le navigateur.
+            </p>
+            <p>
+              L'objectif de la refonte était d'industrialiser les processus
+              métiers et de monter en gamme sur l'expérience utilisateur
+              globale.
+            </p>
           </div>
-        </>
-      )}
-    </ProjectViewLayout>
+        </div>
+        <div className="rounded-2xl overflow-hidden shadow-xl border border-neutral-200 bg-white p-2">
+          <Image
+            src="/images/newversion/INTHEAIRLABS/previous-admin-projects-blur.avif"
+            width={1200}
+            height={700}
+            alt="Main preview"
+            className="rounded-xl w-full object-cover"
+          />
+        </div>
+      </section>
+
+      <div className="flex flex-col gap-32">
+        <ProjectSection
+          title="Refactoring & Gestion d'assets"
+          description={
+            <span>
+              Le point critique de l'ancien système était la gestion des
+              fichiers : les utilisateurs devaient uploader leurs assets un par
+              un, sans aucun retour sur l'état d'avancement. J'ai refondu la
+              structure de données <strong>Projets / Livrables / Assets</strong>{" "}
+              pour permettre une gestion globale des fichiers, tout en
+              fiabilisant les retours d'état (succès/erreur) lors de l'envoi
+              vers le serveur.
+            </span>
+          }
+          icon={<Terminal size={24} />}
+          imgArray={ARCHITECTURE_DATA}
+        />
+
+        <ProjectSection
+          title="Design System & Composants React"
+          description={
+            <span>
+              Création d'un Design System complet sur Figma, puis traduction
+              immédiate en <strong>Composants React réutilisables</strong>.
+              Cette approche a permis d'accélérer le développement des vues
+              Admin complexes (Tableaux de données, Filtres avancés..).
+            </span>
+          }
+          icon={<Layers size={24} />}
+          imgArray={COMPONENT_DATA}
+        />
+
+        <ProjectSection
+          title="Intégration Fullstack & 3D"
+          description={
+            <span>
+              La partie critique du projet. Intégration des endpoints API pour
+              le CRUD des projets. Intervention sur le code{" "}
+              <strong>Python/Django</strong> pour ajuster les serializers et
+              optimiser les payloads envoyés au Front, gestion de fichiers KML
+              depuis Django afin d'avoir les zones des projets clients dessinées
+              côté frontend. Intégration d'un viewer 3D WebGL interagissant en
+              temps réel avec l'état de l'application.
+            </span>
+          }
+          icon={<Database size={24} />}
+          imgArray={INTEGRATION_DATA}
+        />
+      </div>
+    </ProjectLayoutGlobal>
   );
 }
