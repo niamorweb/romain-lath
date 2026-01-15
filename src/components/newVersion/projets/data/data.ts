@@ -100,7 +100,7 @@ const frontendLabels = [
   "TypeScript",
 ];
 
-const backendLabels = ["Node.js", "Express", "Nest.js", "Jest"];
+const backendLabels = ["Node.js", "Express", "Nest.js"];
 
 const dbAndOtherLabels = ["Prisma", "Postgresql", "Git", "Docker", "Postman"];
 
