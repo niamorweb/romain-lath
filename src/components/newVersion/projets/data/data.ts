@@ -100,7 +100,7 @@ const frontendLabels = [
   "TypeScript",
 ];
 
-const backendLabels = ["Node.js", "Express", "Nest.js"];
+const backendLabels = ["Node.js", "Express", "Nest.js", "Django"];
 
 const dbAndOtherLabels = ["Prisma", "Postgresql", "Git", "Docker", "Postman"];
 
@@ -140,7 +140,7 @@ export const projectsNewVersion = [
         "TailwindCSS",
         "Vue.js",
         "Docker",
-      ].includes(icon.label)
+      ].includes(icon.label),
     ),
   },
   {
@@ -161,7 +161,7 @@ export const projectsNewVersion = [
         "TypeScript",
         "Supabase",
         "Jest",
-      ].includes(icon.label)
+      ].includes(icon.label),
     ),
   },
   {
@@ -173,7 +173,7 @@ export const projectsNewVersion = [
     link: "https://labs.intheair.co/login",
     img: "/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif",
     skills: icons.filter((icon) =>
-      ["Figma", "React", "JavaScript", "Django"].includes(icon.label)
+      ["Figma", "React", "JavaScript", "Django"].includes(icon.label),
     ),
   },
   {
@@ -185,7 +185,7 @@ export const projectsNewVersion = [
     link: "https://intheair.co/",
     img: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
     skills: icons.filter((icon) =>
-      ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label)
+      ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label),
     ),
   },
   // {
