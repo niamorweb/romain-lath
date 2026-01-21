@@ -10,6 +10,8 @@ import {
   Maximize,
   RotateCcw,
   Play,
+  Code2,
+  Layout,
 } from "lucide-react";
 import { projectsNewVersion } from "@/components/newVersion/projets/data/data";
 import ProjectLayoutGlobal from "@/components/project/ProjectLayoutGlobal";
@@ -47,7 +49,7 @@ export default function ProjectDetailViewCarnet() {
 
   // Trouver le projet actuel et le suivant dans la liste
   const currentIndex = projectsNewVersion.findIndex(
-    (p) => p.url === currentSlug
+    (p) => p.url === currentSlug,
   );
   const project = projectsNewVersion[currentIndex];
 
@@ -78,6 +80,49 @@ export default function ProjectDetailViewCarnet() {
     {
       textBtn: "Flux Email Transactionnel",
       image: "/images/newversion/MON_CARNET_DE_RECETTES/mail.avif",
+    },
+  ];
+
+  const OCR_DATA: ProjectImageData[] = [
+    {
+      textBtn: "Photo to scan",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/photo-to-scan.avif",
+    },
+    {
+      textBtn: "Scanning",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/photo-scanning.avif",
+    },
+    {
+      textBtn: "Gemini route",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/gemini-route.avif",
+    },
+    {
+      textBtn: "Gemini function",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/gemini-code.avif",
+    },
+  ];
+
+  const PDF_DATA: ProjectImageData[] = [
+    {
+      textBtn: "Pdf viewer",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/new-pdf-viewer.avif",
+    },
+    {
+      textBtn: "Pdf downloaded",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/pdf-downloaded.avif",
+    },
+    {
+      textBtn: "Print route",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/route-print-code.avif",
+    },
+    {
+      textBtn: "Init handlebars and puppeteer",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/init-pdf-code.avif",
+    },
+    {
+      textBtn: "Print function",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/print-recipes-code.avif",
     },
   ];
 
@@ -358,6 +403,36 @@ export default function ProjectDetailViewCarnet() {
           }
           icon={<Mail size={24} />}
           imgArray={AUTH_DATA}
+        />
+
+        <ProjectSection
+          title="Intelligence Artificielle & OCR"
+          description={
+            <span>
+              Intégration de <strong>Google Gemini AI</strong> pour transformer
+              des photos de recettes (manuscrites ou imprimées) en données
+              structurées. Le backend traite l'image via une route dédiée,
+              utilise le prompt engineering pour extraire les ingrédients et
+              instructions, puis renvoie un objet JSON prêt à être validé.
+            </span>
+          }
+          icon={<Code2 />}
+          imgArray={OCR_DATA}
+        />
+
+        <ProjectSection
+          title="Génération PDF & Print"
+          description={
+            <span>
+              Conception d'un moteur d'édition haute fidélité. Utilisation de{" "}
+              <strong>Puppeteer</strong> et <strong>Handlebars</strong> côté
+              serveur pour générer des fichiers PDF "pixel-perfect". Le système
+              injecte les données dynamiquement dans un template HTML/CSS
+              optimisé pour l'impression physique.
+            </span>
+          }
+          icon={<Layout />}
+          imgArray={PDF_DATA}
         />
 
         <ProjectSection

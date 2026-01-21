@@ -98,6 +98,49 @@ export default function ProjectDetailViewCarnet({
     },
   ];
 
+  const OCR_DATA: ProjectImageData[] = [
+    {
+      textBtn: "Photo to scan",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/photo-to-scan.avif",
+    },
+    {
+      textBtn: "Scanning",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/photo-scanning.avif",
+    },
+    {
+      textBtn: "Gemini route",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/gemini-route.avif",
+    },
+    {
+      textBtn: "Gemini function",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/gemini-code.avif",
+    },
+  ];
+
+  const PDF_DATA: ProjectImageData[] = [
+    {
+      textBtn: "Pdf viewer",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/new-pdf-viewer.avif",
+    },
+    {
+      textBtn: "Pdf downloaded",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/pdf-downloaded.avif",
+    },
+    {
+      textBtn: "Print route",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/route-print-code.avif",
+    },
+    {
+      textBtn: "Init handlebars and puppeteer",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/init-pdf-code.avif",
+    },
+    {
+      textBtn: "Print function",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/print-recipes-code.avif",
+    },
+  ];
+
   const FRONT_LOGIC_DATA: ProjectImageData[] = [
     {
       textBtn: "Store Pinia (State Management)",
@@ -272,6 +315,42 @@ export default function ProjectDetailViewCarnet({
                 reversed
                 onImageClick={onMediaClick}
                 accentColor="blue"
+              />
+
+              <ProjectSection
+                title="Intelligence Artificielle & OCR"
+                description={
+                  <span>
+                    Intégration de <strong>Google Gemini AI</strong> pour
+                    transformer des photos de recettes (manuscrites ou
+                    imprimées) en données structurées. Le backend traite l'image
+                    via une route dédiée, utilise le prompt engineering pour
+                    extraire les ingrédients et instructions, puis renvoie un
+                    objet JSON prêt à être validé.
+                  </span>
+                }
+                icon={<Code2 size={24} className="text-purple-400" />}
+                images={OCR_DATA}
+                reversed
+                onImageClick={onMediaClick}
+                accentColor="purple"
+              />
+
+              <ProjectSection
+                title="Génération PDF & Print"
+                description={
+                  <span>
+                    Conception d'un moteur d'édition haute fidélité. Utilisation
+                    de <strong>Puppeteer</strong> et <strong>Handlebars</strong>{" "}
+                    côté serveur pour générer des fichiers PDF "pixel-perfect".
+                    Le système injecte les données dynamiquement dans un
+                    template HTML/CSS optimisé pour l'impression physique.
+                  </span>
+                }
+                icon={<Layout size={24} className="text-rose-400" />}
+                images={PDF_DATA}
+                onImageClick={onMediaClick}
+                accentColor="rose"
               />
 
               <ProjectSection
