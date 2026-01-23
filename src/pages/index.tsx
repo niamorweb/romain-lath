@@ -47,7 +47,7 @@ export default function Version2() {
                     Romain Lathuiliere
                   </h1>
                   <h2 className="text-2xl font-medium text-black/70 geist tracking-tighter">
-                    Développeur Fullstack
+                    Développeur Frontend (Spécialisé UX)
                   </h2>
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">

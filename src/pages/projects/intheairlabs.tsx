@@ -1,20 +1,5 @@
 import React from "react";
-import ProjectViewLayout from "@/components/projects/ProjectLayout";
-import {
-  ProjectHero,
-  ProjectIntro,
-  ProjectFooter,
-} from "@/components/projects/ProjectComponents";
-import {
-  Database,
-  LayoutDashboard,
-  GitMerge,
-  Braces,
-  Layers,
-  Terminal,
-  Box,
-} from "lucide-react";
-import { useRouter } from "next/navigation";
+import { Database, Layers, Terminal } from "lucide-react";
 import { projectsNewVersion } from "@/components/newVersion/projets/data/data";
 import ProjectLayoutGlobal from "@/components/project/ProjectLayoutGlobal";
 import ProjectHeader from "@/components/project/ProjectHeader";
@@ -55,7 +40,7 @@ const COMPONENT_DATA = [
   },
   {
     textBtn: "Mise à jour du backend",
-    image: "/images/newversion/INTHEAIRLABS/code-backend.webp",
+    image: "/images/newversion/INTHEAIRLABS/code-backend.avif",
   },
 ];
 
@@ -65,7 +50,7 @@ const INTEGRATION_DATA = [
     image: "/images/newversion/INTHEAIRLABS/companies-table.avif",
   },
   {
-    textBtn: "Nouveau formulairees",
+    textBtn: "Nouveau formulaires",
     image: "/images/newversion/INTHEAIRLABS/client-form.avif",
   },
   {
@@ -79,17 +64,13 @@ const INTEGRATION_DATA = [
 ];
 
 export default function ProjectPlateformeSaas() {
-  const THEME = "indigo";
-  const router = useRouter();
   const currentSlug = "intheairlabs";
 
   // Trouver le projet actuel et le suivant dans la liste
   const currentIndex = projectsNewVersion.findIndex(
-    (p) => p.url === currentSlug
+    (p) => p.url === currentSlug,
   );
   const project = projectsNewVersion[currentIndex];
-  const nextProject =
-    projectsNewVersion[currentIndex + 1] || projectsNewVersion[0];
 
   return (
     <ProjectLayoutGlobal>
@@ -139,7 +120,7 @@ export default function ProjectPlateformeSaas() {
 
       <div className="flex flex-col gap-32">
         <ProjectSection
-          title="Refactoring & Gestion d'assets"
+          title="Audit de l'ancienne version"
           description={
             <span>
               Le point critique de l'ancien système était la gestion des
@@ -156,7 +137,7 @@ export default function ProjectPlateformeSaas() {
         />
 
         <ProjectSection
-          title="Design System & Composants React"
+          title="Conception & Intégration"
           description={
             <span>
               Création d'un Design System complet sur Figma, puis traduction

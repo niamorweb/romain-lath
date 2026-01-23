@@ -93,6 +93,11 @@ export default function ProjectDetailViewCarnet() {
       image: "/images/newversion/MON_CARNET_DE_RECETTES/photo-scanning.avif",
     },
     {
+      textBtn: "Résultat du scan",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/recipe-from-ocr.avif",
+    },
+
+    {
       textBtn: "Gemini route",
       image: "/images/newversion/MON_CARNET_DE_RECETTES/gemini-route.avif",
     },
@@ -116,7 +121,7 @@ export default function ProjectDetailViewCarnet() {
       image: "/images/newversion/MON_CARNET_DE_RECETTES/route-print-code.avif",
     },
     {
-      textBtn: "Init handlebars and puppeteer",
+      textBtn: "Init Handlebars",
       image: "/images/newversion/MON_CARNET_DE_RECETTES/init-pdf-code.avif",
     },
     {

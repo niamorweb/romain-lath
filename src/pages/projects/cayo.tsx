@@ -46,7 +46,7 @@ export default function CayoProjectPage() {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const currentIndex = projectsNewVersion.findIndex(
-    (p) => p.url === currentSlug
+    (p) => p.url === currentSlug,
   );
   const project = projectsNewVersion[currentIndex];
 
@@ -82,7 +82,11 @@ export default function CayoProjectPage() {
 
   const GROUP_CRYPTO_DATA: ProjectImageData[] = [
     {
-      textBtn: "Échange de clés RSA",
+      textBtn: "Inscription",
+      image: "/images/newversion/CAYO/crypto-process-signup.webp",
+    },
+    {
+      textBtn: "Création d'une organisation",
       image: "/images/newversion/CAYO/crypto-process-group-creation.webp",
     },
     {
