@@ -12,6 +12,7 @@ import {
   Play,
   Code2,
   Layout,
+  Smartphone, // Ajout de l'icône pour le mobile
 } from "lucide-react";
 import { projectsNewVersion } from "@/components/newVersion/projets/data/data";
 import ProjectLayoutGlobal from "@/components/project/ProjectLayoutGlobal";
@@ -19,6 +20,7 @@ import ProjectHeader from "@/components/project/ProjectHeader";
 import ProjectSection from "@/components/project/ProjectSection";
 import Separator from "@/components/project/Separator";
 import Image from "next/image";
+import ProjectSectionMobile from "@/components/project/ProjectSectionMobile";
 
 interface ProjectImageData {
   textBtn: string;
@@ -186,6 +188,61 @@ export default function ProjectDetailViewCarnet() {
       image: "/images/newversion/MON_CARNET_DE_RECETTES/public-recipe.avif",
     },
   ];
+
+  // --- NOUVELLE SECTION MOBILE ---
+  const MOBILE_DATA: ProjectImageData[] = [
+    {
+      textBtn: "Profil",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/mobile/profile.avif",
+    },
+    {
+      textBtn: "Liste Recettes",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/mobile/recipes-selection.avif",
+    },
+    {
+      textBtn: "Page Recette Carnet",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/mobile/page-book.avif",
+    },
+    {
+      textBtn: "Carnet Virtuel",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/mobile/pages-book.avif",
+    },
+    {
+      textBtn: "Options Scanner",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/mobile/options-scan.avif",
+    },
+    {
+      textBtn: "Caméra",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/mobile/camera.avif",
+    },
+    {
+      textBtn: "Prise Photo",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/mobile/picture-takeb.avif",
+    },
+    {
+      textBtn: "Données Scannées",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/mobile/scanned-data.avif",
+    },
+    {
+      textBtn: "Recette affichage",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/mobile/new-recipe-scanned.avif",
+    },
+    {
+      textBtn: "Recette affichage",
+      image:
+        "/images/newversion/MON_CARNET_DE_RECETTES/mobile/new-recipe-data.avif",
+    },
+    {
+      textBtn: "Paramètres",
+      image: "/images/newversion/MON_CARNET_DE_RECETTES/mobile/settings.avif",
+    },
+  ];
+
   const VIDEO_URL =
     "https://res.cloudinary.com/dfez6bupb/video/upload/v1768160482/202601112016_1_ezqjgj.mp4";
   const POSTER_URL = "/images/newversion/MON_CARNET_DE_RECETTES/hp-heroo.avif";
@@ -484,6 +541,21 @@ export default function ProjectDetailViewCarnet() {
           }
           icon={<Laptop size={24} />}
           imgArray={FRONTEND_INTEGRATION_DATA}
+        />
+
+        <ProjectSectionMobile
+          title="Application Mobile React Native"
+          description={
+            <span>
+              Extension de l'écosystème sur mobile avec{" "}
+              <strong>React Native</strong>. L'application consomme la même API
+              NestJS, permettant une synchronisation parfaite des données (scan,
+              recettes, profil) entre le web et le mobile. Utilisation de la
+              caméra native pour la fonctionnalité OCR.
+            </span>
+          }
+          icon={<Smartphone size={24} />}
+          imgArray={MOBILE_DATA}
         />
       </div>
     </ProjectLayoutGlobal>
