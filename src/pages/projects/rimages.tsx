@@ -182,7 +182,7 @@ export default function CayoProjectPage() {
     <ProjectLayoutGlobal>
       <ProjectHeader
         badgeStatus="Projet Personnel"
-        badgeRoles={["Développeur Desktop", "UX Designer"]}
+        badgeRoles={["Développeur Desktop", "UX/UI Designer"]}
         title="Rimages - Bulk images compression. Instant. Private. Free."
         websiteUrl="https://rimages.vercel.app"
         repoUrl="https://github.com/rimages-app"

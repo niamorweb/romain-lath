@@ -124,7 +124,7 @@ export const projectsNewVersion = [
     id: 5,
     url: "moncarnetderecettes",
     title: "Mon Carnet de Recettes",
-    repoUrl: "https://github.com/niamorweb/moncarnetderecettes",
+    repoUrl: "https://github.com/moncarnetderecettes",
     description:
       "Plateforme de création et d'organisation de recettes avec un système automatisé de génération de livres de cuisine (PDF haute définition) prêts pour l'impression.",
     link: "https://moncarnetderecettes.vercel.app/",

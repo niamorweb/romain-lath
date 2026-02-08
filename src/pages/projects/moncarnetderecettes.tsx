@@ -320,10 +320,10 @@ export default function ProjectDetailViewCarnet() {
     <ProjectLayoutGlobal>
       <ProjectHeader
         badgeStatus="Projet Personnel"
-        badgeRoles={["Développeur Fullstack"]}
+        badgeRoles={["Développeur Fullstack", "UX/UI Designer"]}
         title="Mon carnet de recettes - Du numérique au papier"
         websiteUrl="https://moncarnetderecettes.vercel.app"
-        repoUrl="https://github.com/niamorweb/moncarnetderecettes"
+        repoUrl="https://github.com/moncarnetderecettes"
         skills={project.skills}
       />
 
