@@ -100,9 +100,9 @@ const frontendLabels = [
   "TypeScript",
 ];
 
-const backendLabels = ["Node.js", "Express", "Nest.js", "Django"];
+const backendLabels = ["Nest.js", "Django"];
 
-const dbAndOtherLabels = ["Prisma", "Postgresql", "Git", "Docker", "Postman"];
+const dbAndOtherLabels = ["Prisma", "Postgresql", "Docker"];
 
 export const skillsNewVersion = [
   {
@@ -129,6 +129,7 @@ export const projectsNewVersion = [
       "Plateforme de création et d'organisation de recettes avec un système automatisé de génération de livres de cuisine (PDF haute définition) prêts pour l'impression.",
     link: "https://moncarnetderecettes.vercel.app/",
     img: "/images/newversion/MON_CARNET_DE_RECETTES/hp-heroo.avif",
+    type: "Projets personnels",
     skills: icons.filter((icon) =>
       [
         "Nuxt",
@@ -152,6 +153,7 @@ export const projectsNewVersion = [
       "Cayo est une application de gestion de mots de passe collaborative dotée d'un chiffrement de bout en bout, permettant aux familles, équipes de partager leurs identifiants en toute sécurité.",
     link: "https://cayo-zeta.vercel.app",
     img: "/images/newversion/CAYO/hp-hero.avif",
+    type: "Projets personnels",
     skills: icons.filter((icon) =>
       [
         "Figma",
@@ -165,12 +167,27 @@ export const projectsNewVersion = [
     ),
   },
   {
+    id: 6,
+    url: "rimages",
+    title: "rimages",
+    repoUrl: "https://github.com/rimages-app",
+    description:
+      "rimages est une application desktop hyper légère réalisé avec Tauri (React + Rust) permettant de compresser et de resize plusieurs images en même temps.",
+    link: "https://rimages.vercel.app",
+    img: "/images/newversion/RIMAGES/landing-hero.avif",
+    type: "Projets personnels",
+    skills: icons.filter((icon) =>
+      ["Figma", "React", "TypeScript"].includes(icon.label),
+    ),
+  },
+  {
     id: 1,
     url: "intheairlabs",
     title: "IntheairLabs",
     description:
       "IntheairLabs, une web app pour l'instant B2B permettant aux clients de gérer leur projets, de télécharger leur livrables et de les visualiser directement sur la plateforme. Espace admin et espace client.",
     link: "https://labs.intheair.co/login",
+    type: "Projets pro",
     img: "/images/newversion/INTHEAIRLABS/intheairlabs-login2.avif",
     skills: icons.filter((icon) =>
       ["Figma", "React", "JavaScript", "Django"].includes(icon.label),
@@ -184,6 +201,7 @@ export const projectsNewVersion = [
       "Le site vitrine de l’entreprise Intheair. Refonte complète du site en allant du design, à l’architecture des pages avec une toute nouvelle navigation. Intégrations avec des applications externes comme Hubspot (pour le côté marketing), Zapier.",
     link: "https://intheair.co/",
     img: "/images/newversion/SITE_VITRINE/intheair-hp.avif",
+    type: "Projets pro",
     skills: icons.filter((icon) =>
       ["Figma", "Photoshop", "Webflow", "JavaScript"].includes(icon.label),
     ),

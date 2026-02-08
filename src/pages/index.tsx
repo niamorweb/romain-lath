@@ -2,22 +2,14 @@ import {
   projectsNewVersion,
   skillsNewVersion,
 } from "@/components/newVersion/projets/data/data";
-import {
-  Code,
-  ExternalLink,
-  Github,
-  Globe,
-  Mail,
-  MoveRight,
-  Notebook,
-  Paintbrush,
-} from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { LiaLinkedin } from "react-icons/lia";
 import Head from "next/head";
 import Separator from "@/components/project/Separator";
+import ProjectList from "@/components/ProjectsList";
 
 export default function Version2() {
   const pageTitle = "Romain Lathuiliere - Portfolio Développeur Fullstack";
@@ -36,7 +28,7 @@ export default function Version2() {
       </Head>
 
       <main className="min-h-screen p-6 pb-16 bg-neutral-100 ">
-        <div className="max-w-[1000px] mx-auto gap-4 flex flex-col">
+        <div className="max-w-[1000px] mx-auto flex flex-col">
           <div
             className={`w-full h-fit text-neutral-800 flex flex-col gap-4 md:col-span-1 `}
           >
@@ -84,7 +76,7 @@ export default function Version2() {
               <div className="md:hidden">
                 <Separator />
               </div>
-              <div className="flex flex-col gap-4 mt-10">
+              <div className="flex flex-col gap-4">
                 <h3 className="text-3xl font-semibold">Mes compétences</h3>
                 <div className="flex flex-col items-start gap-4 max-w-[500px]">
                   {skillsNewVersion.map((category, catIndex) => (
@@ -117,7 +109,7 @@ export default function Version2() {
           </div>
 
           <Separator />
-          <div className="flex flex-col gap-8 mt-4">
+          {/* <div className="flex flex-col gap-8 mt-4">
             <h2 className="text-3xl font-semibold text-neutral-700">
               Mes projets sélectionnés
             </h2>
@@ -190,7 +182,8 @@ export default function Version2() {
                   </div>
                 ))}
             </div>
-          </div>
+          </div> */}
+          <ProjectList projects={projectsNewVersion} />
           {/* <Separator /> */}
           {/* <div className="flex flex-col gap-2 w-full mb-8">
             <h4 className="text-3xl font-bold mb-6 text-neutral-800 flex items-center gap-2">
