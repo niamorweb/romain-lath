@@ -4,6 +4,10 @@ const icons = [
     icon: "/images/icons/react.svg",
   },
   {
+    label: "React Native",
+    icon: "/images/icons/react.svg",
+  },
+  {
     label: "Next.js",
     icon: "/images/icons/nextjs.svg",
   },
@@ -93,6 +97,7 @@ const frontendLabels = [
   "Figma",
   "TailwindCSS",
   "React",
+  "React Native",
   "Next.js",
   "Vue.js",
   "Nuxt",
@@ -133,6 +138,7 @@ export const projectsNewVersion = [
     skills: icons.filter((icon) =>
       [
         "Nuxt",
+        "React Native",
         "Nest.js",
         "Postgresql",
         "Prisma",
